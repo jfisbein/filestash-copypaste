@@ -153,4 +153,4 @@ Filestash image. A `v*` tag publishes a release with the zip, once the tag match
 ## License
 
 Copyright © 2026 Joan Fisbein. Licensed under the [GNU Affero General Public License v3.0](LICENSE),
-the same license as Filestash. (v1.2.0 was first published under MIT, on the same day.)
+the same license as Filestash, from v1.2.1 on. (v1.2.0, published earlier the same day, was MIT.)

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Build dist/copypaste.zip from src/: the manifest, the patch, the modules and the locales.
+"""Build dist/copypaste.zip from src/: the manifest, the patch, the modules and the locales,
+plus LICENSE.
 
     python3 -I build.py [output.zip]
 
@@ -18,6 +19,8 @@ out = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else root / "dist" / "copyp
 names = ["manifest.json", "ctrl_submenu.diff", "copy.js", "engine.js", "i18n.js"]
 names += sorted(f"locales/{p.name}" for p in (src / "locales").glob("*.json"))
 sources = {name: (src / name).read_bytes() for name in names}
+names.append("LICENSE") # the AGPL asks for its text to go with every copy
+sources["LICENSE"] = (root / "LICENSE").read_bytes()
 version = hashlib.sha256(b"".join(name.encode() + b"\0" + sources[name] for name in names)).hexdigest()[:10]
 out.parent.mkdir(parents=True, exist_ok=True)
 with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:

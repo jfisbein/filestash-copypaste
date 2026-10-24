@@ -1,6 +1,6 @@
 {
     "name": "filestash-copypaste",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "private": true,
     "description": "Copy, cut and paste for Filestash, also between Samba shares",
     "type": "module",
