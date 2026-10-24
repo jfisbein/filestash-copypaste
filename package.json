@@ -4,7 +4,7 @@
     "private": true,
     "description": "Copy, cut and paste for Filestash, also between Samba shares",
     "type": "module",
-    "license": "MIT",
+    "license": "AGPL-3.0-only",
     "repository": "github:jfisbein/filestash-copypaste",
     "engines": {
         "node": ">=20"

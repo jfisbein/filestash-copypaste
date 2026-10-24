@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- **License changed from MIT to the GNU AGPL v3.0**, the license of Filestash itself (2026-10-24).
+  v1.2.0 as released stays available under MIT.
+
 ## v1.2.0 — 2026-10-24
 
 First public release.
