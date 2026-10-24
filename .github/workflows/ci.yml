@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 5 * * 1" # Mondays: catches a Filestash update that breaks the plugin
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Offline tests and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Translations
+        run: node test/locales.mjs
+      - name: Engine, against an in-memory imitation of the files API
+        run: node test/mock.mjs
+      - name: Toolbar and drop logic, in several languages
+        run: for lang in en-US es-ES de-DE ru-RU pl-PL ja-JP; do node test/ui.mjs "$lang"; done
+      - name: Build, twice, and check it is reproducible
+        run: |
+          python3 -I build.py
+          python3 -I build.py "$RUNNER_TEMP/again.zip"
+          cmp dist/copypaste.zip "$RUNNER_TEMP/again.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: copypaste.zip
+          path: dist/copypaste.zip
+
+  integration:
+    name: Filestash + Samba (${{ matrix.image }})
+    needs: test
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ["machines/filestash:latest"]
+    env:
+      FILESTASH_IMAGE: ${{ matrix.image }}
+      PORT: "8334"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: python3 -I build.py
+      - name: Start Filestash and a Samba server
+        run: ci/up.sh
+      - name: What Filestash serves still fits the plugin
+        run: test/served-check.sh "http://localhost:$PORT/"
+      - name: Copy and move through the real API
+        run: node test/e2e.mjs --base "http://localhost:$PORT/" --shares one,two
+        env:
+          FILESTASH_USER: alice
+          FILESTASH_PASSWORD: copypaste-ci-password # test-only, see ci/compose.yaml
+      - name: Logs
+        if: failure()
+        run: docker compose -f ci/compose.yaml logs
+      - name: Stop
+        if: always()
+        run: ci/down.sh

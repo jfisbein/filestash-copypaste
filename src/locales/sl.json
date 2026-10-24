@@ -1,0 +1,92 @@
+{
+    "COPY": "Kopiraj",
+    "COPY_TITLE": "Kopiraj v odložišče, da prilepiš v drugo mapo ali skupno rabo",
+    "CUT": "Izreži",
+    "CUT_TITLE": "Izreži, da premakneš v drugo mapo ali skupno rabo",
+    "PASTE_HERE": "Prilepi sem",
+    "MOVE_HERE": "Premakni sem",
+    "CLEAR_CLIPBOARD": "Izprazni odložišče",
+    "CANCEL": "Prekliči",
+    "COPY_SUFFIX": "kopija",
+    "COPIED": {
+        "one": "Kopiran {{count}} element: odpri ciljno mapo in klikni »{{button}}«",
+        "two": "Kopirana {{count}} elementa: odpri ciljno mapo in klikni »{{button}}«",
+        "few": "Kopirani {{count}} elementi: odpri ciljno mapo in klikni »{{button}}«",
+        "other": "Kopiranih {{count}} elementov: odpri ciljno mapo in klikni »{{button}}«"
+    },
+    "CUT_DONE": {
+        "one": "Izrezan {{count}} element: odpri ciljno mapo in klikni »{{button}}«",
+        "two": "Izrezana {{count}} elementa: odpri ciljno mapo in klikni »{{button}}«",
+        "few": "Izrezani {{count}} elementi: odpri ciljno mapo in klikni »{{button}}«",
+        "other": "Izrezanih {{count}} elementov: odpri ciljno mapo in klikni »{{button}}«"
+    },
+    "SCANNING": {
+        "one": "Pripravljanje… {{count}} datoteka",
+        "two": "Pripravljanje… {{count}} datoteki",
+        "few": "Pripravljanje… {{count}} datoteke",
+        "other": "Pripravljanje… {{count}} datotek"
+    },
+    "COPYING": "Kopiranje {{i}}/{{n}} · {{done}} od {{total}} · {{rate}}/s",
+    "MOVING": "Premikanje {{i}}/{{n}} · {{done}} od {{total}} · {{rate}}/s",
+    "REMOVING": "Odstranjevanje iz vira… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Kopirana bo {{count}} datoteka ({{size}}). Želite nadaljevati?",
+        "two": "Kopirani bosta {{count}} datoteki ({{size}}). Želite nadaljevati?",
+        "few": "Kopirane bodo {{count}} datoteke ({{size}}). Želite nadaljevati?",
+        "other": "Kopiranih bo {{count}} datotek ({{size}}). Želite nadaljevati?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Premakni v {{dest}}: {{count}} datoteka ({{size}}).\n\nNajprej se naredi kopija; vir se odstrani šele, ko ta uspe. Želite nadaljevati?",
+        "two": "Premakni v {{dest}}: {{count}} datoteki ({{size}}).\n\nNajprej se naredi kopija; vir se odstrani šele, ko ta uspe. Želite nadaljevati?",
+        "few": "Premakni v {{dest}}: {{count}} datoteke ({{size}}).\n\nNajprej se naredi kopija; vir se odstrani šele, ko ta uspe. Želite nadaljevati?",
+        "other": "Premakni v {{dest}}: {{count}} datotek ({{size}}).\n\nNajprej se naredi kopija; vir se odstrani šele, ko ta uspe. Želite nadaljevati?"
+    },
+    "COPY_DONE": {
+        "one": "Kopiranje končano: {{count}} datoteka ({{size}})",
+        "two": "Kopiranje končano: {{count}} datoteki ({{size}})",
+        "few": "Kopiranje končano: {{count}} datoteke ({{size}})",
+        "other": "Kopiranje končano: {{count}} datotek ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopiranje preklicano: kopirano {{done}} od {{count}}",
+        "two": "Kopiranje preklicano: kopirano {{done}} od {{count}}",
+        "few": "Kopiranje preklicano: kopirano {{done}} od {{count}}",
+        "other": "Kopiranje preklicano: kopirano {{done}} od {{count}}"
+    },
+    "COPY_FAILED": "Kopiranje ni uspelo",
+    "MOVED_FILES": {
+        "one": "Premaknjeno: {{count}} datoteka ({{size}})",
+        "two": "Premaknjeno: {{count}} datoteki ({{size}})",
+        "few": "Premaknjeno: {{count}} datoteke ({{size}})",
+        "other": "Premaknjeno: {{count}} datotek ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Premaknjeno: {{count}} element",
+        "two": "Premaknjeno: {{count}} elementa",
+        "few": "Premaknjeno: {{count}} elementi",
+        "other": "Premaknjeno: {{count}} elementov"
+    },
+    "MOVED_KEPT": {
+        "one": "Vse je kopirano, vendar iz vira ni bilo mogoče odstraniti elementov: {{count}}; še vedno so tam",
+        "two": "Vse je kopirano, vendar iz vira ni bilo mogoče odstraniti elementov: {{count}}; še vedno so tam",
+        "few": "Vse je kopirano, vendar iz vira ni bilo mogoče odstraniti elementov: {{count}}; še vedno so tam",
+        "other": "Vse je kopirano, vendar iz vira ni bilo mogoče odstraniti elementov: {{count}}; še vedno so tam"
+    },
+    "ALREADY_HERE": "Je že v tej mapi",
+    "MOVE_CANCELLED": {
+        "one": "Premik preklican: kopirano {{done}} od {{count}}, iz vira ni bilo nič odstranjeno",
+        "two": "Premik preklican: kopirano {{done}} od {{count}}, iz vira ni bilo nič odstranjeno",
+        "few": "Premik preklican: kopirano {{done}} od {{count}}, iz vira ni bilo nič odstranjeno",
+        "other": "Premik preklican: kopirano {{done}} od {{count}}, iz vira ni bilo nič odstranjeno"
+    },
+    "MOVE_CANCELLED_REMOVING": "Premik preklican med odstranjevanjem vira: vse je kopirano, vendar je del še vedno tudi v viru",
+    "MOVE_FAILED": "Premik ni uspel (iz vira ni bilo nič odstranjeno)",
+    "MOVE_FAILED_PARTLY": "Premik ni uspel (prejšnji elementi so bili premaknjeni)",
+    "BUSY": "Kopiranje že poteka",
+    "LEAVE": "Kopiranje poteka; če zapreš stran, se prekine.",
+    "ERROR_INTO_ITSELF": "mape ni mogoče kopirati same vase",
+    "ERROR_SHARE_ROOT": "celotne skupne rabe ni mogoče premakniti",
+    "ERROR_NOT_FOUND": "ne obstaja več",
+    "ERROR_SIZE_MISMATCH": "kopirana velikost se ne ujema z izvirnikom",
+    "ERROR_TOO_DEEP": "preveč ravni map (povezava v zanki?)"
+}

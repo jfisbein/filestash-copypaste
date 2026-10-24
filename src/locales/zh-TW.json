@@ -1,0 +1,59 @@
+{
+    "COPY": "複製",
+    "COPY_TITLE": "複製到剪貼簿，以便貼到其他資料夾或共用",
+    "CUT": "剪下",
+    "CUT_TITLE": "剪下，以便移動到其他資料夾或共用",
+    "PASTE_HERE": "貼到這裡",
+    "MOVE_HERE": "移到這裡",
+    "CLEAR_CLIPBOARD": "清空剪貼簿",
+    "CANCEL": "取消",
+    "COPY_SUFFIX": "複本",
+    "COPIED": {
+        "other": "已複製 {{count}} 個項目：開啟目的地資料夾並按下「{{button}}」"
+    },
+    "CUT_DONE": {
+        "other": "已剪下 {{count}} 個項目：開啟目的地資料夾並按下「{{button}}」"
+    },
+    "SCANNING": {
+        "other": "準備中… {{count}} 個檔案"
+    },
+    "COPYING": "正在複製 {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "正在移動 {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "正在從來源刪除… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "other": "即將複製 {{count}} 個檔案（{{size}}）。要繼續嗎？"
+    },
+    "CONFIRM_MOVE": {
+        "other": "移到 {{dest}}：{{count}} 個檔案（{{size}}）。\n\n會先進行複製；只有複製成功後才會刪除來源。要繼續嗎？"
+    },
+    "COPY_DONE": {
+        "other": "複製完成：{{count}} 個檔案（{{size}}）"
+    },
+    "COPY_CANCELLED": {
+        "other": "已取消複製：已複製 {{done}}/{{count}} 個檔案"
+    },
+    "COPY_FAILED": "複製失敗",
+    "MOVED_FILES": {
+        "other": "已移動：{{count}} 個檔案（{{size}}）"
+    },
+    "MOVED_ITEMS": {
+        "other": "已移動：{{count}} 個項目"
+    },
+    "MOVED_KEPT": {
+        "other": "已全部複製，但有 {{count}} 個項目無法從來源刪除，仍留在原處"
+    },
+    "ALREADY_HERE": "已在這個資料夾中",
+    "MOVE_CANCELLED": {
+        "other": "已取消移動：已複製 {{done}}/{{count}} 個檔案，來源未刪除任何內容"
+    },
+    "MOVE_CANCELLED_REMOVING": "在刪除來源時取消了移動：所有內容都已複製，但部分內容仍留在來源",
+    "MOVE_FAILED": "移動失敗（來源未刪除任何內容）",
+    "MOVE_FAILED_PARTLY": "移動失敗（先前的項目已移動）",
+    "BUSY": "已有複製作業正在進行",
+    "LEAVE": "複製正在進行；關閉頁面會中斷複製。",
+    "ERROR_INTO_ITSELF": "無法將資料夾複製到其本身之中",
+    "ERROR_SHARE_ROOT": "無法移動整個共用",
+    "ERROR_NOT_FOUND": "已不存在",
+    "ERROR_SIZE_MISMATCH": "複製後的大小與原始檔案不符",
+    "ERROR_TOO_DEEP": "資料夾層級過多（有循環連結？）"
+}

@@ -1,0 +1,70 @@
+{
+    "COPY": "Copiar",
+    "COPY_TITLE": "Copiar al portapapeles para pegar en otra carpeta o share",
+    "CUT": "Cortar",
+    "CUT_TITLE": "Cortar para mover a otra carpeta o share",
+    "PASTE_HERE": "Pegar aquí",
+    "MOVE_HERE": "Mover aquí",
+    "CLEAR_CLIPBOARD": "Vaciar el portapapeles",
+    "CANCEL": "Cancelar",
+    "COPY_SUFFIX": "copia",
+    "COPIED": {
+        "one": "{{count}} elemento copiado: ve a la carpeta de destino y pulsa «{{button}}»",
+        "other": "{{count}} elementos copiados: ve a la carpeta de destino y pulsa «{{button}}»"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} elemento cortado: ve a la carpeta de destino y pulsa «{{button}}»",
+        "other": "{{count}} elementos cortados: ve a la carpeta de destino y pulsa «{{button}}»"
+    },
+    "SCANNING": {
+        "one": "Preparando… {{count}} fichero",
+        "other": "Preparando… {{count}} ficheros"
+    },
+    "COPYING": "Copiando {{i}}/{{n}} · {{done}} de {{total}} · {{rate}}/s",
+    "MOVING": "Moviendo {{i}}/{{n}} · {{done}} de {{total}} · {{rate}}/s",
+    "REMOVING": "Borrando del origen… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Vas a copiar {{count}} fichero ({{size}}). ¿Seguir?",
+        "other": "Vas a copiar {{count}} ficheros ({{size}}). ¿Seguir?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Mover a {{dest}}: {{count}} fichero ({{size}}).\n\nPrimero se copia, y el origen solo se borra cuando la copia ha terminado bien. ¿Seguir?",
+        "other": "Mover a {{dest}}: {{count}} ficheros ({{size}}).\n\nPrimero se copia, y el origen solo se borra cuando la copia ha terminado bien. ¿Seguir?"
+    },
+    "COPY_DONE": {
+        "one": "Copia terminada: {{count}} fichero ({{size}})",
+        "other": "Copia terminada: {{count}} ficheros ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Copia cancelada: {{done}} de {{count}} fichero copiado",
+        "other": "Copia cancelada: {{done}} de {{count}} ficheros copiados"
+    },
+    "COPY_FAILED": "Error al copiar",
+    "MOVED_FILES": {
+        "one": "Movido: {{count}} fichero ({{size}})",
+        "other": "Movido: {{count}} ficheros ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Movido: {{count}} elemento",
+        "other": "Movido: {{count}} elementos"
+    },
+    "MOVED_KEPT": {
+        "one": "Se ha copiado todo, pero {{count}} elemento no se pudo borrar del origen y sigue allí",
+        "other": "Se ha copiado todo, pero {{count}} elementos no se pudieron borrar del origen y siguen allí"
+    },
+    "ALREADY_HERE": "Ya está en esta carpeta",
+    "MOVE_CANCELLED": {
+        "one": "Movimiento cancelado: {{done}} de {{count}} fichero copiado, no se ha borrado nada del origen",
+        "other": "Movimiento cancelado: {{done}} de {{count}} ficheros copiados, no se ha borrado nada del origen"
+    },
+    "MOVE_CANCELLED_REMOVING": "Movimiento cancelado mientras se borraba el origen: todo está copiado, pero parte sigue también en el origen",
+    "MOVE_FAILED": "Error al mover (no se ha borrado nada del origen)",
+    "MOVE_FAILED_PARTLY": "Error al mover (lo anterior sí se ha movido)",
+    "BUSY": "Ya hay una copia en curso",
+    "LEAVE": "Hay una copia en curso; si cierras la página se interrumpe.",
+    "ERROR_INTO_ITSELF": "no se puede copiar una carpeta dentro de sí misma",
+    "ERROR_SHARE_ROOT": "no se puede mover un share entero",
+    "ERROR_NOT_FOUND": "ya no existe",
+    "ERROR_SIZE_MISMATCH": "el tamaño copiado no coincide con el original",
+    "ERROR_TOO_DEEP": "demasiados niveles de carpetas (¿un enlace en bucle?)"
+}

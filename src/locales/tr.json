@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopyala",
+    "COPY_TITLE": "Başka bir klasöre veya paylaşıma yapıştırmak için panoya kopyala",
+    "CUT": "Kes",
+    "CUT_TITLE": "Başka bir klasöre veya paylaşıma taşımak için kes",
+    "PASTE_HERE": "Buraya yapıştır",
+    "MOVE_HERE": "Buraya taşı",
+    "CLEAR_CLIPBOARD": "Panoyu boşalt",
+    "CANCEL": "İptal",
+    "COPY_SUFFIX": "kopya",
+    "COPIED": {
+        "one": "{{count}} öğe kopyalandı: hedef klasörü açın ve “{{button}}” düğmesine basın",
+        "other": "{{count}} öğe kopyalandı: hedef klasörü açın ve “{{button}}” düğmesine basın"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} öğe kesildi: hedef klasörü açın ve “{{button}}” düğmesine basın",
+        "other": "{{count}} öğe kesildi: hedef klasörü açın ve “{{button}}” düğmesine basın"
+    },
+    "SCANNING": {
+        "one": "Hazırlanıyor… {{count}} dosya",
+        "other": "Hazırlanıyor… {{count}} dosya"
+    },
+    "COPYING": "Kopyalanıyor {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "Taşınıyor {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "Kaynaktan kaldırılıyor… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "{{count}} dosya ({{size}}) kopyalanacak. Devam edilsin mi?",
+        "other": "{{count}} dosya ({{size}}) kopyalanacak. Devam edilsin mi?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Hedef: {{dest}} – {{count}} dosya ({{size}}) taşınacak.\n\nÖnce kopya oluşturulur; kaynak yalnızca kopyalama başarılı olduktan sonra kaldırılır. Devam edilsin mi?",
+        "other": "Hedef: {{dest}} – {{count}} dosya ({{size}}) taşınacak.\n\nÖnce kopya oluşturulur; kaynak yalnızca kopyalama başarılı olduktan sonra kaldırılır. Devam edilsin mi?"
+    },
+    "COPY_DONE": {
+        "one": "Kopyalama tamamlandı: {{count}} dosya ({{size}})",
+        "other": "Kopyalama tamamlandı: {{count}} dosya ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopyalama iptal edildi: kopyalanan {{done}} / {{count}}",
+        "other": "Kopyalama iptal edildi: kopyalanan {{done}} / {{count}}"
+    },
+    "COPY_FAILED": "Kopyalama başarısız oldu",
+    "MOVED_FILES": {
+        "one": "Taşındı: {{count}} dosya ({{size}})",
+        "other": "Taşındı: {{count}} dosya ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Taşındı: {{count}} öğe",
+        "other": "Taşındı: {{count}} öğe"
+    },
+    "MOVED_KEPT": {
+        "one": "Her şey kopyalandı, ancak {{count}} öğe kaynaktan kaldırılamadı ve hâlâ orada",
+        "other": "Her şey kopyalandı, ancak {{count}} öğe kaynaktan kaldırılamadı ve hâlâ orada"
+    },
+    "ALREADY_HERE": "Zaten bu klasörde",
+    "MOVE_CANCELLED": {
+        "one": "Taşıma iptal edildi: kopyalanan {{done}} / {{count}}, kaynaktan hiçbir şey kaldırılmadı",
+        "other": "Taşıma iptal edildi: kopyalanan {{done}} / {{count}}, kaynaktan hiçbir şey kaldırılmadı"
+    },
+    "MOVE_CANCELLED_REMOVING": "Taşıma, kaynak kaldırılırken iptal edildi: her şey kopyalandı, ancak bir kısmı hâlâ kaynakta da duruyor",
+    "MOVE_FAILED": "Taşıma başarısız oldu (kaynaktan hiçbir şey kaldırılmadı)",
+    "MOVE_FAILED_PARTLY": "Taşıma başarısız oldu (öncekiler taşındı)",
+    "BUSY": "Zaten bir kopyalama işlemi sürüyor",
+    "LEAVE": "Bir kopyalama sürüyor; sayfayı kapatırsanız durur.",
+    "ERROR_INTO_ITSELF": "bir klasör kendi içine kopyalanamaz",
+    "ERROR_SHARE_ROOT": "bir paylaşımın tamamı taşınamaz",
+    "ERROR_NOT_FOUND": "artık mevcut değil",
+    "ERROR_SIZE_MISMATCH": "kopyalanan boyut orijinalle eşleşmiyor",
+    "ERROR_TOO_DEEP": "çok fazla klasör düzeyi (döngüye giren bir bağlantı mı?)"
+}

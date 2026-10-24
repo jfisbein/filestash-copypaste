@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: The tag matches the manifest
+        run: |
+          version=$(python3 -I -c 'import json; print(json.load(open("src/manifest.json"))["version"])')
+          [ "$version" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME, manifest $version"; exit 1; }
+      - name: Tests
+        run: |
+          node test/locales.mjs
+          node test/mock.mjs
+          node test/ui.mjs en-US
+      - run: python3 -I build.py
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          awk -v v="## $GITHUB_REF_NAME" 'index($0, v) == 1 { on = 1; next } /^## / { on = 0 } on' CHANGELOG.md > "$RUNNER_TEMP/notes.md"
+          sha256sum dist/copypaste.zip | sed 's|dist/||' > "$RUNNER_TEMP/copypaste.zip.sha256"
+          gh release create "$GITHUB_REF_NAME" dist/copypaste.zip "$RUNNER_TEMP/copypaste.zip.sha256" \
+            --title "$GITHUB_REF_NAME" --notes-file "$RUNNER_TEMP/notes.md"

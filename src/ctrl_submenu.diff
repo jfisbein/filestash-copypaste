@@ -1,0 +1,5 @@
+diff --git a/public/assets/pages/filespage/ctrl_submenu.js b/public/assets/pages/filespage/ctrl_submenu.js
+--- a/public/assets/pages/filespage/ctrl_submenu.js
++++ b/public/assets/pages/filespage/ctrl_submenu.js
+@@ -1,0 +1,1 @@
++import(new URL("../../plugin/copypaste.zip/copy.js?v=__V__", import.meta.url).toString()).catch((err) => console.error("[copypaste]", err));

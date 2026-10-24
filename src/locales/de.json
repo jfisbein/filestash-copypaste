@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopieren",
+    "COPY_TITLE": "In die Zwischenablage kopieren, um es in einem anderen Ordner oder einer anderen Freigabe einzufügen",
+    "CUT": "Ausschneiden",
+    "CUT_TITLE": "Ausschneiden, um es in einen anderen Ordner oder eine andere Freigabe zu verschieben",
+    "PASTE_HERE": "Hier einfügen",
+    "MOVE_HERE": "Hierher verschieben",
+    "CLEAR_CLIPBOARD": "Zwischenablage leeren",
+    "CANCEL": "Abbrechen",
+    "COPY_SUFFIX": "Kopie",
+    "COPIED": {
+        "one": "{{count}} Element kopiert: Öffne den Zielordner und klicke auf „{{button}}“",
+        "other": "{{count}} Elemente kopiert: Öffne den Zielordner und klicke auf „{{button}}“"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} Element ausgeschnitten: Öffne den Zielordner und klicke auf „{{button}}“",
+        "other": "{{count}} Elemente ausgeschnitten: Öffne den Zielordner und klicke auf „{{button}}“"
+    },
+    "SCANNING": {
+        "one": "Vorbereitung… {{count}} Datei",
+        "other": "Vorbereitung… {{count}} Dateien"
+    },
+    "COPYING": "Kopieren {{i}}/{{n}} · {{done}} von {{total}} · {{rate}}/s",
+    "MOVING": "Verschieben {{i}}/{{n}} · {{done}} von {{total}} · {{rate}}/s",
+    "REMOVING": "Entfernen aus der Quelle… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "{{count}} Datei ({{size}}) wird kopiert. Fortfahren?",
+        "other": "{{count}} Dateien ({{size}}) werden kopiert. Fortfahren?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Nach {{dest}} verschieben: {{count}} Datei ({{size}}).\n\nZuerst wird kopiert; die Quelle wird erst entfernt, wenn die Kopie erfolgreich war. Fortfahren?",
+        "other": "Nach {{dest}} verschieben: {{count}} Dateien ({{size}}).\n\nZuerst wird kopiert; die Quelle wird erst entfernt, wenn die Kopie erfolgreich war. Fortfahren?"
+    },
+    "COPY_DONE": {
+        "one": "Kopieren abgeschlossen: {{count}} Datei ({{size}})",
+        "other": "Kopieren abgeschlossen: {{count}} Dateien ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopieren abgebrochen: {{done}} von {{count}} Datei kopiert",
+        "other": "Kopieren abgebrochen: {{done}} von {{count}} Dateien kopiert"
+    },
+    "COPY_FAILED": "Kopieren fehlgeschlagen",
+    "MOVED_FILES": {
+        "one": "Verschoben: {{count}} Datei ({{size}})",
+        "other": "Verschoben: {{count}} Dateien ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Verschoben: {{count}} Element",
+        "other": "Verschoben: {{count}} Elemente"
+    },
+    "MOVED_KEPT": {
+        "one": "Alles wurde kopiert, aber {{count}} Element konnte nicht aus der Quelle entfernt werden und ist noch dort",
+        "other": "Alles wurde kopiert, aber {{count}} Elemente konnten nicht aus der Quelle entfernt werden und sind noch dort"
+    },
+    "ALREADY_HERE": "Bereits in diesem Ordner",
+    "MOVE_CANCELLED": {
+        "one": "Verschieben abgebrochen: {{done}} von {{count}} Datei kopiert, nichts aus der Quelle entfernt",
+        "other": "Verschieben abgebrochen: {{done}} von {{count}} Dateien kopiert, nichts aus der Quelle entfernt"
+    },
+    "MOVE_CANCELLED_REMOVING": "Verschieben abgebrochen, während die Quelle entfernt wurde: Alles ist kopiert, aber ein Teil ist auch noch in der Quelle",
+    "MOVE_FAILED": "Verschieben fehlgeschlagen (nichts aus der Quelle entfernt)",
+    "MOVE_FAILED_PARTLY": "Verschieben fehlgeschlagen (das Vorherige wurde verschoben)",
+    "BUSY": "Es läuft bereits ein Kopiervorgang",
+    "LEAVE": "Ein Kopiervorgang läuft; das Schließen der Seite bricht ihn ab.",
+    "ERROR_INTO_ITSELF": "ein Ordner kann nicht in sich selbst kopiert werden",
+    "ERROR_SHARE_ROOT": "eine ganze Freigabe kann nicht verschoben werden",
+    "ERROR_NOT_FOUND": "existiert nicht mehr",
+    "ERROR_SIZE_MISMATCH": "die kopierte Größe stimmt nicht mit dem Original überein",
+    "ERROR_TOO_DEEP": "zu viele Ordnerebenen (eine Verknüpfungsschleife?)"
+}

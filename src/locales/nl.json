@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopiëren",
+    "COPY_TITLE": "Naar het klembord kopiëren, om in een andere map of share te plakken",
+    "CUT": "Knippen",
+    "CUT_TITLE": "Knippen, om naar een andere map of share te verplaatsen",
+    "PASTE_HERE": "Hier plakken",
+    "MOVE_HERE": "Hierheen verplaatsen",
+    "CLEAR_CLIPBOARD": "Klembord leegmaken",
+    "CANCEL": "Annuleren",
+    "COPY_SUFFIX": "kopie",
+    "COPIED": {
+        "one": "{{count}} item gekopieerd: open de doelmap en klik op ‘{{button}}’",
+        "other": "{{count}} items gekopieerd: open de doelmap en klik op ‘{{button}}’"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} item geknipt: open de doelmap en klik op ‘{{button}}’",
+        "other": "{{count}} items geknipt: open de doelmap en klik op ‘{{button}}’"
+    },
+    "SCANNING": {
+        "one": "Voorbereiden… {{count}} bestand",
+        "other": "Voorbereiden… {{count}} bestanden"
+    },
+    "COPYING": "Kopiëren {{i}}/{{n}} · {{done}} van {{total}} · {{rate}}/s",
+    "MOVING": "Verplaatsen {{i}}/{{n}} · {{done}} van {{total}} · {{rate}}/s",
+    "REMOVING": "Verwijderen uit de bron… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Je gaat {{count}} bestand kopiëren ({{size}}). Doorgaan?",
+        "other": "Je gaat {{count}} bestanden kopiëren ({{size}}). Doorgaan?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Verplaatsen naar {{dest}}: {{count}} bestand ({{size}}).\n\nEerst wordt er gekopieerd; de bron wordt pas verwijderd als dat gelukt is. Doorgaan?",
+        "other": "Verplaatsen naar {{dest}}: {{count}} bestanden ({{size}}).\n\nEerst wordt er gekopieerd; de bron wordt pas verwijderd als dat gelukt is. Doorgaan?"
+    },
+    "COPY_DONE": {
+        "one": "Kopiëren voltooid: {{count}} bestand ({{size}})",
+        "other": "Kopiëren voltooid: {{count}} bestanden ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopiëren geannuleerd: {{done}} van {{count}} bestand gekopieerd",
+        "other": "Kopiëren geannuleerd: {{done}} van {{count}} bestanden gekopieerd"
+    },
+    "COPY_FAILED": "Kopiëren mislukt",
+    "MOVED_FILES": {
+        "one": "Verplaatst: {{count}} bestand ({{size}})",
+        "other": "Verplaatst: {{count}} bestanden ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Verplaatst: {{count}} item",
+        "other": "Verplaatst: {{count}} items"
+    },
+    "MOVED_KEPT": {
+        "one": "Alles is gekopieerd, maar {{count}} item kon niet uit de bron worden verwijderd en staat er nog",
+        "other": "Alles is gekopieerd, maar {{count}} items konden niet uit de bron worden verwijderd en staan er nog"
+    },
+    "ALREADY_HERE": "Staat al in deze map",
+    "MOVE_CANCELLED": {
+        "one": "Verplaatsen geannuleerd: {{done}} van {{count}} bestand gekopieerd, niets uit de bron verwijderd",
+        "other": "Verplaatsen geannuleerd: {{done}} van {{count}} bestanden gekopieerd, niets uit de bron verwijderd"
+    },
+    "MOVE_CANCELLED_REMOVING": "Verplaatsen geannuleerd tijdens het verwijderen van de bron: alles is gekopieerd, maar een deel staat ook nog in de bron",
+    "MOVE_FAILED": "Verplaatsen mislukt (niets uit de bron verwijderd)",
+    "MOVE_FAILED_PARTLY": "Verplaatsen mislukt (wat ervoor kwam is wel verplaatst)",
+    "BUSY": "Er loopt al een kopieeractie",
+    "LEAVE": "Er loopt een kopieeractie; als je de pagina sluit, stopt die.",
+    "ERROR_INTO_ITSELF": "een map kan niet in zichzelf worden gekopieerd",
+    "ERROR_SHARE_ROOT": "een hele share kan niet worden verplaatst",
+    "ERROR_NOT_FOUND": "bestaat niet meer",
+    "ERROR_SIZE_MISMATCH": "de gekopieerde grootte komt niet overeen met het origineel",
+    "ERROR_TOO_DEEP": "te veel mapniveaus (een link in een lus?)"
+}

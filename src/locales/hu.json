@@ -1,0 +1,70 @@
+{
+    "COPY": "Másolás",
+    "COPY_TITLE": "Másolás a vágólapra, hogy egy másik mappába vagy megosztásba illeszd be",
+    "CUT": "Kivágás",
+    "CUT_TITLE": "Kivágás, hogy egy másik mappába vagy megosztásba helyezd át",
+    "PASTE_HERE": "Beillesztés ide",
+    "MOVE_HERE": "Áthelyezés ide",
+    "CLEAR_CLIPBOARD": "Vágólap ürítése",
+    "CANCEL": "Mégse",
+    "COPY_SUFFIX": "másolat",
+    "COPIED": {
+        "one": "{{count}} elem kimásolva: nyisd meg a célmappát, és kattints a(z) „{{button}}” gombra",
+        "other": "{{count}} elem kimásolva: nyisd meg a célmappát, és kattints a(z) „{{button}}” gombra"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} elem kivágva: nyisd meg a célmappát, és kattints a(z) „{{button}}” gombra",
+        "other": "{{count}} elem kivágva: nyisd meg a célmappát, és kattints a(z) „{{button}}” gombra"
+    },
+    "SCANNING": {
+        "one": "Előkészítés… {{count}} fájl",
+        "other": "Előkészítés… {{count}} fájl"
+    },
+    "COPYING": "Másolás {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "Áthelyezés {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "Eltávolítás a forrásból… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "{{count}} fájl ({{size}}) másolása következik. Folytatod?",
+        "other": "{{count}} fájl ({{size}}) másolása következik. Folytatod?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Áthelyezés ide: {{dest}} – {{count}} fájl ({{size}}).\n\nElőször másolat készül; a forrás csak akkor törlődik, ha ez sikerült. Folytatod?",
+        "other": "Áthelyezés ide: {{dest}} – {{count}} fájl ({{size}}).\n\nElőször másolat készül; a forrás csak akkor törlődik, ha ez sikerült. Folytatod?"
+    },
+    "COPY_DONE": {
+        "one": "Másolás kész: {{count}} fájl ({{size}})",
+        "other": "Másolás kész: {{count}} fájl ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Másolás megszakítva: {{done}} / {{count}} fájl átmásolva",
+        "other": "Másolás megszakítva: {{done}} / {{count}} fájl átmásolva"
+    },
+    "COPY_FAILED": "A másolás nem sikerült",
+    "MOVED_FILES": {
+        "one": "Áthelyezve: {{count}} fájl ({{size}})",
+        "other": "Áthelyezve: {{count}} fájl ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Áthelyezve: {{count}} elem",
+        "other": "Áthelyezve: {{count}} elem"
+    },
+    "MOVED_KEPT": {
+        "one": "Minden átmásolódott, de {{count}} elemet nem sikerült eltávolítani a forrásból, és még ott van",
+        "other": "Minden átmásolódott, de {{count}} elemet nem sikerült eltávolítani a forrásból, és még ott van"
+    },
+    "ALREADY_HERE": "Már ebben a mappában van",
+    "MOVE_CANCELLED": {
+        "one": "Áthelyezés megszakítva: {{done}} / {{count}} fájl átmásolva, a forrásból semmi sem lett eltávolítva",
+        "other": "Áthelyezés megszakítva: {{done}} / {{count}} fájl átmásolva, a forrásból semmi sem lett eltávolítva"
+    },
+    "MOVE_CANCELLED_REMOVING": "Az áthelyezés a forrás eltávolítása közben megszakadt: minden át van másolva, de egy része még a forrásban is megvan",
+    "MOVE_FAILED": "Az áthelyezés nem sikerült (a forrásból semmi sem lett eltávolítva)",
+    "MOVE_FAILED_PARTLY": "Az áthelyezés nem sikerült (a korábbi elemek áthelyeződtek)",
+    "BUSY": "Már folyamatban van egy másolás",
+    "LEAVE": "Másolás van folyamatban; az oldal bezárása megszakítja.",
+    "ERROR_INTO_ITSELF": "egy mappa nem másolható önmagába",
+    "ERROR_SHARE_ROOT": "egy teljes megosztás nem helyezhető át",
+    "ERROR_NOT_FOUND": "már nem létezik",
+    "ERROR_SIZE_MISMATCH": "a másolt méret nem egyezik az eredetivel",
+    "ERROR_TOO_DEEP": "túl sok mappaszint (hurkot képező hivatkozás?)"
+}

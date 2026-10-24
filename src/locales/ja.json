@@ -1,0 +1,59 @@
+{
+    "COPY": "コピー",
+    "COPY_TITLE": "クリップボードにコピーして、別のフォルダーや共有に貼り付けます",
+    "CUT": "切り取り",
+    "CUT_TITLE": "切り取って、別のフォルダーや共有に移動します",
+    "PASTE_HERE": "ここに貼り付け",
+    "MOVE_HERE": "ここに移動",
+    "CLEAR_CLIPBOARD": "クリップボードを空にする",
+    "CANCEL": "キャンセル",
+    "COPY_SUFFIX": "コピー",
+    "COPIED": {
+        "other": "{{count}} 件の項目をコピーしました。移動先のフォルダーを開いて「{{button}}」を押してください"
+    },
+    "CUT_DONE": {
+        "other": "{{count}} 件の項目を切り取りました。移動先のフォルダーを開いて「{{button}}」を押してください"
+    },
+    "SCANNING": {
+        "other": "準備中… {{count}} 個のファイル"
+    },
+    "COPYING": "コピー中 {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "移動中 {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "移動元から削除中… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "other": "{{count}} 個のファイル（{{size}}）をコピーします。続行しますか？"
+    },
+    "CONFIRM_MOVE": {
+        "other": "{{dest}} へ移動: {{count}} 個のファイル（{{size}}）。\n\n先にコピーを行い、成功した後でのみ移動元を削除します。続行しますか？"
+    },
+    "COPY_DONE": {
+        "other": "コピー完了: {{count}} 個のファイル（{{size}}）"
+    },
+    "COPY_CANCELLED": {
+        "other": "コピーをキャンセルしました: {{count}} 個中 {{done}} 個をコピー済み"
+    },
+    "COPY_FAILED": "コピーに失敗しました",
+    "MOVED_FILES": {
+        "other": "移動しました: {{count}} 個のファイル（{{size}}）"
+    },
+    "MOVED_ITEMS": {
+        "other": "移動しました: {{count}} 件の項目"
+    },
+    "MOVED_KEPT": {
+        "other": "すべてコピーしましたが、{{count}} 件の項目を移動元から削除できず、まだ残っています"
+    },
+    "ALREADY_HERE": "すでにこのフォルダーにあります",
+    "MOVE_CANCELLED": {
+        "other": "移動をキャンセルしました: {{count}} 個中 {{done}} 個をコピー済み。移動元からは何も削除していません"
+    },
+    "MOVE_CANCELLED_REMOVING": "移動元の削除中に移動をキャンセルしました: すべてコピー済みですが、一部は移動元にも残っています",
+    "MOVE_FAILED": "移動に失敗しました（移動元からは何も削除していません）",
+    "MOVE_FAILED_PARTLY": "移動に失敗しました（それより前の項目は移動済みです）",
+    "BUSY": "すでにコピーを実行中です",
+    "LEAVE": "コピーを実行中です。ページを閉じると中断されます。",
+    "ERROR_INTO_ITSELF": "フォルダーをそれ自体の中にコピーすることはできません",
+    "ERROR_SHARE_ROOT": "共有全体を移動することはできません",
+    "ERROR_NOT_FOUND": "もう存在しません",
+    "ERROR_SIZE_MISMATCH": "コピーしたサイズが元のサイズと一致しません",
+    "ERROR_TOO_DEEP": "フォルダーの階層が深すぎます（ループしているリンク？）"
+}

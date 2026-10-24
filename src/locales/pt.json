@@ -1,0 +1,70 @@
+{
+    "COPY": "Copiar",
+    "COPY_TITLE": "Copiar para a área de transferência, para colar em outra pasta ou compartilhamento",
+    "CUT": "Recortar",
+    "CUT_TITLE": "Recortar, para mover para outra pasta ou compartilhamento",
+    "PASTE_HERE": "Colar aqui",
+    "MOVE_HERE": "Mover para cá",
+    "CLEAR_CLIPBOARD": "Esvaziar a área de transferência",
+    "CANCEL": "Cancelar",
+    "COPY_SUFFIX": "cópia",
+    "COPIED": {
+        "one": "{{count}} item copiado: abra a pasta de destino e clique em “{{button}}”",
+        "other": "{{count}} itens copiados: abra a pasta de destino e clique em “{{button}}”"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} item recortado: abra a pasta de destino e clique em “{{button}}”",
+        "other": "{{count}} itens recortados: abra a pasta de destino e clique em “{{button}}”"
+    },
+    "SCANNING": {
+        "one": "Preparando… {{count}} arquivo",
+        "other": "Preparando… {{count}} arquivos"
+    },
+    "COPYING": "Copiando {{i}}/{{n}} · {{done}} de {{total}} · {{rate}}/s",
+    "MOVING": "Movendo {{i}}/{{n}} · {{done}} de {{total}} · {{rate}}/s",
+    "REMOVING": "Removendo da origem… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Você vai copiar {{count}} arquivo ({{size}}). Continuar?",
+        "other": "Você vai copiar {{count}} arquivos ({{size}}). Continuar?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Mover para {{dest}}: {{count}} arquivo ({{size}}).\n\nPrimeiro é feita a cópia; a origem só é removida depois que ela terminar com sucesso. Continuar?",
+        "other": "Mover para {{dest}}: {{count}} arquivos ({{size}}).\n\nPrimeiro é feita a cópia; a origem só é removida depois que ela terminar com sucesso. Continuar?"
+    },
+    "COPY_DONE": {
+        "one": "Cópia concluída: {{count}} arquivo ({{size}})",
+        "other": "Cópia concluída: {{count}} arquivos ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Cópia cancelada: {{done}} de {{count}} arquivo copiado",
+        "other": "Cópia cancelada: {{done}} de {{count}} arquivos copiados"
+    },
+    "COPY_FAILED": "Erro ao copiar",
+    "MOVED_FILES": {
+        "one": "Movido: {{count}} arquivo ({{size}})",
+        "other": "Movidos: {{count}} arquivos ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Movido: {{count}} item",
+        "other": "Movidos: {{count}} itens"
+    },
+    "MOVED_KEPT": {
+        "one": "Tudo foi copiado, mas {{count}} item não pôde ser removido da origem e continua lá",
+        "other": "Tudo foi copiado, mas {{count}} itens não puderam ser removidos da origem e continuam lá"
+    },
+    "ALREADY_HERE": "Já está nesta pasta",
+    "MOVE_CANCELLED": {
+        "one": "Movimentação cancelada: {{done}} de {{count}} arquivo copiado, nada foi removido da origem",
+        "other": "Movimentação cancelada: {{done}} de {{count}} arquivos copiados, nada foi removido da origem"
+    },
+    "MOVE_CANCELLED_REMOVING": "Movimentação cancelada durante a remoção da origem: tudo está copiado, mas parte ainda está também na origem",
+    "MOVE_FAILED": "Erro ao mover (nada foi removido da origem)",
+    "MOVE_FAILED_PARTLY": "Erro ao mover (o que veio antes foi movido)",
+    "BUSY": "Já há uma cópia em andamento",
+    "LEAVE": "Há uma cópia em andamento; fechar a página a interrompe.",
+    "ERROR_INTO_ITSELF": "não é possível copiar uma pasta para dentro dela mesma",
+    "ERROR_SHARE_ROOT": "não é possível mover um compartilhamento inteiro",
+    "ERROR_NOT_FOUND": "não existe mais",
+    "ERROR_SIZE_MISMATCH": "o tamanho copiado não corresponde ao original",
+    "ERROR_TOO_DEEP": "níveis de pasta demais (um link em loop?)"
+}

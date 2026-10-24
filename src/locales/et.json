@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopeeri",
+    "COPY_TITLE": "Kopeeri lõikelauale, et kleepida teise kausta või jagatud ressurssi",
+    "CUT": "Lõika",
+    "CUT_TITLE": "Lõika, et teisaldada teise kausta või jagatud ressurssi",
+    "PASTE_HERE": "Kleebi siia",
+    "MOVE_HERE": "Teisalda siia",
+    "CLEAR_CLIPBOARD": "Tühjenda lõikelaud",
+    "CANCEL": "Tühista",
+    "COPY_SUFFIX": "koopia",
+    "COPIED": {
+        "one": "{{count}} üksus kopeeritud: ava sihtkaust ja vajuta „{{button}}“",
+        "other": "{{count}} üksust kopeeritud: ava sihtkaust ja vajuta „{{button}}“"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} üksus lõigatud: ava sihtkaust ja vajuta „{{button}}“",
+        "other": "{{count}} üksust lõigatud: ava sihtkaust ja vajuta „{{button}}“"
+    },
+    "SCANNING": {
+        "one": "Ettevalmistus… {{count}} fail",
+        "other": "Ettevalmistus… {{count}} faili"
+    },
+    "COPYING": "Kopeerimine {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "Teisaldamine {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "Allikast eemaldamine… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Kopeeritakse {{count}} fail ({{size}}). Kas jätkata?",
+        "other": "Kopeeritakse {{count}} faili ({{size}}). Kas jätkata?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Teisalda asukohta {{dest}}: {{count}} fail ({{size}}).\n\nKõigepealt tehakse koopia; allikas eemaldatakse alles siis, kui see on õnnestunud. Kas jätkata?",
+        "other": "Teisalda asukohta {{dest}}: {{count}} faili ({{size}}).\n\nKõigepealt tehakse koopia; allikas eemaldatakse alles siis, kui see on õnnestunud. Kas jätkata?"
+    },
+    "COPY_DONE": {
+        "one": "Kopeerimine lõpetatud: {{count}} fail ({{size}})",
+        "other": "Kopeerimine lõpetatud: {{count}} faili ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopeerimine tühistatud: kopeeritud {{done}}/{{count}}",
+        "other": "Kopeerimine tühistatud: kopeeritud {{done}}/{{count}}"
+    },
+    "COPY_FAILED": "Kopeerimine ebaõnnestus",
+    "MOVED_FILES": {
+        "one": "Teisaldatud: {{count}} fail ({{size}})",
+        "other": "Teisaldatud: {{count}} faili ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Teisaldatud: {{count}} üksus",
+        "other": "Teisaldatud: {{count}} üksust"
+    },
+    "MOVED_KEPT": {
+        "one": "Kõik kopeeriti, kuid {{count}} üksust ei saanud allikast eemaldada ja see on endiselt seal",
+        "other": "Kõik kopeeriti, kuid {{count}} üksust ei saanud allikast eemaldada ja need on endiselt seal"
+    },
+    "ALREADY_HERE": "On juba selles kaustas",
+    "MOVE_CANCELLED": {
+        "one": "Teisaldamine tühistatud: kopeeritud {{done}}/{{count}}, allikast ei eemaldatud midagi",
+        "other": "Teisaldamine tühistatud: kopeeritud {{done}}/{{count}}, allikast ei eemaldatud midagi"
+    },
+    "MOVE_CANCELLED_REMOVING": "Teisaldamine tühistati allika eemaldamise ajal: kõik on kopeeritud, kuid osa on ka endiselt allikas",
+    "MOVE_FAILED": "Teisaldamine ebaõnnestus (allikast ei eemaldatud midagi)",
+    "MOVE_FAILED_PARTLY": "Teisaldamine ebaõnnestus (sellele eelnev teisaldati)",
+    "BUSY": "Kopeerimine on juba käimas",
+    "LEAVE": "Kopeerimine on käimas; lehe sulgemine katkestab selle.",
+    "ERROR_INTO_ITSELF": "kausta ei saa kopeerida iseenda sisse",
+    "ERROR_SHARE_ROOT": "tervet jagatud ressurssi ei saa teisaldada",
+    "ERROR_NOT_FOUND": "ei ole enam olemas",
+    "ERROR_SIZE_MISMATCH": "kopeeritud suurus ei vasta originaalile",
+    "ERROR_TOO_DEEP": "liiga palju kaustatasemeid (silmusesse jääv link?)"
+}

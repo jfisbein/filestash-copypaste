@@ -1,0 +1,92 @@
+{
+    "COPY": "Kopiuj",
+    "COPY_TITLE": "Kopiuj do schowka, aby wkleić w innym folderze lub udziale",
+    "CUT": "Wytnij",
+    "CUT_TITLE": "Wytnij, aby przenieść do innego folderu lub udziału",
+    "PASTE_HERE": "Wklej tutaj",
+    "MOVE_HERE": "Przenieś tutaj",
+    "CLEAR_CLIPBOARD": "Wyczyść schowek",
+    "CANCEL": "Anuluj",
+    "COPY_SUFFIX": "kopia",
+    "COPIED": {
+        "one": "Skopiowano {{count}} element: otwórz folder docelowy i kliknij „{{button}}”",
+        "few": "Skopiowano {{count}} elementy: otwórz folder docelowy i kliknij „{{button}}”",
+        "many": "Skopiowano {{count}} elementów: otwórz folder docelowy i kliknij „{{button}}”",
+        "other": "Skopiowano {{count}} elementu: otwórz folder docelowy i kliknij „{{button}}”"
+    },
+    "CUT_DONE": {
+        "one": "Wycięto {{count}} element: otwórz folder docelowy i kliknij „{{button}}”",
+        "few": "Wycięto {{count}} elementy: otwórz folder docelowy i kliknij „{{button}}”",
+        "many": "Wycięto {{count}} elementów: otwórz folder docelowy i kliknij „{{button}}”",
+        "other": "Wycięto {{count}} elementu: otwórz folder docelowy i kliknij „{{button}}”"
+    },
+    "SCANNING": {
+        "one": "Przygotowywanie… {{count}} plik",
+        "few": "Przygotowywanie… {{count}} pliki",
+        "many": "Przygotowywanie… {{count}} plików",
+        "other": "Przygotowywanie… {{count}} pliku"
+    },
+    "COPYING": "Kopiowanie {{i}}/{{n}} · {{done}} z {{total}} · {{rate}}/s",
+    "MOVING": "Przenoszenie {{i}}/{{n}} · {{done}} z {{total}} · {{rate}}/s",
+    "REMOVING": "Usuwanie ze źródła… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Zostanie skopiowany {{count}} plik ({{size}}). Kontynuować?",
+        "few": "Zostaną skopiowane {{count}} pliki ({{size}}). Kontynuować?",
+        "many": "Zostanie skopiowanych {{count}} plików ({{size}}). Kontynuować?",
+        "other": "Zostanie skopiowane {{count}} pliku ({{size}}). Kontynuować?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Przenieś do {{dest}}: {{count}} plik ({{size}}).\n\nNajpierw wykonywana jest kopia; źródło jest usuwane dopiero, gdy się powiedzie. Kontynuować?",
+        "few": "Przenieś do {{dest}}: {{count}} pliki ({{size}}).\n\nNajpierw wykonywana jest kopia; źródło jest usuwane dopiero, gdy się powiedzie. Kontynuować?",
+        "many": "Przenieś do {{dest}}: {{count}} plików ({{size}}).\n\nNajpierw wykonywana jest kopia; źródło jest usuwane dopiero, gdy się powiedzie. Kontynuować?",
+        "other": "Przenieś do {{dest}}: {{count}} pliku ({{size}}).\n\nNajpierw wykonywana jest kopia; źródło jest usuwane dopiero, gdy się powiedzie. Kontynuować?"
+    },
+    "COPY_DONE": {
+        "one": "Kopiowanie zakończone: {{count}} plik ({{size}})",
+        "few": "Kopiowanie zakończone: {{count}} pliki ({{size}})",
+        "many": "Kopiowanie zakończone: {{count}} plików ({{size}})",
+        "other": "Kopiowanie zakończone: {{count}} pliku ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopiowanie anulowane: skopiowano {{done}} z {{count}}",
+        "few": "Kopiowanie anulowane: skopiowano {{done}} z {{count}}",
+        "many": "Kopiowanie anulowane: skopiowano {{done}} z {{count}}",
+        "other": "Kopiowanie anulowane: skopiowano {{done}} z {{count}}"
+    },
+    "COPY_FAILED": "Kopiowanie nie powiodło się",
+    "MOVED_FILES": {
+        "one": "Przeniesiono: {{count}} plik ({{size}})",
+        "few": "Przeniesiono: {{count}} pliki ({{size}})",
+        "many": "Przeniesiono: {{count}} plików ({{size}})",
+        "other": "Przeniesiono: {{count}} pliku ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Przeniesiono: {{count}} element",
+        "few": "Przeniesiono: {{count}} elementy",
+        "many": "Przeniesiono: {{count}} elementów",
+        "other": "Przeniesiono: {{count}} elementu"
+    },
+    "MOVED_KEPT": {
+        "one": "Wszystko skopiowano, ale nie udało się usunąć ze źródła {{count}} elementu; nadal tam jest",
+        "few": "Wszystko skopiowano, ale nie udało się usunąć ze źródła {{count}} elementów; nadal tam są",
+        "many": "Wszystko skopiowano, ale nie udało się usunąć ze źródła {{count}} elementów; nadal tam są",
+        "other": "Wszystko skopiowano, ale nie udało się usunąć ze źródła {{count}} elementu; nadal tam są"
+    },
+    "ALREADY_HERE": "Już jest w tym folderze",
+    "MOVE_CANCELLED": {
+        "one": "Przenoszenie anulowane: skopiowano {{done}} z {{count}}, nic nie usunięto ze źródła",
+        "few": "Przenoszenie anulowane: skopiowano {{done}} z {{count}}, nic nie usunięto ze źródła",
+        "many": "Przenoszenie anulowane: skopiowano {{done}} z {{count}}, nic nie usunięto ze źródła",
+        "other": "Przenoszenie anulowane: skopiowano {{done}} z {{count}}, nic nie usunięto ze źródła"
+    },
+    "MOVE_CANCELLED_REMOVING": "Przenoszenie anulowane podczas usuwania źródła: wszystko jest skopiowane, ale część nadal jest też w źródle",
+    "MOVE_FAILED": "Przenoszenie nie powiodło się (nic nie usunięto ze źródła)",
+    "MOVE_FAILED_PARTLY": "Przenoszenie nie powiodło się (wcześniejsze elementy zostały przeniesione)",
+    "BUSY": "Kopiowanie już trwa",
+    "LEAVE": "Trwa kopiowanie; zamknięcie strony je przerwie.",
+    "ERROR_INTO_ITSELF": "nie można skopiować folderu do niego samego",
+    "ERROR_SHARE_ROOT": "nie można przenieść całego udziału",
+    "ERROR_NOT_FOUND": "już nie istnieje",
+    "ERROR_SIZE_MISMATCH": "skopiowany rozmiar nie zgadza się z oryginałem",
+    "ERROR_TOO_DEEP": "zbyt wiele poziomów folderów (zapętlony link?)"
+}

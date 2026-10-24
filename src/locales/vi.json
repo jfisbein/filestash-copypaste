@@ -1,0 +1,59 @@
+{
+    "COPY": "Sao chép",
+    "COPY_TITLE": "Sao chép vào bộ nhớ tạm để dán vào thư mục hoặc mục chia sẻ khác",
+    "CUT": "Cắt",
+    "CUT_TITLE": "Cắt để di chuyển sang thư mục hoặc mục chia sẻ khác",
+    "PASTE_HERE": "Dán vào đây",
+    "MOVE_HERE": "Di chuyển đến đây",
+    "CLEAR_CLIPBOARD": "Xóa bộ nhớ tạm",
+    "CANCEL": "Hủy",
+    "COPY_SUFFIX": "bản sao",
+    "COPIED": {
+        "other": "Đã sao chép {{count}} mục: mở thư mục đích và nhấn “{{button}}”"
+    },
+    "CUT_DONE": {
+        "other": "Đã cắt {{count}} mục: mở thư mục đích và nhấn “{{button}}”"
+    },
+    "SCANNING": {
+        "other": "Đang chuẩn bị… {{count}} tệp"
+    },
+    "COPYING": "Đang sao chép {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "Đang di chuyển {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "Đang xóa khỏi nguồn… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "other": "Sắp sao chép {{count}} tệp ({{size}}). Tiếp tục?"
+    },
+    "CONFIRM_MOVE": {
+        "other": "Di chuyển đến {{dest}}: {{count}} tệp ({{size}}).\n\nViệc sao chép được thực hiện trước; nguồn chỉ bị xóa sau khi sao chép thành công. Tiếp tục?"
+    },
+    "COPY_DONE": {
+        "other": "Đã sao chép xong: {{count}} tệp ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "other": "Đã hủy sao chép: đã sao chép {{done}}/{{count}} tệp"
+    },
+    "COPY_FAILED": "Sao chép thất bại",
+    "MOVED_FILES": {
+        "other": "Đã di chuyển: {{count}} tệp ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "other": "Đã di chuyển: {{count}} mục"
+    },
+    "MOVED_KEPT": {
+        "other": "Đã sao chép tất cả, nhưng không thể xóa {{count}} mục khỏi nguồn và chúng vẫn còn ở đó"
+    },
+    "ALREADY_HERE": "Đã ở trong thư mục này",
+    "MOVE_CANCELLED": {
+        "other": "Đã hủy di chuyển: đã sao chép {{done}}/{{count}} tệp, không có gì bị xóa khỏi nguồn"
+    },
+    "MOVE_CANCELLED_REMOVING": "Đã hủy di chuyển trong khi xóa nguồn: mọi thứ đã được sao chép, nhưng một phần vẫn còn ở nguồn",
+    "MOVE_FAILED": "Di chuyển thất bại (không có gì bị xóa khỏi nguồn)",
+    "MOVE_FAILED_PARTLY": "Di chuyển thất bại (các mục trước đó đã được di chuyển)",
+    "BUSY": "Đang có một thao tác sao chép",
+    "LEAVE": "Đang sao chép; đóng trang sẽ làm gián đoạn.",
+    "ERROR_INTO_ITSELF": "không thể sao chép một thư mục vào chính nó",
+    "ERROR_SHARE_ROOT": "không thể di chuyển toàn bộ một mục chia sẻ",
+    "ERROR_NOT_FOUND": "không còn tồn tại",
+    "ERROR_SIZE_MISMATCH": "kích thước đã sao chép không khớp với bản gốc",
+    "ERROR_TOO_DEEP": "quá nhiều cấp thư mục (liên kết lặp vòng?)"
+}

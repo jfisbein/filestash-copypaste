@@ -1,0 +1,81 @@
+{
+    "COPY": "Kopírovat",
+    "COPY_TITLE": "Zkopírovat do schránky a vložit do jiné složky nebo sdílené složky",
+    "CUT": "Vyjmout",
+    "CUT_TITLE": "Vyjmout a přesunout do jiné složky nebo sdílené složky",
+    "PASTE_HERE": "Vložit sem",
+    "MOVE_HERE": "Přesunout sem",
+    "CLEAR_CLIPBOARD": "Vyprázdnit schránku",
+    "CANCEL": "Zrušit",
+    "COPY_SUFFIX": "kopie",
+    "COPIED": {
+        "one": "Zkopírována {{count}} položka: otevřete cílovou složku a klikněte na „{{button}}“",
+        "few": "Zkopírovány {{count}} položky: otevřete cílovou složku a klikněte na „{{button}}“",
+        "other": "Zkopírováno {{count}} položek: otevřete cílovou složku a klikněte na „{{button}}“"
+    },
+    "CUT_DONE": {
+        "one": "Vyjmuta {{count}} položka: otevřete cílovou složku a klikněte na „{{button}}“",
+        "few": "Vyjmuty {{count}} položky: otevřete cílovou složku a klikněte na „{{button}}“",
+        "other": "Vyjmuto {{count}} položek: otevřete cílovou složku a klikněte na „{{button}}“"
+    },
+    "SCANNING": {
+        "one": "Příprava… {{count}} soubor",
+        "few": "Příprava… {{count}} soubory",
+        "other": "Příprava… {{count}} souborů"
+    },
+    "COPYING": "Kopírování {{i}}/{{n}} · {{done}} z {{total}} · {{rate}}/s",
+    "MOVING": "Přesouvání {{i}}/{{n}} · {{done}} z {{total}} · {{rate}}/s",
+    "REMOVING": "Odstraňování ze zdroje… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Bude zkopírován {{count}} soubor ({{size}}). Pokračovat?",
+        "few": "Budou zkopírovány {{count}} soubory ({{size}}). Pokračovat?",
+        "other": "Bude zkopírováno {{count}} souborů ({{size}}). Pokračovat?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Přesunout do {{dest}}: {{count}} soubor ({{size}}).\n\nNejprve se vytvoří kopie; zdroj se odstraní až po jejím úspěšném dokončení. Pokračovat?",
+        "few": "Přesunout do {{dest}}: {{count}} soubory ({{size}}).\n\nNejprve se vytvoří kopie; zdroj se odstraní až po jejím úspěšném dokončení. Pokračovat?",
+        "other": "Přesunout do {{dest}}: {{count}} souborů ({{size}}).\n\nNejprve se vytvoří kopie; zdroj se odstraní až po jejím úspěšném dokončení. Pokračovat?"
+    },
+    "COPY_DONE": {
+        "one": "Kopírování dokončeno: {{count}} soubor ({{size}})",
+        "few": "Kopírování dokončeno: {{count}} soubory ({{size}})",
+        "other": "Kopírování dokončeno: {{count}} souborů ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopírování zrušeno: zkopírováno {{done}} z {{count}}",
+        "few": "Kopírování zrušeno: zkopírováno {{done}} z {{count}}",
+        "other": "Kopírování zrušeno: zkopírováno {{done}} z {{count}}"
+    },
+    "COPY_FAILED": "Kopírování selhalo",
+    "MOVED_FILES": {
+        "one": "Přesunuto: {{count}} soubor ({{size}})",
+        "few": "Přesunuto: {{count}} soubory ({{size}})",
+        "other": "Přesunuto: {{count}} souborů ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Přesunuto: {{count}} položka",
+        "few": "Přesunuto: {{count}} položky",
+        "other": "Přesunuto: {{count}} položek"
+    },
+    "MOVED_KEPT": {
+        "one": "Vše bylo zkopírováno, ale {{count}} položku nebylo možné odstranit ze zdroje a stále tam je",
+        "few": "Vše bylo zkopírováno, ale {{count}} položky nebylo možné odstranit ze zdroje a stále tam jsou",
+        "other": "Vše bylo zkopírováno, ale {{count}} položek nebylo možné odstranit ze zdroje a stále tam jsou"
+    },
+    "ALREADY_HERE": "Už je v této složce",
+    "MOVE_CANCELLED": {
+        "one": "Přesun zrušen: zkopírováno {{done}} z {{count}}, ze zdroje nebylo nic odstraněno",
+        "few": "Přesun zrušen: zkopírováno {{done}} z {{count}}, ze zdroje nebylo nic odstraněno",
+        "other": "Přesun zrušen: zkopírováno {{done}} z {{count}}, ze zdroje nebylo nic odstraněno"
+    },
+    "MOVE_CANCELLED_REMOVING": "Přesun zrušen během odstraňování zdroje: vše je zkopírováno, ale část je stále i ve zdroji",
+    "MOVE_FAILED": "Přesun selhal (ze zdroje nebylo nic odstraněno)",
+    "MOVE_FAILED_PARTLY": "Přesun selhal (předchozí položky byly přesunuty)",
+    "BUSY": "Kopírování už probíhá",
+    "LEAVE": "Probíhá kopírování; zavřením stránky se přeruší.",
+    "ERROR_INTO_ITSELF": "složku nelze zkopírovat do sebe sama",
+    "ERROR_SHARE_ROOT": "celou sdílenou složku nelze přesunout",
+    "ERROR_NOT_FOUND": "už neexistuje",
+    "ERROR_SIZE_MISMATCH": "zkopírovaná velikost neodpovídá originálu",
+    "ERROR_TOO_DEEP": "příliš mnoho úrovní složek (zacyklený odkaz?)"
+}

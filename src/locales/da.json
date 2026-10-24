@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopiér",
+    "COPY_TITLE": "Kopiér til udklipsholderen for at indsætte i en anden mappe eller deling",
+    "CUT": "Klip",
+    "CUT_TITLE": "Klip for at flytte til en anden mappe eller deling",
+    "PASTE_HERE": "Indsæt her",
+    "MOVE_HERE": "Flyt hertil",
+    "CLEAR_CLIPBOARD": "Tøm udklipsholderen",
+    "CANCEL": "Annuller",
+    "COPY_SUFFIX": "kopi",
+    "COPIED": {
+        "one": "{{count}} element kopieret: åbn destinationsmappen og tryk på »{{button}}«",
+        "other": "{{count}} elementer kopieret: åbn destinationsmappen og tryk på »{{button}}«"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} element klippet: åbn destinationsmappen og tryk på »{{button}}«",
+        "other": "{{count}} elementer klippet: åbn destinationsmappen og tryk på »{{button}}«"
+    },
+    "SCANNING": {
+        "one": "Forbereder… {{count}} fil",
+        "other": "Forbereder… {{count}} filer"
+    },
+    "COPYING": "Kopierer {{i}}/{{n}} · {{done}} af {{total}} · {{rate}}/s",
+    "MOVING": "Flytter {{i}}/{{n}} · {{done}} af {{total}} · {{rate}}/s",
+    "REMOVING": "Fjerner fra kilden… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Du er ved at kopiere {{count}} fil ({{size}}). Fortsæt?",
+        "other": "Du er ved at kopiere {{count}} filer ({{size}}). Fortsæt?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Flyt til {{dest}}: {{count}} fil ({{size}}).\n\nFørst laves kopien; kilden fjernes først, når den er lykkedes. Fortsæt?",
+        "other": "Flyt til {{dest}}: {{count}} filer ({{size}}).\n\nFørst laves kopien; kilden fjernes først, når den er lykkedes. Fortsæt?"
+    },
+    "COPY_DONE": {
+        "one": "Kopiering færdig: {{count}} fil ({{size}})",
+        "other": "Kopiering færdig: {{count}} filer ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopiering annulleret: {{done}} af {{count}} fil kopieret",
+        "other": "Kopiering annulleret: {{done}} af {{count}} filer kopieret"
+    },
+    "COPY_FAILED": "Kopiering mislykkedes",
+    "MOVED_FILES": {
+        "one": "Flyttet: {{count}} fil ({{size}})",
+        "other": "Flyttet: {{count}} filer ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Flyttet: {{count}} element",
+        "other": "Flyttet: {{count}} elementer"
+    },
+    "MOVED_KEPT": {
+        "one": "Alt er kopieret, men {{count}} element kunne ikke fjernes fra kilden og er der stadig",
+        "other": "Alt er kopieret, men {{count}} elementer kunne ikke fjernes fra kilden og er der stadig"
+    },
+    "ALREADY_HERE": "Er allerede i denne mappe",
+    "MOVE_CANCELLED": {
+        "one": "Flytning annulleret: {{done}} af {{count}} fil kopieret, intet fjernet fra kilden",
+        "other": "Flytning annulleret: {{done}} af {{count}} filer kopieret, intet fjernet fra kilden"
+    },
+    "MOVE_CANCELLED_REMOVING": "Flytning annulleret under fjernelse af kilden: alt er kopieret, men en del er også stadig i kilden",
+    "MOVE_FAILED": "Flytning mislykkedes (intet fjernet fra kilden)",
+    "MOVE_FAILED_PARTLY": "Flytning mislykkedes (det, der kom før, blev flyttet)",
+    "BUSY": "En kopiering er allerede i gang",
+    "LEAVE": "En kopiering er i gang; lukker du siden, stopper den.",
+    "ERROR_INTO_ITSELF": "en mappe kan ikke kopieres ind i sig selv",
+    "ERROR_SHARE_ROOT": "en hel deling kan ikke flyttes",
+    "ERROR_NOT_FOUND": "findes ikke længere",
+    "ERROR_SIZE_MISMATCH": "den kopierede størrelse svarer ikke til originalen",
+    "ERROR_TOO_DEEP": "for mange mappeniveauer (et link i en løkke?)"
+}

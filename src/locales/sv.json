@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopiera",
+    "COPY_TITLE": "Kopiera till urklipp för att klistra in i en annan mapp eller utdelning",
+    "CUT": "Klipp ut",
+    "CUT_TITLE": "Klipp ut för att flytta till en annan mapp eller utdelning",
+    "PASTE_HERE": "Klistra in här",
+    "MOVE_HERE": "Flytta hit",
+    "CLEAR_CLIPBOARD": "Töm urklipp",
+    "CANCEL": "Avbryt",
+    "COPY_SUFFIX": "kopia",
+    "COPIED": {
+        "one": "{{count}} objekt kopierat: öppna målmappen och tryck på ”{{button}}”",
+        "other": "{{count}} objekt kopierade: öppna målmappen och tryck på ”{{button}}”"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} objekt urklippt: öppna målmappen och tryck på ”{{button}}”",
+        "other": "{{count}} objekt urklippta: öppna målmappen och tryck på ”{{button}}”"
+    },
+    "SCANNING": {
+        "one": "Förbereder… {{count}} fil",
+        "other": "Förbereder… {{count}} filer"
+    },
+    "COPYING": "Kopierar {{i}}/{{n}} · {{done}} av {{total}} · {{rate}}/s",
+    "MOVING": "Flyttar {{i}}/{{n}} · {{done}} av {{total}} · {{rate}}/s",
+    "REMOVING": "Tar bort från källan… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Du kommer att kopiera {{count}} fil ({{size}}). Fortsätta?",
+        "other": "Du kommer att kopiera {{count}} filer ({{size}}). Fortsätta?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Flytta till {{dest}}: {{count}} fil ({{size}}).\n\nFörst görs kopian; källan tas bort först när den har lyckats. Fortsätta?",
+        "other": "Flytta till {{dest}}: {{count}} filer ({{size}}).\n\nFörst görs kopian; källan tas bort först när den har lyckats. Fortsätta?"
+    },
+    "COPY_DONE": {
+        "one": "Kopieringen klar: {{count}} fil ({{size}})",
+        "other": "Kopieringen klar: {{count}} filer ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopieringen avbröts: {{done}} av {{count}} fil kopierad",
+        "other": "Kopieringen avbröts: {{done}} av {{count}} filer kopierade"
+    },
+    "COPY_FAILED": "Kopieringen misslyckades",
+    "MOVED_FILES": {
+        "one": "Flyttad: {{count}} fil ({{size}})",
+        "other": "Flyttade: {{count}} filer ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Flyttat: {{count}} objekt",
+        "other": "Flyttade: {{count}} objekt"
+    },
+    "MOVED_KEPT": {
+        "one": "Allt kopierades, men {{count}} objekt kunde inte tas bort från källan och finns kvar där",
+        "other": "Allt kopierades, men {{count}} objekt kunde inte tas bort från källan och finns kvar där"
+    },
+    "ALREADY_HERE": "Finns redan i den här mappen",
+    "MOVE_CANCELLED": {
+        "one": "Flytten avbröts: {{done}} av {{count}} fil kopierad, inget togs bort från källan",
+        "other": "Flytten avbröts: {{done}} av {{count}} filer kopierade, inget togs bort från källan"
+    },
+    "MOVE_CANCELLED_REMOVING": "Flytten avbröts medan källan togs bort: allt är kopierat, men en del finns också kvar i källan",
+    "MOVE_FAILED": "Flytten misslyckades (inget togs bort från källan)",
+    "MOVE_FAILED_PARTLY": "Flytten misslyckades (det som kom före har flyttats)",
+    "BUSY": "En kopiering pågår redan",
+    "LEAVE": "En kopiering pågår; om du stänger sidan avbryts den.",
+    "ERROR_INTO_ITSELF": "en mapp kan inte kopieras in i sig själv",
+    "ERROR_SHARE_ROOT": "en hel utdelning kan inte flyttas",
+    "ERROR_NOT_FOUND": "finns inte längre",
+    "ERROR_SIZE_MISMATCH": "den kopierade storleken stämmer inte med originalet",
+    "ERROR_TOO_DEEP": "för många mappnivåer (en länk i en slinga?)"
+}

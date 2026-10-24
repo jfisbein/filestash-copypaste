@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopioi",
+    "COPY_TITLE": "Kopioi leikepöydälle liitettäväksi toiseen kansioon tai jakoon",
+    "CUT": "Leikkaa",
+    "CUT_TITLE": "Leikkaa siirrettäväksi toiseen kansioon tai jakoon",
+    "PASTE_HERE": "Liitä tähän",
+    "MOVE_HERE": "Siirrä tähän",
+    "CLEAR_CLIPBOARD": "Tyhjennä leikepöytä",
+    "CANCEL": "Peruuta",
+    "COPY_SUFFIX": "kopio",
+    "COPIED": {
+        "one": "{{count}} kohde kopioitu: avaa kohdekansio ja paina ”{{button}}”",
+        "other": "{{count}} kohdetta kopioitu: avaa kohdekansio ja paina ”{{button}}”"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} kohde leikattu: avaa kohdekansio ja paina ”{{button}}”",
+        "other": "{{count}} kohdetta leikattu: avaa kohdekansio ja paina ”{{button}}”"
+    },
+    "SCANNING": {
+        "one": "Valmistellaan… {{count}} tiedosto",
+        "other": "Valmistellaan… {{count}} tiedostoa"
+    },
+    "COPYING": "Kopioidaan {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "Siirretään {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "Poistetaan lähteestä… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Kopioidaan {{count}} tiedosto ({{size}}). Jatketaanko?",
+        "other": "Kopioidaan {{count}} tiedostoa ({{size}}). Jatketaanko?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Siirrä kohteeseen {{dest}}: {{count}} tiedosto ({{size}}).\n\nEnsin tehdään kopio; lähde poistetaan vasta, kun kopiointi on onnistunut. Jatketaanko?",
+        "other": "Siirrä kohteeseen {{dest}}: {{count}} tiedostoa ({{size}}).\n\nEnsin tehdään kopio; lähde poistetaan vasta, kun kopiointi on onnistunut. Jatketaanko?"
+    },
+    "COPY_DONE": {
+        "one": "Kopiointi valmis: {{count}} tiedosto ({{size}})",
+        "other": "Kopiointi valmis: {{count}} tiedostoa ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopiointi peruttu: kopioitu {{done}}/{{count}}",
+        "other": "Kopiointi peruttu: kopioitu {{done}}/{{count}}"
+    },
+    "COPY_FAILED": "Kopiointi epäonnistui",
+    "MOVED_FILES": {
+        "one": "Siirretty: {{count}} tiedosto ({{size}})",
+        "other": "Siirretty: {{count}} tiedostoa ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Siirretty: {{count}} kohde",
+        "other": "Siirretty: {{count}} kohdetta"
+    },
+    "MOVED_KEPT": {
+        "one": "Kaikki kopioitiin, mutta {{count}} kohde jäi lähteeseen, koska sitä ei voitu poistaa",
+        "other": "Kaikki kopioitiin, mutta {{count}} kohdetta jäi lähteeseen, koska niitä ei voitu poistaa"
+    },
+    "ALREADY_HERE": "On jo tässä kansiossa",
+    "MOVE_CANCELLED": {
+        "one": "Siirto peruttu: kopioitu {{done}}/{{count}}, lähteestä ei poistettu mitään",
+        "other": "Siirto peruttu: kopioitu {{done}}/{{count}}, lähteestä ei poistettu mitään"
+    },
+    "MOVE_CANCELLED_REMOVING": "Siirto peruttu lähdettä poistettaessa: kaikki on kopioitu, mutta osa on yhä myös lähteessä",
+    "MOVE_FAILED": "Siirto epäonnistui (lähteestä ei poistettu mitään)",
+    "MOVE_FAILED_PARTLY": "Siirto epäonnistui (sitä edeltävät siirrettiin)",
+    "BUSY": "Kopiointi on jo käynnissä",
+    "LEAVE": "Kopiointi on käynnissä; sivun sulkeminen keskeyttää sen.",
+    "ERROR_INTO_ITSELF": "kansiota ei voi kopioida itsensä sisään",
+    "ERROR_SHARE_ROOT": "kokonaista jakoa ei voi siirtää",
+    "ERROR_NOT_FOUND": "ei ole enää olemassa",
+    "ERROR_SIZE_MISMATCH": "kopioitu koko ei vastaa alkuperäistä",
+    "ERROR_TOO_DEEP": "liian monta kansiotasoa (silmukan muodostava linkki?)"
+}

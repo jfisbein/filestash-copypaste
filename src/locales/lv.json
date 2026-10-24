@@ -1,0 +1,81 @@
+{
+    "COPY": "Kopēt",
+    "COPY_TITLE": "Kopēt starpliktuvē, lai ielīmētu citā mapē vai koplietojumā",
+    "CUT": "Izgriezt",
+    "CUT_TITLE": "Izgriezt, lai pārvietotu uz citu mapi vai koplietojumu",
+    "PASTE_HERE": "Ielīmēt šeit",
+    "MOVE_HERE": "Pārvietot šeit",
+    "CLEAR_CLIPBOARD": "Iztukšot starpliktuvi",
+    "CANCEL": "Atcelt",
+    "COPY_SUFFIX": "kopija",
+    "COPIED": {
+        "zero": "Nokopēti elementi: {{count}}. Atveriet mērķa mapi un nospiediet “{{button}}”",
+        "one": "Nokopēti elementi: {{count}}. Atveriet mērķa mapi un nospiediet “{{button}}”",
+        "other": "Nokopēti elementi: {{count}}. Atveriet mērķa mapi un nospiediet “{{button}}”"
+    },
+    "CUT_DONE": {
+        "zero": "Izgriezti elementi: {{count}}. Atveriet mērķa mapi un nospiediet “{{button}}”",
+        "one": "Izgriezti elementi: {{count}}. Atveriet mērķa mapi un nospiediet “{{button}}”",
+        "other": "Izgriezti elementi: {{count}}. Atveriet mērķa mapi un nospiediet “{{button}}”"
+    },
+    "SCANNING": {
+        "zero": "Sagatavo… {{count}} failu",
+        "one": "Sagatavo… {{count}} fails",
+        "other": "Sagatavo… {{count}} faili"
+    },
+    "COPYING": "Kopē {{i}}/{{n}} · {{done}} no {{total}} · {{rate}}/s",
+    "MOVING": "Pārvieto {{i}}/{{n}} · {{done}} no {{total}} · {{rate}}/s",
+    "REMOVING": "Dzēš no avota… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "zero": "Failu skaits kopēšanai: {{count}} ({{size}}). Turpināt?",
+        "one": "Failu skaits kopēšanai: {{count}} ({{size}}). Turpināt?",
+        "other": "Failu skaits kopēšanai: {{count}} ({{size}}). Turpināt?"
+    },
+    "CONFIRM_MOVE": {
+        "zero": "Pārvietot uz {{dest}}. Failu skaits: {{count}} ({{size}}).\n\nVispirms tiek izveidota kopija; avots tiek dzēsts tikai pēc tam, kad tā ir izdevusies. Turpināt?",
+        "one": "Pārvietot uz {{dest}}. Failu skaits: {{count}} ({{size}}).\n\nVispirms tiek izveidota kopija; avots tiek dzēsts tikai pēc tam, kad tā ir izdevusies. Turpināt?",
+        "other": "Pārvietot uz {{dest}}. Failu skaits: {{count}} ({{size}}).\n\nVispirms tiek izveidota kopija; avots tiek dzēsts tikai pēc tam, kad tā ir izdevusies. Turpināt?"
+    },
+    "COPY_DONE": {
+        "zero": "Kopēšana pabeigta. Failu skaits: {{count}} ({{size}})",
+        "one": "Kopēšana pabeigta. Failu skaits: {{count}} ({{size}})",
+        "other": "Kopēšana pabeigta. Failu skaits: {{count}} ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "zero": "Kopēšana atcelta: nokopēti {{done}} no {{count}}",
+        "one": "Kopēšana atcelta: nokopēti {{done}} no {{count}}",
+        "other": "Kopēšana atcelta: nokopēti {{done}} no {{count}}"
+    },
+    "COPY_FAILED": "Kopēšana neizdevās",
+    "MOVED_FILES": {
+        "zero": "Pārvietots. Failu skaits: {{count}} ({{size}})",
+        "one": "Pārvietots. Failu skaits: {{count}} ({{size}})",
+        "other": "Pārvietots. Failu skaits: {{count}} ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "zero": "Pārvietots. Elementu skaits: {{count}}",
+        "one": "Pārvietots. Elementu skaits: {{count}}",
+        "other": "Pārvietots. Elementu skaits: {{count}}"
+    },
+    "MOVED_KEPT": {
+        "zero": "Viss ir nokopēts, bet dažus elementus neizdevās izdzēst no avota, un tie joprojām tur ir (skaits: {{count}})",
+        "one": "Viss ir nokopēts, bet dažus elementus neizdevās izdzēst no avota, un tie joprojām tur ir (skaits: {{count}})",
+        "other": "Viss ir nokopēts, bet dažus elementus neizdevās izdzēst no avota, un tie joprojām tur ir (skaits: {{count}})"
+    },
+    "ALREADY_HERE": "Jau ir šajā mapē",
+    "MOVE_CANCELLED": {
+        "zero": "Pārvietošana atcelta: nokopēti {{done}} no {{count}}, no avota nekas nav izdzēsts",
+        "one": "Pārvietošana atcelta: nokopēti {{done}} no {{count}}, no avota nekas nav izdzēsts",
+        "other": "Pārvietošana atcelta: nokopēti {{done}} no {{count}}, no avota nekas nav izdzēsts"
+    },
+    "MOVE_CANCELLED_REMOVING": "Pārvietošana atcelta avota dzēšanas laikā: viss ir nokopēts, bet daļa joprojām ir arī avotā",
+    "MOVE_FAILED": "Pārvietošana neizdevās (no avota nekas nav izdzēsts)",
+    "MOVE_FAILED_PARTLY": "Pārvietošana neizdevās (iepriekšējie elementi tika pārvietoti)",
+    "BUSY": "Kopēšana jau notiek",
+    "LEAVE": "Notiek kopēšana; aizverot lapu, tā tiks pārtraukta.",
+    "ERROR_INTO_ITSELF": "mapi nevar nokopēt pašu sevī",
+    "ERROR_SHARE_ROOT": "visu koplietojumu nevar pārvietot",
+    "ERROR_NOT_FOUND": "vairs nepastāv",
+    "ERROR_SIZE_MISMATCH": "nokopētais izmērs neatbilst oriģinālam",
+    "ERROR_TOO_DEEP": "pārāk daudz mapju līmeņu (cilpā esoša saite?)"
+}

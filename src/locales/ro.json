@@ -1,0 +1,81 @@
+{
+    "COPY": "Copiază",
+    "COPY_TITLE": "Copiază în clipboard, pentru a lipi în alt dosar sau altă partajare",
+    "CUT": "Decupează",
+    "CUT_TITLE": "Decupează, pentru a muta în alt dosar sau altă partajare",
+    "PASTE_HERE": "Lipește aici",
+    "MOVE_HERE": "Mută aici",
+    "CLEAR_CLIPBOARD": "Golește clipboardul",
+    "CANCEL": "Anulează",
+    "COPY_SUFFIX": "copie",
+    "COPIED": {
+        "one": "{{count}} element copiat: deschide dosarul de destinație și apasă „{{button}}”",
+        "few": "{{count}} elemente copiate: deschide dosarul de destinație și apasă „{{button}}”",
+        "other": "{{count}} de elemente copiate: deschide dosarul de destinație și apasă „{{button}}”"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} element decupat: deschide dosarul de destinație și apasă „{{button}}”",
+        "few": "{{count}} elemente decupate: deschide dosarul de destinație și apasă „{{button}}”",
+        "other": "{{count}} de elemente decupate: deschide dosarul de destinație și apasă „{{button}}”"
+    },
+    "SCANNING": {
+        "one": "Se pregătește… {{count}} fișier",
+        "few": "Se pregătește… {{count}} fișiere",
+        "other": "Se pregătește… {{count}} de fișiere"
+    },
+    "COPYING": "Se copiază {{i}}/{{n}} · {{done}} din {{total}} · {{rate}}/s",
+    "MOVING": "Se mută {{i}}/{{n}} · {{done}} din {{total}} · {{rate}}/s",
+    "REMOVING": "Se elimină din sursă… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Vei copia {{count}} fișier ({{size}}). Continui?",
+        "few": "Vei copia {{count}} fișiere ({{size}}). Continui?",
+        "other": "Vei copia {{count}} de fișiere ({{size}}). Continui?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Mută în {{dest}}: {{count}} fișier ({{size}}).\n\nMai întâi se face copia; sursa este eliminată doar după ce aceasta a reușit. Continui?",
+        "few": "Mută în {{dest}}: {{count}} fișiere ({{size}}).\n\nMai întâi se face copia; sursa este eliminată doar după ce aceasta a reușit. Continui?",
+        "other": "Mută în {{dest}}: {{count}} de fișiere ({{size}}).\n\nMai întâi se face copia; sursa este eliminată doar după ce aceasta a reușit. Continui?"
+    },
+    "COPY_DONE": {
+        "one": "Copiere terminată: {{count}} fișier ({{size}})",
+        "few": "Copiere terminată: {{count}} fișiere ({{size}})",
+        "other": "Copiere terminată: {{count}} de fișiere ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Copiere anulată: copiate {{done}} din {{count}}",
+        "few": "Copiere anulată: copiate {{done}} din {{count}}",
+        "other": "Copiere anulată: copiate {{done}} din {{count}}"
+    },
+    "COPY_FAILED": "Copierea a eșuat",
+    "MOVED_FILES": {
+        "one": "Mutat: {{count}} fișier ({{size}})",
+        "few": "Mutate: {{count}} fișiere ({{size}})",
+        "other": "Mutate: {{count}} de fișiere ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Mutat: {{count}} element",
+        "few": "Mutate: {{count}} elemente",
+        "other": "Mutate: {{count}} de elemente"
+    },
+    "MOVED_KEPT": {
+        "one": "Totul a fost copiat, dar {{count}} element nu a putut fi eliminat din sursă și este încă acolo",
+        "few": "Totul a fost copiat, dar {{count}} elemente nu au putut fi eliminate din sursă și sunt încă acolo",
+        "other": "Totul a fost copiat, dar {{count}} de elemente nu au putut fi eliminate din sursă și sunt încă acolo"
+    },
+    "ALREADY_HERE": "Este deja în acest dosar",
+    "MOVE_CANCELLED": {
+        "one": "Mutare anulată: copiate {{done}} din {{count}}, nimic nu a fost eliminat din sursă",
+        "few": "Mutare anulată: copiate {{done}} din {{count}}, nimic nu a fost eliminat din sursă",
+        "other": "Mutare anulată: copiate {{done}} din {{count}}, nimic nu a fost eliminat din sursă"
+    },
+    "MOVE_CANCELLED_REMOVING": "Mutare anulată în timpul eliminării sursei: totul este copiat, dar o parte este încă și în sursă",
+    "MOVE_FAILED": "Mutarea a eșuat (nimic nu a fost eliminat din sursă)",
+    "MOVE_FAILED_PARTLY": "Mutarea a eșuat (elementele anterioare au fost mutate)",
+    "BUSY": "O copiere este deja în curs",
+    "LEAVE": "O copiere este în curs; închiderea paginii o întrerupe.",
+    "ERROR_INTO_ITSELF": "un dosar nu poate fi copiat în el însuși",
+    "ERROR_SHARE_ROOT": "o partajare întreagă nu poate fi mutată",
+    "ERROR_NOT_FOUND": "nu mai există",
+    "ERROR_SIZE_MISMATCH": "dimensiunea copiată nu corespunde cu originalul",
+    "ERROR_TOO_DEEP": "prea multe niveluri de dosare (o legătură în buclă?)"
+}

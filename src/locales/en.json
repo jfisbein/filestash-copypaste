@@ -1,0 +1,70 @@
+{
+    "COPY": "Copy",
+    "COPY_TITLE": "Copy to the clipboard, to paste in another folder or share",
+    "CUT": "Cut",
+    "CUT_TITLE": "Cut, to move to another folder or share",
+    "PASTE_HERE": "Paste here",
+    "MOVE_HERE": "Move here",
+    "CLEAR_CLIPBOARD": "Empty the clipboard",
+    "CANCEL": "Cancel",
+    "COPY_SUFFIX": "copy",
+    "COPIED": {
+        "one": "{{count}} item copied: open the destination folder and press \"{{button}}\"",
+        "other": "{{count}} items copied: open the destination folder and press \"{{button}}\""
+    },
+    "CUT_DONE": {
+        "one": "{{count}} item cut: open the destination folder and press \"{{button}}\"",
+        "other": "{{count}} items cut: open the destination folder and press \"{{button}}\""
+    },
+    "SCANNING": {
+        "one": "Preparing… {{count}} file",
+        "other": "Preparing… {{count}} files"
+    },
+    "COPYING": "Copying {{i}}/{{n}} · {{done}} of {{total}} · {{rate}}/s",
+    "MOVING": "Moving {{i}}/{{n}} · {{done}} of {{total}} · {{rate}}/s",
+    "REMOVING": "Removing from the source… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "About to copy {{count}} file ({{size}}). Continue?",
+        "other": "About to copy {{count}} files ({{size}}). Continue?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Move to {{dest}}: {{count}} file ({{size}}).\n\nThe copy is made first; the source is removed only once it has succeeded. Continue?",
+        "other": "Move to {{dest}}: {{count}} files ({{size}}).\n\nThe copy is made first; the source is removed only once it has succeeded. Continue?"
+    },
+    "COPY_DONE": {
+        "one": "Copy finished: {{count}} file ({{size}})",
+        "other": "Copy finished: {{count}} files ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Copy cancelled: {{done}} of {{count}} file copied",
+        "other": "Copy cancelled: {{done}} of {{count}} files copied"
+    },
+    "COPY_FAILED": "Copy failed",
+    "MOVED_FILES": {
+        "one": "Moved: {{count}} file ({{size}})",
+        "other": "Moved: {{count}} files ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Moved: {{count}} item",
+        "other": "Moved: {{count}} items"
+    },
+    "MOVED_KEPT": {
+        "one": "Everything was copied, but {{count}} item could not be removed from the source and is still there",
+        "other": "Everything was copied, but {{count}} items could not be removed from the source and are still there"
+    },
+    "ALREADY_HERE": "Already in this folder",
+    "MOVE_CANCELLED": {
+        "one": "Move cancelled: {{done}} of {{count}} file copied, nothing removed from the source",
+        "other": "Move cancelled: {{done}} of {{count}} files copied, nothing removed from the source"
+    },
+    "MOVE_CANCELLED_REMOVING": "Move cancelled while removing the source: everything is copied, but part of it is still in the source too",
+    "MOVE_FAILED": "Move failed (nothing removed from the source)",
+    "MOVE_FAILED_PARTLY": "Move failed (what came before it was moved)",
+    "BUSY": "A copy is already running",
+    "LEAVE": "A copy is running; closing the page stops it.",
+    "ERROR_INTO_ITSELF": "a folder cannot be copied into itself",
+    "ERROR_SHARE_ROOT": "a whole share cannot be moved",
+    "ERROR_NOT_FOUND": "no longer exists",
+    "ERROR_SIZE_MISMATCH": "the copied size does not match the original",
+    "ERROR_TOO_DEEP": "too many folder levels (a symlink loop?)"
+}

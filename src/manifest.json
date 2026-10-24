@@ -1,0 +1,7 @@
+{
+    "author": "Joan Fisbein (https://github.com/jfisbein/filestash-copypaste)",
+    "version": "v1.2.0",
+    "modules": [
+        { "type": "patch", "entrypoint": "ctrl_submenu.diff" }
+    ]
+}

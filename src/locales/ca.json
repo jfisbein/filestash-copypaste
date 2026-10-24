@@ -1,0 +1,70 @@
+{
+    "COPY": "Copia",
+    "COPY_TITLE": "Copia al porta-retalls per enganxar-ho en una altra carpeta o recurs compartit",
+    "CUT": "Retalla",
+    "CUT_TITLE": "Retalla per moure-ho a una altra carpeta o recurs compartit",
+    "PASTE_HERE": "Enganxa aquí",
+    "MOVE_HERE": "Mou aquí",
+    "CLEAR_CLIPBOARD": "Buida el porta-retalls",
+    "CANCEL": "Cancel·la",
+    "COPY_SUFFIX": "còpia",
+    "COPIED": {
+        "one": "{{count}} element copiat: ves a la carpeta de destinació i prem «{{button}}»",
+        "other": "{{count}} elements copiats: ves a la carpeta de destinació i prem «{{button}}»"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} element retallat: ves a la carpeta de destinació i prem «{{button}}»",
+        "other": "{{count}} elements retallats: ves a la carpeta de destinació i prem «{{button}}»"
+    },
+    "SCANNING": {
+        "one": "Preparant… {{count}} fitxer",
+        "other": "Preparant… {{count}} fitxers"
+    },
+    "COPYING": "Copiant {{i}}/{{n}} · {{done}} de {{total}} · {{rate}}/s",
+    "MOVING": "Movent {{i}}/{{n}} · {{done}} de {{total}} · {{rate}}/s",
+    "REMOVING": "Esborrant de l'origen… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Copiaràs {{count}} fitxer ({{size}}). Vols continuar?",
+        "other": "Copiaràs {{count}} fitxers ({{size}}). Vols continuar?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Moure a {{dest}}: {{count}} fitxer ({{size}}).\n\nPrimer es fa la còpia; l'origen només s'esborra quan ha acabat bé. Vols continuar?",
+        "other": "Moure a {{dest}}: {{count}} fitxers ({{size}}).\n\nPrimer es fa la còpia; l'origen només s'esborra quan ha acabat bé. Vols continuar?"
+    },
+    "COPY_DONE": {
+        "one": "Còpia acabada: {{count}} fitxer ({{size}})",
+        "other": "Còpia acabada: {{count}} fitxers ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Còpia cancel·lada: {{done}} de {{count}} fitxer copiat",
+        "other": "Còpia cancel·lada: {{done}} de {{count}} fitxers copiats"
+    },
+    "COPY_FAILED": "Error en copiar",
+    "MOVED_FILES": {
+        "one": "Mogut: {{count}} fitxer ({{size}})",
+        "other": "Moguts: {{count}} fitxers ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Mogut: {{count}} element",
+        "other": "Moguts: {{count}} elements"
+    },
+    "MOVED_KEPT": {
+        "one": "S'ha copiat tot, però {{count}} element no s'ha pogut esborrar de l'origen i encara hi és",
+        "other": "S'ha copiat tot, però {{count}} elements no s'han pogut esborrar de l'origen i encara hi són"
+    },
+    "ALREADY_HERE": "Ja és en aquesta carpeta",
+    "MOVE_CANCELLED": {
+        "one": "Moviment cancel·lat: {{done}} de {{count}} fitxer copiat, no s'ha esborrat res de l'origen",
+        "other": "Moviment cancel·lat: {{done}} de {{count}} fitxers copiats, no s'ha esborrat res de l'origen"
+    },
+    "MOVE_CANCELLED_REMOVING": "Moviment cancel·lat mentre s'esborrava l'origen: tot està copiat, però una part encara és també a l'origen",
+    "MOVE_FAILED": "Error en moure (no s'ha esborrat res de l'origen)",
+    "MOVE_FAILED_PARTLY": "Error en moure (el que anava abans sí que s'ha mogut)",
+    "BUSY": "Ja hi ha una còpia en curs",
+    "LEAVE": "Hi ha una còpia en curs; si tanques la pàgina, s'interromp.",
+    "ERROR_INTO_ITSELF": "no es pot copiar una carpeta dins d'ella mateixa",
+    "ERROR_SHARE_ROOT": "no es pot moure un recurs compartit sencer",
+    "ERROR_NOT_FOUND": "ja no existeix",
+    "ERROR_SIZE_MISMATCH": "la mida copiada no coincideix amb l'original",
+    "ERROR_TOO_DEEP": "massa nivells de carpetes (un enllaç en bucle?)"
+}

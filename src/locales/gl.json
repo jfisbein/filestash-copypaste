@@ -1,0 +1,70 @@
+{
+    "COPY": "Copiar",
+    "COPY_TITLE": "Copiar ao portapapeis para pegar noutro cartafol ou recurso compartido",
+    "CUT": "Cortar",
+    "CUT_TITLE": "Cortar para mover a outro cartafol ou recurso compartido",
+    "PASTE_HERE": "Pegar aquí",
+    "MOVE_HERE": "Mover aquí",
+    "CLEAR_CLIPBOARD": "Baleirar o portapapeis",
+    "CANCEL": "Cancelar",
+    "COPY_SUFFIX": "copia",
+    "COPIED": {
+        "one": "{{count}} elemento copiado: vai ao cartafol de destino e preme «{{button}}»",
+        "other": "{{count}} elementos copiados: vai ao cartafol de destino e preme «{{button}}»"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} elemento cortado: vai ao cartafol de destino e preme «{{button}}»",
+        "other": "{{count}} elementos cortados: vai ao cartafol de destino e preme «{{button}}»"
+    },
+    "SCANNING": {
+        "one": "Preparando… {{count}} ficheiro",
+        "other": "Preparando… {{count}} ficheiros"
+    },
+    "COPYING": "Copiando {{i}}/{{n}} · {{done}} de {{total}} · {{rate}}/s",
+    "MOVING": "Movendo {{i}}/{{n}} · {{done}} de {{total}} · {{rate}}/s",
+    "REMOVING": "Borrando da orixe… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Vas copiar {{count}} ficheiro ({{size}}). Continuar?",
+        "other": "Vas copiar {{count}} ficheiros ({{size}}). Continuar?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Mover a {{dest}}: {{count}} ficheiro ({{size}}).\n\nPrimeiro faise a copia; a orixe só se borra cando rematou ben. Continuar?",
+        "other": "Mover a {{dest}}: {{count}} ficheiros ({{size}}).\n\nPrimeiro faise a copia; a orixe só se borra cando rematou ben. Continuar?"
+    },
+    "COPY_DONE": {
+        "one": "Copia rematada: {{count}} ficheiro ({{size}})",
+        "other": "Copia rematada: {{count}} ficheiros ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Copia cancelada: {{done}} de {{count}} ficheiro copiado",
+        "other": "Copia cancelada: {{done}} de {{count}} ficheiros copiados"
+    },
+    "COPY_FAILED": "Erro ao copiar",
+    "MOVED_FILES": {
+        "one": "Movido: {{count}} ficheiro ({{size}})",
+        "other": "Movidos: {{count}} ficheiros ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Movido: {{count}} elemento",
+        "other": "Movidos: {{count}} elementos"
+    },
+    "MOVED_KEPT": {
+        "one": "Copiouse todo, pero {{count}} elemento non se puido borrar da orixe e segue alí",
+        "other": "Copiouse todo, pero {{count}} elementos non se puideron borrar da orixe e seguen alí"
+    },
+    "ALREADY_HERE": "Xa está neste cartafol",
+    "MOVE_CANCELLED": {
+        "one": "Movemento cancelado: {{done}} de {{count}} ficheiro copiado, non se borrou nada da orixe",
+        "other": "Movemento cancelado: {{done}} de {{count}} ficheiros copiados, non se borrou nada da orixe"
+    },
+    "MOVE_CANCELLED_REMOVING": "Movemento cancelado mentres se borraba a orixe: todo está copiado, pero parte segue tamén na orixe",
+    "MOVE_FAILED": "Erro ao mover (non se borrou nada da orixe)",
+    "MOVE_FAILED_PARTLY": "Erro ao mover (o anterior si se moveu)",
+    "BUSY": "Xa hai unha copia en curso",
+    "LEAVE": "Hai unha copia en curso; se pechas a páxina, interrómpese.",
+    "ERROR_INTO_ITSELF": "non se pode copiar un cartafol dentro de si mesmo",
+    "ERROR_SHARE_ROOT": "non se pode mover un recurso compartido enteiro",
+    "ERROR_NOT_FOUND": "xa non existe",
+    "ERROR_SIZE_MISMATCH": "o tamaño copiado non coincide co orixinal",
+    "ERROR_TOO_DEEP": "demasiados niveis de cartafoles (unha ligazón en bucle?)"
+}

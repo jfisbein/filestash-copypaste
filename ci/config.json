@@ -1,0 +1,23 @@
+{
+    "general": {
+        "name": "copypaste CI",
+        "host": "localhost:__PORT__",
+        "secret_key": "copypaste-ci-016"
+    },
+    "auth": {
+        "admin": "$2b$10$SQbuaT71W6KJWRCefQuF0uB6Hd82weq6bWAxBUFOwXqO2Xd53yutS"
+    },
+    "middleware": {
+        "identity_provider": {
+            "type": "passthrough",
+            "params": "{\"strategy\":\"username_and_password\"}"
+        },
+        "attribute_mapping": {
+            "related_backend": "samba",
+            "params": "{\"samba\":{\"type\":\"samba\",\"host\":\"samba\",\"hostname\":\"samba\",\"username\":\"{{ .user }}\",\"password\":\"{{ .password }}\"}}"
+        }
+    },
+    "connections": [
+        { "label": "samba", "type": "samba" }
+    ]
+}

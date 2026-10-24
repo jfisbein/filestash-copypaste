@@ -1,0 +1,81 @@
+{
+    "COPY": "Kopijuoti",
+    "COPY_TITLE": "Kopijuoti į iškarpinę, kad įklijuotumėte kitame aplanke ar bendrinamame ištekliuje",
+    "CUT": "Iškirpti",
+    "CUT_TITLE": "Iškirpti, kad perkeltumėte į kitą aplanką ar bendrinamą išteklių",
+    "PASTE_HERE": "Įklijuoti čia",
+    "MOVE_HERE": "Perkelti čia",
+    "CLEAR_CLIPBOARD": "Išvalyti iškarpinę",
+    "CANCEL": "Atšaukti",
+    "COPY_SUFFIX": "kopija",
+    "COPIED": {
+        "one": "Nukopijuotas {{count}} elementas: atidarykite paskirties aplanką ir spauskite „{{button}}“",
+        "few": "Nukopijuoti {{count}} elementai: atidarykite paskirties aplanką ir spauskite „{{button}}“",
+        "other": "Nukopijuota {{count}} elementų: atidarykite paskirties aplanką ir spauskite „{{button}}“"
+    },
+    "CUT_DONE": {
+        "one": "Iškirptas {{count}} elementas: atidarykite paskirties aplanką ir spauskite „{{button}}“",
+        "few": "Iškirpti {{count}} elementai: atidarykite paskirties aplanką ir spauskite „{{button}}“",
+        "other": "Iškirpta {{count}} elementų: atidarykite paskirties aplanką ir spauskite „{{button}}“"
+    },
+    "SCANNING": {
+        "one": "Ruošiama… {{count}} failas",
+        "few": "Ruošiama… {{count}} failai",
+        "other": "Ruošiama… {{count}} failų"
+    },
+    "COPYING": "Kopijuojama {{i}}/{{n}} · {{done}} iš {{total}} · {{rate}}/s",
+    "MOVING": "Perkeliama {{i}}/{{n}} · {{done}} iš {{total}} · {{rate}}/s",
+    "REMOVING": "Šalinama iš šaltinio… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Bus nukopijuotas {{count}} failas ({{size}}). Tęsti?",
+        "few": "Bus nukopijuoti {{count}} failai ({{size}}). Tęsti?",
+        "other": "Bus nukopijuota {{count}} failų ({{size}}). Tęsti?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Perkelti į {{dest}}: {{count}} failas ({{size}}).\n\nPirmiausia sukuriama kopija; šaltinis pašalinamas tik jai pavykus. Tęsti?",
+        "few": "Perkelti į {{dest}}: {{count}} failai ({{size}}).\n\nPirmiausia sukuriama kopija; šaltinis pašalinamas tik jai pavykus. Tęsti?",
+        "other": "Perkelti į {{dest}}: {{count}} failų ({{size}}).\n\nPirmiausia sukuriama kopija; šaltinis pašalinamas tik jai pavykus. Tęsti?"
+    },
+    "COPY_DONE": {
+        "one": "Kopijavimas baigtas: {{count}} failas ({{size}})",
+        "few": "Kopijavimas baigtas: {{count}} failai ({{size}})",
+        "other": "Kopijavimas baigtas: {{count}} failų ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopijavimas atšauktas: nukopijuota {{done}} iš {{count}}",
+        "few": "Kopijavimas atšauktas: nukopijuota {{done}} iš {{count}}",
+        "other": "Kopijavimas atšauktas: nukopijuota {{done}} iš {{count}}"
+    },
+    "COPY_FAILED": "Nepavyko nukopijuoti",
+    "MOVED_FILES": {
+        "one": "Perkelta: {{count}} failas ({{size}})",
+        "few": "Perkelta: {{count}} failai ({{size}})",
+        "other": "Perkelta: {{count}} failų ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Perkelta: {{count}} elementas",
+        "few": "Perkelta: {{count}} elementai",
+        "other": "Perkelta: {{count}} elementų"
+    },
+    "MOVED_KEPT": {
+        "one": "Viskas nukopijuota, tačiau dalies elementų nepavyko pašalinti iš šaltinio ir jie vis dar ten: {{count}}",
+        "few": "Viskas nukopijuota, tačiau dalies elementų nepavyko pašalinti iš šaltinio ir jie vis dar ten: {{count}}",
+        "other": "Viskas nukopijuota, tačiau dalies elementų nepavyko pašalinti iš šaltinio ir jie vis dar ten: {{count}}"
+    },
+    "ALREADY_HERE": "Jau yra šiame aplanke",
+    "MOVE_CANCELLED": {
+        "one": "Perkėlimas atšauktas: nukopijuota {{done}} iš {{count}}, iš šaltinio nieko nepašalinta",
+        "few": "Perkėlimas atšauktas: nukopijuota {{done}} iš {{count}}, iš šaltinio nieko nepašalinta",
+        "other": "Perkėlimas atšauktas: nukopijuota {{done}} iš {{count}}, iš šaltinio nieko nepašalinta"
+    },
+    "MOVE_CANCELLED_REMOVING": "Perkėlimas atšauktas šalinant šaltinį: viskas nukopijuota, tačiau dalis vis dar yra ir šaltinyje",
+    "MOVE_FAILED": "Nepavyko perkelti (iš šaltinio nieko nepašalinta)",
+    "MOVE_FAILED_PARTLY": "Nepavyko perkelti (ankstesni elementai perkelti)",
+    "BUSY": "Kopijavimas jau vyksta",
+    "LEAVE": "Vyksta kopijavimas; uždarius puslapį jis bus nutrauktas.",
+    "ERROR_INTO_ITSELF": "aplanko negalima nukopijuoti į jį patį",
+    "ERROR_SHARE_ROOT": "negalima perkelti viso bendrinamo ištekliaus",
+    "ERROR_NOT_FOUND": "nebeegzistuoja",
+    "ERROR_SIZE_MISMATCH": "nukopijuotas dydis nesutampa su originalu",
+    "ERROR_TOO_DEEP": "per daug aplankų lygių (ciklinė nuoroda?)"
+}

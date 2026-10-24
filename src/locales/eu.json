@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopiatu",
+    "COPY_TITLE": "Kopiatu arbelera, beste karpeta edo partekatze batean itsasteko",
+    "CUT": "Ebaki",
+    "CUT_TITLE": "Ebaki, beste karpeta edo partekatze batera eramateko",
+    "PASTE_HERE": "Itsatsi hemen",
+    "MOVE_HERE": "Eraman hona",
+    "CLEAR_CLIPBOARD": "Hustu arbela",
+    "CANCEL": "Utzi",
+    "COPY_SUFFIX": "kopia",
+    "COPIED": {
+        "one": "Elementu {{count}} kopiatuta: joan helburuko karpetara eta sakatu «{{button}}»",
+        "other": "{{count}} elementu kopiatuta: joan helburuko karpetara eta sakatu «{{button}}»"
+    },
+    "CUT_DONE": {
+        "one": "Elementu {{count}} ebakita: joan helburuko karpetara eta sakatu «{{button}}»",
+        "other": "{{count}} elementu ebakita: joan helburuko karpetara eta sakatu «{{button}}»"
+    },
+    "SCANNING": {
+        "one": "Prestatzen… fitxategi {{count}}",
+        "other": "Prestatzen… {{count}} fitxategi"
+    },
+    "COPYING": "Kopiatzen {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "Eramaten {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "Jatorritik ezabatzen… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Fitxategi {{count}} kopiatuko duzu ({{size}}). Jarraitu?",
+        "other": "{{count}} fitxategi kopiatuko dituzu ({{size}}). Jarraitu?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Helburua: {{dest}}. Fitxategi {{count}} eramango da ({{size}}).\n\nLehenik kopia egiten da; jatorria kopia ondo amaitzen denean bakarrik ezabatzen da. Jarraitu?",
+        "other": "Helburua: {{dest}}. {{count}} fitxategi eramango dira ({{size}}).\n\nLehenik kopia egiten da; jatorria kopia ondo amaitzen denean bakarrik ezabatzen da. Jarraitu?"
+    },
+    "COPY_DONE": {
+        "one": "Kopia amaituta: fitxategi {{count}} ({{size}})",
+        "other": "Kopia amaituta: {{count}} fitxategi ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopia bertan behera: {{done}} / {{count}} fitxategi kopiatuta",
+        "other": "Kopia bertan behera: {{done}} / {{count}} fitxategi kopiatuta"
+    },
+    "COPY_FAILED": "Errorea kopiatzean",
+    "MOVED_FILES": {
+        "one": "Eramanda: fitxategi {{count}} ({{size}})",
+        "other": "Eramanda: {{count}} fitxategi ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Eramanda: elementu {{count}}",
+        "other": "Eramanda: {{count}} elementu"
+    },
+    "MOVED_KEPT": {
+        "one": "Dena kopiatu da, baina elementu {{count}} ezin izan da jatorritik ezabatu eta han dago oraindik",
+        "other": "Dena kopiatu da, baina {{count}} elementu ezin izan dira jatorritik ezabatu eta han daude oraindik"
+    },
+    "ALREADY_HERE": "Dagoeneko karpeta honetan dago",
+    "MOVE_CANCELLED": {
+        "one": "Mugimendua bertan behera: {{done}} / {{count}} fitxategi kopiatuta, jatorritik ez da ezer ezabatu",
+        "other": "Mugimendua bertan behera: {{done}} / {{count}} fitxategi kopiatuta, jatorritik ez da ezer ezabatu"
+    },
+    "MOVE_CANCELLED_REMOVING": "Mugimendua bertan behera jatorria ezabatzen ari zela: dena kopiatuta dago, baina zati bat jatorrian ere badago oraindik",
+    "MOVE_FAILED": "Errorea eramatean (jatorritik ez da ezer ezabatu)",
+    "MOVE_FAILED_PARTLY": "Errorea eramatean (aurrekoa eraman da)",
+    "BUSY": "Kopia bat abian dago jada",
+    "LEAVE": "Kopia bat abian dago; orria ixten baduzu, eten egingo da.",
+    "ERROR_INTO_ITSELF": "ezin da karpeta bat bere barruan kopiatu",
+    "ERROR_SHARE_ROOT": "ezin da partekatze oso bat eraman",
+    "ERROR_NOT_FOUND": "ez da existitzen jada",
+    "ERROR_SIZE_MISMATCH": "kopiatutako tamaina ez dator bat jatorrizkoarekin",
+    "ERROR_TOO_DEEP": "karpeta-maila gehiegi (begizta bat duen esteka?)"
+}

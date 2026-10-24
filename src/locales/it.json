@@ -1,0 +1,70 @@
+{
+    "COPY": "Copia",
+    "COPY_TITLE": "Copia negli appunti, per incollare in un'altra cartella o condivisione",
+    "CUT": "Taglia",
+    "CUT_TITLE": "Taglia, per spostare in un'altra cartella o condivisione",
+    "PASTE_HERE": "Incolla qui",
+    "MOVE_HERE": "Sposta qui",
+    "CLEAR_CLIPBOARD": "Svuota gli appunti",
+    "CANCEL": "Annulla",
+    "COPY_SUFFIX": "copia",
+    "COPIED": {
+        "one": "{{count}} elemento copiato: apri la cartella di destinazione e premi «{{button}}»",
+        "other": "{{count}} elementi copiati: apri la cartella di destinazione e premi «{{button}}»"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} elemento tagliato: apri la cartella di destinazione e premi «{{button}}»",
+        "other": "{{count}} elementi tagliati: apri la cartella di destinazione e premi «{{button}}»"
+    },
+    "SCANNING": {
+        "one": "Preparazione… {{count}} file",
+        "other": "Preparazione… {{count}} file"
+    },
+    "COPYING": "Copia {{i}}/{{n}} · {{done}} di {{total}} · {{rate}}/s",
+    "MOVING": "Spostamento {{i}}/{{n}} · {{done}} di {{total}} · {{rate}}/s",
+    "REMOVING": "Rimozione dall'origine… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Stai per copiare {{count}} file ({{size}}). Continuare?",
+        "other": "Stai per copiare {{count}} file ({{size}}). Continuare?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Spostare in {{dest}}: {{count}} file ({{size}}).\n\nPrima viene fatta la copia; l'origine viene rimossa solo quando la copia è riuscita. Continuare?",
+        "other": "Spostare in {{dest}}: {{count}} file ({{size}}).\n\nPrima viene fatta la copia; l'origine viene rimossa solo quando la copia è riuscita. Continuare?"
+    },
+    "COPY_DONE": {
+        "one": "Copia completata: {{count}} file ({{size}})",
+        "other": "Copia completata: {{count}} file ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Copia annullata: {{done}} di {{count}} file copiato",
+        "other": "Copia annullata: {{done}} di {{count}} file copiati"
+    },
+    "COPY_FAILED": "Copia non riuscita",
+    "MOVED_FILES": {
+        "one": "Spostato: {{count}} file ({{size}})",
+        "other": "Spostati: {{count}} file ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Spostato: {{count}} elemento",
+        "other": "Spostati: {{count}} elementi"
+    },
+    "MOVED_KEPT": {
+        "one": "È stato copiato tutto, ma {{count}} elemento non è stato rimosso dall'origine ed è ancora lì",
+        "other": "È stato copiato tutto, ma {{count}} elementi non sono stati rimossi dall'origine e sono ancora lì"
+    },
+    "ALREADY_HERE": "È già in questa cartella",
+    "MOVE_CANCELLED": {
+        "one": "Spostamento annullato: {{done}} di {{count}} file copiato, nulla è stato rimosso dall'origine",
+        "other": "Spostamento annullato: {{done}} di {{count}} file copiati, nulla è stato rimosso dall'origine"
+    },
+    "MOVE_CANCELLED_REMOVING": "Spostamento annullato durante la rimozione dell'origine: è tutto copiato, ma una parte è ancora anche nell'origine",
+    "MOVE_FAILED": "Spostamento non riuscito (nulla è stato rimosso dall'origine)",
+    "MOVE_FAILED_PARTLY": "Spostamento non riuscito (quanto veniva prima è stato spostato)",
+    "BUSY": "C'è già una copia in corso",
+    "LEAVE": "C'è una copia in corso; chiudendo la pagina si interrompe.",
+    "ERROR_INTO_ITSELF": "una cartella non può essere copiata dentro se stessa",
+    "ERROR_SHARE_ROOT": "non si può spostare un'intera condivisione",
+    "ERROR_NOT_FOUND": "non esiste più",
+    "ERROR_SIZE_MISMATCH": "la dimensione copiata non corrisponde all'originale",
+    "ERROR_TOO_DEEP": "troppi livelli di cartelle (un collegamento in loop?)"
+}

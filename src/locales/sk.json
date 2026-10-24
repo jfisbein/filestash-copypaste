@@ -1,0 +1,81 @@
+{
+    "COPY": "Kopírovať",
+    "COPY_TITLE": "Skopírovať do schránky a vložiť do iného priečinka alebo zdieľaného priečinka",
+    "CUT": "Vystrihnúť",
+    "CUT_TITLE": "Vystrihnúť a presunúť do iného priečinka alebo zdieľaného priečinka",
+    "PASTE_HERE": "Vložiť sem",
+    "MOVE_HERE": "Presunúť sem",
+    "CLEAR_CLIPBOARD": "Vyprázdniť schránku",
+    "CANCEL": "Zrušiť",
+    "COPY_SUFFIX": "kópia",
+    "COPIED": {
+        "one": "Skopírovaná {{count}} položka: otvorte cieľový priečinok a kliknite na „{{button}}“",
+        "few": "Skopírované {{count}} položky: otvorte cieľový priečinok a kliknite na „{{button}}“",
+        "other": "Skopírovaných {{count}} položiek: otvorte cieľový priečinok a kliknite na „{{button}}“"
+    },
+    "CUT_DONE": {
+        "one": "Vystrihnutá {{count}} položka: otvorte cieľový priečinok a kliknite na „{{button}}“",
+        "few": "Vystrihnuté {{count}} položky: otvorte cieľový priečinok a kliknite na „{{button}}“",
+        "other": "Vystrihnutých {{count}} položiek: otvorte cieľový priečinok a kliknite na „{{button}}“"
+    },
+    "SCANNING": {
+        "one": "Príprava… {{count}} súbor",
+        "few": "Príprava… {{count}} súbory",
+        "other": "Príprava… {{count}} súborov"
+    },
+    "COPYING": "Kopírovanie {{i}}/{{n}} · {{done}} z {{total}} · {{rate}}/s",
+    "MOVING": "Presúvanie {{i}}/{{n}} · {{done}} z {{total}} · {{rate}}/s",
+    "REMOVING": "Odstraňovanie zo zdroja… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Skopíruje sa {{count}} súbor ({{size}}). Pokračovať?",
+        "few": "Skopírujú sa {{count}} súbory ({{size}}). Pokračovať?",
+        "other": "Skopíruje sa {{count}} súborov ({{size}}). Pokračovať?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Presunúť do {{dest}}: {{count}} súbor ({{size}}).\n\nNajprv sa vytvorí kópia; zdroj sa odstráni až po jej úspešnom dokončení. Pokračovať?",
+        "few": "Presunúť do {{dest}}: {{count}} súbory ({{size}}).\n\nNajprv sa vytvorí kópia; zdroj sa odstráni až po jej úspešnom dokončení. Pokračovať?",
+        "other": "Presunúť do {{dest}}: {{count}} súborov ({{size}}).\n\nNajprv sa vytvorí kópia; zdroj sa odstráni až po jej úspešnom dokončení. Pokračovať?"
+    },
+    "COPY_DONE": {
+        "one": "Kopírovanie dokončené: {{count}} súbor ({{size}})",
+        "few": "Kopírovanie dokončené: {{count}} súbory ({{size}})",
+        "other": "Kopírovanie dokončené: {{count}} súborov ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopírovanie zrušené: skopírované {{done}} z {{count}}",
+        "few": "Kopírovanie zrušené: skopírované {{done}} z {{count}}",
+        "other": "Kopírovanie zrušené: skopírované {{done}} z {{count}}"
+    },
+    "COPY_FAILED": "Kopírovanie zlyhalo",
+    "MOVED_FILES": {
+        "one": "Presunuté: {{count}} súbor ({{size}})",
+        "few": "Presunuté: {{count}} súbory ({{size}})",
+        "other": "Presunuté: {{count}} súborov ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Presunuté: {{count}} položka",
+        "few": "Presunuté: {{count}} položky",
+        "other": "Presunuté: {{count}} položiek"
+    },
+    "MOVED_KEPT": {
+        "one": "Všetko sa skopírovalo, ale {{count}} položku sa nepodarilo odstrániť zo zdroja a stále tam je",
+        "few": "Všetko sa skopírovalo, ale {{count}} položky sa nepodarilo odstrániť zo zdroja a stále tam sú",
+        "other": "Všetko sa skopírovalo, ale {{count}} položiek sa nepodarilo odstrániť zo zdroja a stále tam sú"
+    },
+    "ALREADY_HERE": "Už je v tomto priečinku",
+    "MOVE_CANCELLED": {
+        "one": "Presun zrušený: skopírované {{done}} z {{count}}, zo zdroja sa nič neodstránilo",
+        "few": "Presun zrušený: skopírované {{done}} z {{count}}, zo zdroja sa nič neodstránilo",
+        "other": "Presun zrušený: skopírované {{done}} z {{count}}, zo zdroja sa nič neodstránilo"
+    },
+    "MOVE_CANCELLED_REMOVING": "Presun zrušený počas odstraňovania zdroja: všetko je skopírované, ale časť je stále aj v zdroji",
+    "MOVE_FAILED": "Presun zlyhal (zo zdroja sa nič neodstránilo)",
+    "MOVE_FAILED_PARTLY": "Presun zlyhal (predchádzajúce položky sa presunuli)",
+    "BUSY": "Kopírovanie už prebieha",
+    "LEAVE": "Prebieha kopírovanie; zatvorením stránky sa preruší.",
+    "ERROR_INTO_ITSELF": "priečinok nemožno skopírovať do seba samého",
+    "ERROR_SHARE_ROOT": "celý zdieľaný priečinok nemožno presunúť",
+    "ERROR_NOT_FOUND": "už neexistuje",
+    "ERROR_SIZE_MISMATCH": "skopírovaná veľkosť nezodpovedá originálu",
+    "ERROR_TOO_DEEP": "príliš veľa úrovní priečinkov (zacyklený odkaz?)"
+}

@@ -1,0 +1,59 @@
+{
+    "COPY": "Salin",
+    "COPY_TITLE": "Salin ke papan klip untuk ditempel di folder atau berbagi lain",
+    "CUT": "Potong",
+    "CUT_TITLE": "Potong untuk dipindahkan ke folder atau berbagi lain",
+    "PASTE_HERE": "Tempel di sini",
+    "MOVE_HERE": "Pindahkan ke sini",
+    "CLEAR_CLIPBOARD": "Kosongkan papan klip",
+    "CANCEL": "Batal",
+    "COPY_SUFFIX": "salinan",
+    "COPIED": {
+        "other": "{{count}} item disalin: buka folder tujuan lalu tekan “{{button}}”"
+    },
+    "CUT_DONE": {
+        "other": "{{count}} item dipotong: buka folder tujuan lalu tekan “{{button}}”"
+    },
+    "SCANNING": {
+        "other": "Menyiapkan… {{count}} berkas"
+    },
+    "COPYING": "Menyalin {{i}}/{{n}} · {{done}} dari {{total}} · {{rate}}/s",
+    "MOVING": "Memindahkan {{i}}/{{n}} · {{done}} dari {{total}} · {{rate}}/s",
+    "REMOVING": "Menghapus dari sumber… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "other": "Akan menyalin {{count}} berkas ({{size}}). Lanjutkan?"
+    },
+    "CONFIRM_MOVE": {
+        "other": "Pindahkan ke {{dest}}: {{count}} berkas ({{size}}).\n\nSalinan dibuat terlebih dahulu; sumber hanya dihapus setelah penyalinan berhasil. Lanjutkan?"
+    },
+    "COPY_DONE": {
+        "other": "Penyalinan selesai: {{count}} berkas ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "other": "Penyalinan dibatalkan: {{done}} dari {{count}} berkas tersalin"
+    },
+    "COPY_FAILED": "Gagal menyalin",
+    "MOVED_FILES": {
+        "other": "Dipindahkan: {{count}} berkas ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "other": "Dipindahkan: {{count}} item"
+    },
+    "MOVED_KEPT": {
+        "other": "Semua sudah disalin, tetapi {{count}} item tidak dapat dihapus dari sumber dan masih ada di sana"
+    },
+    "ALREADY_HERE": "Sudah ada di folder ini",
+    "MOVE_CANCELLED": {
+        "other": "Pemindahan dibatalkan: {{done}} dari {{count}} berkas tersalin, tidak ada yang dihapus dari sumber"
+    },
+    "MOVE_CANCELLED_REMOVING": "Pemindahan dibatalkan saat menghapus sumber: semuanya sudah disalin, tetapi sebagian masih ada juga di sumber",
+    "MOVE_FAILED": "Gagal memindahkan (tidak ada yang dihapus dari sumber)",
+    "MOVE_FAILED_PARTLY": "Gagal memindahkan (item sebelumnya sudah dipindahkan)",
+    "BUSY": "Penyalinan sedang berjalan",
+    "LEAVE": "Penyalinan sedang berjalan; menutup halaman akan menghentikannya.",
+    "ERROR_INTO_ITSELF": "folder tidak dapat disalin ke dalam dirinya sendiri",
+    "ERROR_SHARE_ROOT": "seluruh berbagi tidak dapat dipindahkan",
+    "ERROR_NOT_FOUND": "sudah tidak ada",
+    "ERROR_SIZE_MISMATCH": "ukuran salinan tidak sama dengan aslinya",
+    "ERROR_TOO_DEEP": "terlalu banyak tingkat folder (tautan berulang?)"
+}

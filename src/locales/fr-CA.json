@@ -1,0 +1,70 @@
+{
+    "COPY": "Copier",
+    "COPY_TITLE": "Copier dans le presse-papiers, pour coller dans un autre dossier ou partage",
+    "CUT": "Couper",
+    "CUT_TITLE": "Couper, pour déplacer vers un autre dossier ou partage",
+    "PASTE_HERE": "Coller ici",
+    "MOVE_HERE": "Déplacer ici",
+    "CLEAR_CLIPBOARD": "Vider le presse-papiers",
+    "CANCEL": "Annuler",
+    "COPY_SUFFIX": "copie",
+    "COPIED": {
+        "one": "{{count}} élément copié : ouvrez le dossier de destination et cliquez sur « {{button}} »",
+        "other": "{{count}} éléments copiés : ouvrez le dossier de destination et cliquez sur « {{button}} »"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} élément coupé : ouvrez le dossier de destination et cliquez sur « {{button}} »",
+        "other": "{{count}} éléments coupés : ouvrez le dossier de destination et cliquez sur « {{button}} »"
+    },
+    "SCANNING": {
+        "one": "Préparation… {{count}} fichier",
+        "other": "Préparation… {{count}} fichiers"
+    },
+    "COPYING": "Copie {{i}}/{{n}} · {{done}} sur {{total}} · {{rate}}/s",
+    "MOVING": "Déplacement {{i}}/{{n}} · {{done}} sur {{total}} · {{rate}}/s",
+    "REMOVING": "Suppression à la source… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Vous allez copier {{count}} fichier ({{size}}). Continuer?",
+        "other": "Vous allez copier {{count}} fichiers ({{size}}). Continuer?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Déplacer vers {{dest}} : {{count}} fichier ({{size}}).\n\nLa copie est faite d’abord; la source n’est supprimée qu’une fois la copie réussie. Continuer?",
+        "other": "Déplacer vers {{dest}} : {{count}} fichiers ({{size}}).\n\nLa copie est faite d’abord; la source n’est supprimée qu’une fois la copie réussie. Continuer?"
+    },
+    "COPY_DONE": {
+        "one": "Copie terminée : {{count}} fichier ({{size}})",
+        "other": "Copie terminée : {{count}} fichiers ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Copie annulée : {{done}} sur {{count}} fichier copié",
+        "other": "Copie annulée : {{done}} sur {{count}} fichiers copiés"
+    },
+    "COPY_FAILED": "Échec de la copie",
+    "MOVED_FILES": {
+        "one": "Déplacé : {{count}} fichier ({{size}})",
+        "other": "Déplacés : {{count}} fichiers ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Déplacé : {{count}} élément",
+        "other": "Déplacés : {{count}} éléments"
+    },
+    "MOVED_KEPT": {
+        "one": "Tout a été copié, mais {{count}} élément n’a pas pu être supprimé de la source et s’y trouve toujours",
+        "other": "Tout a été copié, mais {{count}} éléments n’ont pas pu être supprimés de la source et s’y trouvent toujours"
+    },
+    "ALREADY_HERE": "Déjà dans ce dossier",
+    "MOVE_CANCELLED": {
+        "one": "Déplacement annulé : {{done}} sur {{count}} fichier copié, rien n’a été supprimé de la source",
+        "other": "Déplacement annulé : {{done}} sur {{count}} fichiers copiés, rien n’a été supprimé de la source"
+    },
+    "MOVE_CANCELLED_REMOVING": "Déplacement annulé pendant la suppression de la source : tout est copié, mais une partie se trouve encore aussi dans la source",
+    "MOVE_FAILED": "Échec du déplacement (rien n’a été supprimé de la source)",
+    "MOVE_FAILED_PARTLY": "Échec du déplacement (ce qui précédait a bien été déplacé)",
+    "BUSY": "Une copie est déjà en cours",
+    "LEAVE": "Une copie est en cours; fermer la page l’interrompt.",
+    "ERROR_INTO_ITSELF": "un dossier ne peut pas être copié dans lui-même",
+    "ERROR_SHARE_ROOT": "un partage entier ne peut pas être déplacé",
+    "ERROR_NOT_FOUND": "n’existe plus",
+    "ERROR_SIZE_MISMATCH": "la taille copiée ne correspond pas à l’original",
+    "ERROR_TOO_DEEP": "trop de niveaux de dossiers (un lien en boucle?)"
+}

@@ -1,0 +1,20 @@
+# Integration environment: Filestash with this plugin, logging in to a throwaway Samba server
+# with each user's own credentials (the passthrough + attribute mapping setup the plugin is
+# written for). Started and stopped by ci/up.sh and ci/down.sh. Test-only credentials: Samba user
+# alice / copypaste-ci-password; the admin hash in config.json is bcrypt of copypaste-ci-admin.
+# general.secret_key must be 16, 24 or 32 bytes (an AES key), or every login fails with 405.
+name: copypaste-ci
+services:
+  samba:
+    build: ./samba
+    environment:
+      SMB_PASSWORD: copypaste-ci-password
+  filestash:
+    image: ${FILESTASH_IMAGE:-machines/filestash:latest}
+    depends_on: [samba]
+    environment:
+      CONFIG_ENCRYPT: "false" # config.json keeps the middleware params in clear
+    ports:
+      - "127.0.0.1:${PORT:-8334}:8334"
+    volumes:
+      - ./state:/app/data/state

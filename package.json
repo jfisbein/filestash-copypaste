@@ -1,0 +1,16 @@
+{
+    "name": "filestash-copypaste",
+    "version": "1.2.0",
+    "private": true,
+    "description": "Copy, cut and paste for Filestash, also between Samba shares",
+    "type": "module",
+    "license": "MIT",
+    "repository": "github:jfisbein/filestash-copypaste",
+    "engines": {
+        "node": ">=20"
+    },
+    "scripts": {
+        "build": "python3 -I build.py",
+        "test": "node test/locales.mjs && node test/mock.mjs && node test/ui.mjs es-ES && node test/ui.mjs en-US"
+    }
+}

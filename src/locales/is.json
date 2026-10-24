@@ -1,0 +1,70 @@
+{
+    "COPY": "Afrita",
+    "COPY_TITLE": "Afrita á klippiborðið til að líma í aðra möppu eða sameign",
+    "CUT": "Klippa",
+    "CUT_TITLE": "Klippa til að færa í aðra möppu eða sameign",
+    "PASTE_HERE": "Líma hér",
+    "MOVE_HERE": "Færa hingað",
+    "CLEAR_CLIPBOARD": "Tæma klippiborðið",
+    "CANCEL": "Hætta við",
+    "COPY_SUFFIX": "afrit",
+    "COPIED": {
+        "one": "{{count}} atriði afritað: opnaðu áfangamöppuna og ýttu á „{{button}}“",
+        "other": "{{count}} atriði afrituð: opnaðu áfangamöppuna og ýttu á „{{button}}“"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} atriði klippt: opnaðu áfangamöppuna og ýttu á „{{button}}“",
+        "other": "{{count}} atriði klippt: opnaðu áfangamöppuna og ýttu á „{{button}}“"
+    },
+    "SCANNING": {
+        "one": "Undirbý… {{count}} skrá",
+        "other": "Undirbý… {{count}} skrár"
+    },
+    "COPYING": "Afrita {{i}}/{{n}} · {{done}} af {{total}} · {{rate}}/s",
+    "MOVING": "Færi {{i}}/{{n}} · {{done}} af {{total}} · {{rate}}/s",
+    "REMOVING": "Fjarlægi úr upprunanum… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Þú ert að fara að afrita {{count}} skrá ({{size}}). Halda áfram?",
+        "other": "Þú ert að fara að afrita {{count}} skrár ({{size}}). Halda áfram?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Færa í {{dest}}: {{count}} skrá ({{size}}).\n\nFyrst er afritað; uppruninn er aðeins fjarlægður þegar afritunin hefur tekist. Halda áfram?",
+        "other": "Færa í {{dest}}: {{count}} skrár ({{size}}).\n\nFyrst er afritað; uppruninn er aðeins fjarlægður þegar afritunin hefur tekist. Halda áfram?"
+    },
+    "COPY_DONE": {
+        "one": "Afritun lokið: {{count}} skrá ({{size}})",
+        "other": "Afritun lokið: {{count}} skrár ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Hætt við afritun: {{done}} af {{count}} skrá afrituð",
+        "other": "Hætt við afritun: {{done}} af {{count}} skrám afritaðar"
+    },
+    "COPY_FAILED": "Afritun mistókst",
+    "MOVED_FILES": {
+        "one": "Fært: {{count}} skrá ({{size}})",
+        "other": "Fært: {{count}} skrár ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Fært: {{count}} atriði",
+        "other": "Fært: {{count}} atriði"
+    },
+    "MOVED_KEPT": {
+        "one": "Allt var afritað, en ekki tókst að fjarlægja {{count}} atriði úr upprunanum og það er þar enn",
+        "other": "Allt var afritað, en ekki tókst að fjarlægja {{count}} atriði úr upprunanum og þau eru þar enn"
+    },
+    "ALREADY_HERE": "Er þegar í þessari möppu",
+    "MOVE_CANCELLED": {
+        "one": "Hætt við flutning: {{done}} af {{count}} skrá afrituð, ekkert fjarlægt úr upprunanum",
+        "other": "Hætt við flutning: {{done}} af {{count}} skrám afritaðar, ekkert fjarlægt úr upprunanum"
+    },
+    "MOVE_CANCELLED_REMOVING": "Hætt við flutning á meðan uppruninn var fjarlægður: allt er afritað, en hluti er líka enn í upprunanum",
+    "MOVE_FAILED": "Flutningur mistókst (ekkert fjarlægt úr upprunanum)",
+    "MOVE_FAILED_PARTLY": "Flutningur mistókst (það sem kom á undan var fært)",
+    "BUSY": "Afritun er þegar í gangi",
+    "LEAVE": "Afritun er í gangi; ef þú lokar síðunni stöðvast hún.",
+    "ERROR_INTO_ITSELF": "ekki er hægt að afrita möppu inn í sjálfa sig",
+    "ERROR_SHARE_ROOT": "ekki er hægt að færa heila sameign",
+    "ERROR_NOT_FOUND": "er ekki lengur til",
+    "ERROR_SIZE_MISMATCH": "afrituð stærð passar ekki við upprunann",
+    "ERROR_TOO_DEEP": "of mörg möppustig (tengill í lykkju?)"
+}

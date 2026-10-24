@@ -1,0 +1,70 @@
+{
+    "COPY": "Kopyala",
+    "COPY_TITLE": "Başqa qovluğa və ya paylaşıma yapışdırmaq üçün mübadilə buferinə kopyala",
+    "CUT": "Kəs",
+    "CUT_TITLE": "Başqa qovluğa və ya paylaşıma köçürmək üçün kəs",
+    "PASTE_HERE": "Bura yapışdır",
+    "MOVE_HERE": "Bura köçür",
+    "CLEAR_CLIPBOARD": "Mübadilə buferini boşalt",
+    "CANCEL": "Ləğv et",
+    "COPY_SUFFIX": "surət",
+    "COPIED": {
+        "one": "{{count}} element kopyalandı: təyinat qovluğunu açın və “{{button}}” düyməsini basın",
+        "other": "{{count}} element kopyalandı: təyinat qovluğunu açın və “{{button}}” düyməsini basın"
+    },
+    "CUT_DONE": {
+        "one": "{{count}} element kəsildi: təyinat qovluğunu açın və “{{button}}” düyməsini basın",
+        "other": "{{count}} element kəsildi: təyinat qovluğunu açın və “{{button}}” düyməsini basın"
+    },
+    "SCANNING": {
+        "one": "Hazırlanır… {{count}} fayl",
+        "other": "Hazırlanır… {{count}} fayl"
+    },
+    "COPYING": "Kopyalanır {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "Köçürülür {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "Mənbədən silinir… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "{{count}} fayl ({{size}}) kopyalanacaq. Davam edilsin?",
+        "other": "{{count}} fayl ({{size}}) kopyalanacaq. Davam edilsin?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Təyinat: {{dest}} – {{count}} fayl ({{size}}) köçürüləcək.\n\nƏvvəlcə surət çıxarılır; mənbə yalnız bu uğurla başa çatdıqdan sonra silinir. Davam edilsin?",
+        "other": "Təyinat: {{dest}} – {{count}} fayl ({{size}}) köçürüləcək.\n\nƏvvəlcə surət çıxarılır; mənbə yalnız bu uğurla başa çatdıqdan sonra silinir. Davam edilsin?"
+    },
+    "COPY_DONE": {
+        "one": "Kopyalama başa çatdı: {{count}} fayl ({{size}})",
+        "other": "Kopyalama başa çatdı: {{count}} fayl ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopyalama ləğv edildi: kopyalanıb {{done}} / {{count}}",
+        "other": "Kopyalama ləğv edildi: kopyalanıb {{done}} / {{count}}"
+    },
+    "COPY_FAILED": "Kopyalama alınmadı",
+    "MOVED_FILES": {
+        "one": "Köçürüldü: {{count}} fayl ({{size}})",
+        "other": "Köçürüldü: {{count}} fayl ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Köçürüldü: {{count}} element",
+        "other": "Köçürüldü: {{count}} element"
+    },
+    "MOVED_KEPT": {
+        "one": "Hər şey kopyalandı, lakin {{count}} element mənbədən silinə bilmədi və hələ də oradadır",
+        "other": "Hər şey kopyalandı, lakin {{count}} element mənbədən silinə bilmədi və hələ də oradadır"
+    },
+    "ALREADY_HERE": "Artıq bu qovluqdadır",
+    "MOVE_CANCELLED": {
+        "one": "Köçürmə ləğv edildi: kopyalanıb {{done}} / {{count}}, mənbədən heç nə silinmədi",
+        "other": "Köçürmə ləğv edildi: kopyalanıb {{done}} / {{count}}, mənbədən heç nə silinmədi"
+    },
+    "MOVE_CANCELLED_REMOVING": "Köçürmə mənbə silinərkən ləğv edildi: hər şey kopyalanıb, lakin bir hissəsi hələ mənbədə də var",
+    "MOVE_FAILED": "Köçürmə alınmadı (mənbədən heç nə silinmədi)",
+    "MOVE_FAILED_PARTLY": "Köçürmə alınmadı (əvvəlkilər köçürüldü)",
+    "BUSY": "Artıq kopyalama gedir",
+    "LEAVE": "Kopyalama gedir; səhifəni bağlasanız, dayanacaq.",
+    "ERROR_INTO_ITSELF": "qovluq öz içinə kopyalana bilməz",
+    "ERROR_SHARE_ROOT": "paylaşımın tamamı köçürülə bilməz",
+    "ERROR_NOT_FOUND": "artıq mövcud deyil",
+    "ERROR_SIZE_MISMATCH": "kopyalanan ölçü orijinalla uyğun gəlmir",
+    "ERROR_TOO_DEEP": "həddən artıq qovluq səviyyəsi (dövrə düşən keçid?)"
+}

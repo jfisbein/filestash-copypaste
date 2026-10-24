@@ -1,0 +1,81 @@
+{
+    "COPY": "Kopiraj",
+    "COPY_TITLE": "Kopiraj u međuspremnik radi lijepljenja u drugu mapu ili dijeljeni resurs",
+    "CUT": "Izreži",
+    "CUT_TITLE": "Izreži radi premještanja u drugu mapu ili dijeljeni resurs",
+    "PASTE_HERE": "Zalijepi ovdje",
+    "MOVE_HERE": "Premjesti ovdje",
+    "CLEAR_CLIPBOARD": "Isprazni međuspremnik",
+    "CANCEL": "Odustani",
+    "COPY_SUFFIX": "kopija",
+    "COPIED": {
+        "one": "Kopirana je {{count}} stavka: otvori odredišnu mapu i klikni „{{button}}”",
+        "few": "Kopirane su {{count}} stavke: otvori odredišnu mapu i klikni „{{button}}”",
+        "other": "Kopirano je {{count}} stavki: otvori odredišnu mapu i klikni „{{button}}”"
+    },
+    "CUT_DONE": {
+        "one": "Izrezana je {{count}} stavka: otvori odredišnu mapu i klikni „{{button}}”",
+        "few": "Izrezane su {{count}} stavke: otvori odredišnu mapu i klikni „{{button}}”",
+        "other": "Izrezano je {{count}} stavki: otvori odredišnu mapu i klikni „{{button}}”"
+    },
+    "SCANNING": {
+        "one": "Priprema… {{count}} datoteka",
+        "few": "Priprema… {{count}} datoteke",
+        "other": "Priprema… {{count}} datoteka"
+    },
+    "COPYING": "Kopiranje {{i}}/{{n}} · {{done}} od {{total}} · {{rate}}/s",
+    "MOVING": "Premještanje {{i}}/{{n}} · {{done}} od {{total}} · {{rate}}/s",
+    "REMOVING": "Uklanjanje iz izvora… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "one": "Kopirat će se {{count}} datoteka ({{size}}). Nastaviti?",
+        "few": "Kopirat će se {{count}} datoteke ({{size}}). Nastaviti?",
+        "other": "Kopirat će se {{count}} datoteka ({{size}}). Nastaviti?"
+    },
+    "CONFIRM_MOVE": {
+        "one": "Premjesti u {{dest}}: {{count}} datoteka ({{size}}).\n\nNajprije se radi kopija; izvor se uklanja tek kad ona uspije. Nastaviti?",
+        "few": "Premjesti u {{dest}}: {{count}} datoteke ({{size}}).\n\nNajprije se radi kopija; izvor se uklanja tek kad ona uspije. Nastaviti?",
+        "other": "Premjesti u {{dest}}: {{count}} datoteka ({{size}}).\n\nNajprije se radi kopija; izvor se uklanja tek kad ona uspije. Nastaviti?"
+    },
+    "COPY_DONE": {
+        "one": "Kopiranje završeno: {{count}} datoteka ({{size}})",
+        "few": "Kopiranje završeno: {{count}} datoteke ({{size}})",
+        "other": "Kopiranje završeno: {{count}} datoteka ({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "one": "Kopiranje otkazano: kopirano {{done}} od {{count}}",
+        "few": "Kopiranje otkazano: kopirano {{done}} od {{count}}",
+        "other": "Kopiranje otkazano: kopirano {{done}} od {{count}}"
+    },
+    "COPY_FAILED": "Kopiranje nije uspjelo",
+    "MOVED_FILES": {
+        "one": "Premješteno: {{count}} datoteka ({{size}})",
+        "few": "Premješteno: {{count}} datoteke ({{size}})",
+        "other": "Premješteno: {{count}} datoteka ({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "one": "Premješteno: {{count}} stavka",
+        "few": "Premješteno: {{count}} stavke",
+        "other": "Premješteno: {{count}} stavki"
+    },
+    "MOVED_KEPT": {
+        "one": "Sve je kopirano, ali {{count}} stavku nije bilo moguće ukloniti iz izvora i još je ondje",
+        "few": "Sve je kopirano, ali {{count}} stavke nije bilo moguće ukloniti iz izvora i još su ondje",
+        "other": "Sve je kopirano, ali {{count}} stavki nije bilo moguće ukloniti iz izvora i još su ondje"
+    },
+    "ALREADY_HERE": "Već je u ovoj mapi",
+    "MOVE_CANCELLED": {
+        "one": "Premještanje otkazano: kopirano {{done}} od {{count}}, ništa nije uklonjeno iz izvora",
+        "few": "Premještanje otkazano: kopirano {{done}} od {{count}}, ništa nije uklonjeno iz izvora",
+        "other": "Premještanje otkazano: kopirano {{done}} od {{count}}, ništa nije uklonjeno iz izvora"
+    },
+    "MOVE_CANCELLED_REMOVING": "Premještanje otkazano tijekom uklanjanja izvora: sve je kopirano, ali dio je još i u izvoru",
+    "MOVE_FAILED": "Premještanje nije uspjelo (ništa nije uklonjeno iz izvora)",
+    "MOVE_FAILED_PARTLY": "Premještanje nije uspjelo (prethodne stavke su premještene)",
+    "BUSY": "Kopiranje je već u tijeku",
+    "LEAVE": "Kopiranje je u tijeku; zatvaranjem stranice ono se prekida.",
+    "ERROR_INTO_ITSELF": "mapa se ne može kopirati u samu sebe",
+    "ERROR_SHARE_ROOT": "cijeli dijeljeni resurs ne može se premjestiti",
+    "ERROR_NOT_FOUND": "više ne postoji",
+    "ERROR_SIZE_MISMATCH": "kopirana veličina ne odgovara izvorniku",
+    "ERROR_TOO_DEEP": "previše razina mapa (poveznica u petlji?)"
+}

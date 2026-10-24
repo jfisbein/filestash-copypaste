@@ -1,0 +1,59 @@
+{
+    "COPY": "복사",
+    "COPY_TITLE": "클립보드에 복사하여 다른 폴더나 공유에 붙여넣기",
+    "CUT": "잘라내기",
+    "CUT_TITLE": "잘라내어 다른 폴더나 공유로 이동",
+    "PASTE_HERE": "여기에 붙여넣기",
+    "MOVE_HERE": "여기로 이동",
+    "CLEAR_CLIPBOARD": "클립보드 비우기",
+    "CANCEL": "취소",
+    "COPY_SUFFIX": "사본",
+    "COPIED": {
+        "other": "항목 {{count}}개를 복사했습니다. 대상 폴더를 열고 ‘{{button}}’을(를) 누르세요"
+    },
+    "CUT_DONE": {
+        "other": "항목 {{count}}개를 잘라냈습니다. 대상 폴더를 열고 ‘{{button}}’을(를) 누르세요"
+    },
+    "SCANNING": {
+        "other": "준비 중… 파일 {{count}}개"
+    },
+    "COPYING": "복사 중 {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "MOVING": "이동 중 {{i}}/{{n}} · {{done}} / {{total}} · {{rate}}/s",
+    "REMOVING": "원본에서 삭제 중… {{i}}/{{n}}",
+    "CONFIRM_COPY": {
+        "other": "파일 {{count}}개({{size}})를 복사합니다. 계속하시겠습니까?"
+    },
+    "CONFIRM_MOVE": {
+        "other": "{{dest}}(으)로 이동: 파일 {{count}}개({{size}}).\n\n먼저 복사한 뒤, 복사가 성공한 경우에만 원본을 삭제합니다. 계속하시겠습니까?"
+    },
+    "COPY_DONE": {
+        "other": "복사 완료: 파일 {{count}}개({{size}})"
+    },
+    "COPY_CANCELLED": {
+        "other": "복사 취소됨: {{count}}개 중 {{done}}개 복사됨"
+    },
+    "COPY_FAILED": "복사하지 못했습니다",
+    "MOVED_FILES": {
+        "other": "이동 완료: 파일 {{count}}개({{size}})"
+    },
+    "MOVED_ITEMS": {
+        "other": "이동 완료: 항목 {{count}}개"
+    },
+    "MOVED_KEPT": {
+        "other": "모두 복사했지만 항목 {{count}}개를 원본에서 삭제하지 못해 아직 남아 있습니다"
+    },
+    "ALREADY_HERE": "이미 이 폴더에 있습니다",
+    "MOVE_CANCELLED": {
+        "other": "이동 취소됨: {{count}}개 중 {{done}}개 복사됨, 원본에서는 아무것도 삭제하지 않았습니다"
+    },
+    "MOVE_CANCELLED_REMOVING": "원본을 삭제하는 중에 이동이 취소되었습니다. 모두 복사되었지만 일부는 원본에도 남아 있습니다",
+    "MOVE_FAILED": "이동하지 못했습니다(원본에서는 아무것도 삭제하지 않았습니다)",
+    "MOVE_FAILED_PARTLY": "이동하지 못했습니다(그 앞의 항목은 이동되었습니다)",
+    "BUSY": "이미 복사가 진행 중입니다",
+    "LEAVE": "복사가 진행 중입니다. 페이지를 닫으면 중단됩니다.",
+    "ERROR_INTO_ITSELF": "폴더를 자기 자신 안으로 복사할 수 없습니다",
+    "ERROR_SHARE_ROOT": "공유 전체를 이동할 수 없습니다",
+    "ERROR_NOT_FOUND": "더 이상 존재하지 않습니다",
+    "ERROR_SIZE_MISMATCH": "복사된 크기가 원본과 일치하지 않습니다",
+    "ERROR_TOO_DEEP": "폴더 단계가 너무 많습니다(순환 링크?)"
+}
