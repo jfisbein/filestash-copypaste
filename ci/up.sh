@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 PORT=${PORT:-8334}
 export PORT
 [ -f ../dist/copypaste.zip ] || { echo "build first: python3 -I build.py" >&2; exit 1; }
-rm -rf state
+[ ! -e state ] || ./down.sh # what a previous run left
 mkdir -p state/config state/plugins
 sed "s/__PORT__/$PORT/" config.json > state/config/config.json
 cp ../dist/copypaste.zip state/plugins/copypaste.zip

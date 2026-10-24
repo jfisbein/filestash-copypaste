@@ -15,8 +15,8 @@ jobs:
     name: Offline tests and build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - name: Translations
@@ -30,7 +30,7 @@ jobs:
           python3 -I build.py
           python3 -I build.py "$RUNNER_TEMP/again.zip"
           cmp dist/copypaste.zip "$RUNNER_TEMP/again.zip"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: copypaste.zip
           path: dist/copypaste.zip
@@ -47,8 +47,8 @@ jobs:
       FILESTASH_IMAGE: ${{ matrix.image }}
       PORT: "8334"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - run: python3 -I build.py
