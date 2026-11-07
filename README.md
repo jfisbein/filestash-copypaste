@@ -89,9 +89,8 @@ anything. Without the service, nothing changes.
   person's own login and its rules (Samba `valid users`, `write list`…) apply. Jobs are listed only
   to the person who started them. The cookie is read from the request, kept in memory while the job
   runs, and never written to disk or logged; `jobs.json` holds paths and states only.
-- **Where it runs**: anywhere that reaches Filestash, normally next to it (see
-  [`server/compose.example.yaml`](server/compose.example.yaml), `server/Dockerfile`). Zero
-  dependencies, Node 20 or later. Publish its port as widely as Filestash itself, no wider.
+- **Where it runs**: anywhere that reaches Filestash, normally next to it, as in the example below.
+  Zero dependencies, Node 20 or later. Publish its port as widely as Filestash itself, no wider.
 - **How the browser finds it**: `http(s)://<the host of the page>:8335`, which is the default port. For
   another address run once in the browser console `localStorage.setItem("plg_copypaste_server", "http://host:port")`
   (`"off"` turns it off). Filestash's cookie is shared by every port of the same host and is
@@ -102,6 +101,62 @@ anything. Without the service, nothing changes.
   running jobs are listed as *interrupted* (what was half-written is removed on a clean stop;
   re-launch them, nothing is ever overwritten). `MAX_JOBS` (default 2) copy at the same time, the
   rest wait.
+
+### Deploying it with Docker Compose
+
+A complete `compose.yaml`: Filestash with the plugin, and the service next to it (the same file is
+[`server/compose.example.yaml`](server/compose.example.yaml)). The image is built from this repository
+(`server/Dockerfile`); there is no published image.
+
+```yaml
+services:
+  filestash:
+    image: machines/filestash:latest
+    restart: unless-stopped
+    ports:
+      - "8334:8334"
+    volumes:
+      - filestash_state:/app/data/state
+      - ./copypaste.zip:/app/data/state/plugins/copypaste.zip:ro
+
+  copypaste-jobs:
+    build:
+      context: https://github.com/jfisbein/filestash-copypaste.git#main
+      dockerfile: server/Dockerfile
+    restart: unless-stopped
+    environment:
+      FILESTASH_URL: http://nas.lan:8334/        # Filestash, by the name it is configured with
+      ALLOWED_ORIGINS: http://nas.lan:8334       # the address you open in the browser, scheme and port included
+      MAX_JOBS: "2"                              # jobs copying at the same time; the rest wait
+    extra_hosts:
+      - "nas.lan:host-gateway"                   # the name above reaches this machine's published :8334
+    ports:
+      - "8335:8335"                              # the plugin looks for it at <page host>:8335
+    volumes:
+      - copypaste_jobs_state:/state              # jobs.json: paths and states, no credentials
+    mem_limit: 512m
+    stop_grace_period: 15s                       # on a stop, running jobs remove their half-written file first
+
+volumes:
+  filestash_state:
+  copypaste_jobs_state:
+```
+
+Before `docker compose up -d`:
+
+1. Put `copypaste.zip` next to the file, as in the plugin's installation steps. It has to be a build that
+   includes the background jobs: a [release](https://github.com/jfisbein/filestash-copypaste/releases)
+   newer than 1.2.1, or `python3 -I build.py` from this repository. Older ones don't show the button.
+2. Set **Filestash's host** (admin console → *Configure* → `host`) to the name you type in the browser,
+   for example `nas.lan:8334`. Filestash answers only to that name (any other gets
+   `403 … only traffic from … is allowed`), so the service must call it by that same name; that is what
+   `FILESTASH_URL` and `extra_hosts` are for. Replace every `nas.lan` in the example with your name.
+3. `ALLOWED_ORIGINS` is the address you open in the browser, scheme and port included. If Filestash is
+   reached over HTTPS, so must the service be: put both behind your reverse proxy and set
+   `plg_copypaste_server` (above) to the service's address.
+
+Reload Filestash's page: **In background** appears next to *Paste here*. `docker compose logs copypaste-jobs`
+shows each job; to update the service, `docker compose build --pull copypaste-jobs && docker compose up -d`.
 
 Configuration, all environment variables: `FILESTASH_URL` (default `http://127.0.0.1:8334/`),
 `PORT` (8335), `HOST`, `ALLOWED_ORIGINS` (comma list; **set it**), `MAX_JOBS`, `STATE_DIR`,

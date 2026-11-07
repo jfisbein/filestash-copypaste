@@ -1,20 +1,41 @@
-# Next to Filestash, in the same compose project (so `filestash` resolves). Adjust ALLOWED_ORIGINS
-# to the address you type in the browser to reach Filestash, scheme and port included.
+# A complete example: Filestash with the copypaste plugin, and the background service next to it.
+#
+# 1. Put copypaste.zip (from the Releases page, or `python3 -I build.py`) next to this file.
+# 2. In Filestash's admin console (/admin → Configure → "host") the host must be the name you type in
+#    the browser, e.g. `nas.lan:8334`. Filestash refuses requests addressed to any other name, which
+#    is why the service below calls it by that name (see extra_hosts) and not as `filestash`.
+# 3. Replace `nas.lan` below with that name, then `docker compose up -d`.
+#
+# The service has no login of its own: it acts with each person's own Filestash session cookie. Publish
+# its port exactly as widely as Filestash itself, no wider.
 services:
+  filestash:
+    image: machines/filestash:latest
+    restart: unless-stopped
+    ports:
+      - "8334:8334"
+    volumes:
+      - filestash_state:/app/data/state
+      - ./copypaste.zip:/app/data/state/plugins/copypaste.zip:ro
+
   copypaste-jobs:
     build:
-      context: https://github.com/jfisbein/filestash-copypaste.git
+      context: https://github.com/jfisbein/filestash-copypaste.git#main
       dockerfile: server/Dockerfile
     restart: unless-stopped
     environment:
-      FILESTASH_URL: http://filestash:8334/
-      ALLOWED_ORIGINS: http://nas.lan:8334
-      MAX_JOBS: "2"
+      FILESTASH_URL: http://nas.lan:8334/        # Filestash, by the name it is configured with
+      ALLOWED_ORIGINS: http://nas.lan:8334       # the address you open in the browser, scheme and port included
+      MAX_JOBS: "2"                              # jobs copying at the same time; the rest wait
+    extra_hosts:
+      - "nas.lan:host-gateway"                   # the name above reaches this machine's published :8334
     ports:
-      - "8335:8335" # publish it exactly as widely as Filestash itself
+      - "8335:8335"                              # the plugin looks for it at <page host>:8335
     volumes:
-      - copypaste_jobs_state:/state
+      - copypaste_jobs_state:/state              # jobs.json: paths and states, no credentials
     mem_limit: 512m
-    stop_grace_period: 15s # on a stop, running jobs remove their half-written file first
+    stop_grace_period: 15s                       # on a stop, running jobs remove their half-written file first
+
 volumes:
+  filestash_state:
   copypaste_jobs_state:
