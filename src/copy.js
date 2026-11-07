@@ -10,7 +10,7 @@ import { getSelection$, expandSelection, lengthSelection, clearSelection } from 
 import { currentPath } from "../../pages/filespage/helper.js";
 import { refresh } from "../../pages/filespage/model_files.js";
 import Notification from "../../components/notification.js";
-import { plan, planRename, execute, removeSources, shareOf, CopyError } from "./engine.js?v=__V__"; // __V__: set by build.py
+import { plan, planRename, execute, removeSources, shareOf, splitPath, CopyError } from "./engine.js?v=__V__"; // __V__: set by build.py
 import { load, t } from "./i18n.js?v=__V__";
 
 const GiB = 1024 * 1024 * 1024;
@@ -24,6 +24,20 @@ const state = {
     clipboard: loadClipboard(),
     job: null, // { abort, status }
 };
+
+// The optional server half (server/copyjobs.mjs): jobs that run on the server, so the data never
+// goes through this browser. `available` is true once the service has answered with this session.
+const bg = {
+    available: false,
+    jobs: [], // as the service lists them
+    now: 0, // the service's clock, for rates
+    open: false, // the panel
+    timer: null,
+    mine: new Set(), // jobs started from this page: their confirmation is asked here
+    asked: new Set(),
+    last: new Map(), // id -> status, to notice a job finishing
+};
+const ACTIVE = ["queued", "planning", "awaiting_confirm", "running", "removing"];
 
 // { mode: "copy" | "cut", paths }
 function loadClipboard() {
@@ -96,6 +110,10 @@ function errorText(err) {
 const STATUS_STYLE = "padding:6px 10px;font-size:0.8rem;color:var(--light);line-height:15px;align-self:center;";
 
 function view() {
+    return mainView() + (bg.available ? jobsView() : "");
+}
+
+function mainView() {
     if (state.job) {
         return `<span style="${STATUS_STYLE}">${esc(state.job.status)}</span>`
             + `<button data-plg="cancel">${esc(t("CANCEL"))}</button>`;
@@ -107,10 +125,180 @@ function view() {
     const { mode, paths } = state.clipboard;
     if (paths.length > 0 && canPasteHere()) {
         return `<button data-plg="paste" title="${esc(paths.join("\n"))}">${esc(t(mode === "cut" ? "MOVE_HERE" : "PASTE_HERE"))} (${paths.length})</button>`
+            + (bg.available ? `<button data-plg="paste-bg" title="${esc(t("BG_TITLE"))}">${esc(t(mode === "cut" ? "MOVE_BG" : "PASTE_BG"))}</button>` : "")
             + `<button data-plg="clear" title="${esc(t("CLEAR_CLIPBOARD"))}">×</button>`;
     }
     return "";
 }
+
+// ---------------------------------------------------------------- background jobs (server)
+
+function serverUrl() {
+    try {
+        const value = localStorage.getItem("plg_copypaste_server"); // "off", or the service's URL
+        if (value === "off") return null;
+        if (value) return value.replace(/\/$/, "");
+    } catch (_) {}
+    return `${location.protocol}//${location.hostname}:8335`;
+}
+
+async function sv(method, path = "", body = undefined) {
+    const base = serverUrl();
+    if (!base) throw new Error("background service off");
+    return fetch(`${base}/api/copyjobs${path}`, {
+        method,
+        credentials: "include", // Filestash's cookie: the service acts as this person, nobody else
+        headers: { "X-Requested-With": "XmlHttpRequest", ...(body === undefined ? {} : { "Content-Type": "application/json" }) },
+        body: body === undefined ? undefined : JSON.stringify(body),
+    });
+}
+
+const isActive = (job) => ACTIVE.includes(job.status);
+
+function jobTitle(job) {
+    const [, name] = splitPath(job.sources[0]);
+    return `${name}${job.sources.length > 1 ? ` (+${job.sources.length - 1})` : ""} → ${job.destination}`;
+}
+
+function jobError(job) {
+    const e = job.error;
+    return e ? errorText(new CopyError(e.code, e.path, e.detail, e.status)) : "";
+}
+
+function jobStatus(job) {
+    const total = Math.max(job.totalFiles, 1);
+    switch (job.status) {
+    case "queued": return t("BG_QUEUED");
+    case "planning": return t("SCANNING", { count: job.totalFiles });
+    case "awaiting_confirm": return t("BG_WAITING");
+    case "running": {
+        const seconds = Math.max((bg.now - job.started) / 1000, 0.001);
+        return t(job.move ? "MOVING" : "COPYING", {
+            i: Math.min(job.files + 1, total), n: job.totalFiles,
+            done: human(job.bytes), total: human(job.totalBytes), rate: human(job.bytes / seconds),
+        });
+    }
+    case "removing": return t("BG_REMOVING");
+    case "done":
+        if (job.note === "ALREADY_HERE") return t("ALREADY_HERE");
+        if (job.note === "RENAMED") return t("MOVED_ITEMS", { count: job.renamed });
+        return t(job.move ? "MOVED_FILES" : "COPY_DONE", { count: job.files, size: human(job.bytes) })
+            + (job.kept?.length ? ` · ${t("MOVED_KEPT", { count: job.kept.length })}` : "");
+    case "failed": return `${t(job.move ? "MOVE_FAILED" : "COPY_FAILED")}: ${jobError(job)}`;
+    case "cancelled": return job.note === "CANCELLED_REMOVING" ? t("MOVE_CANCELLED_REMOVING") : t("BG_CANCELLED");
+    default: return t("BG_INTERRUPTED");
+    }
+}
+
+const BTN = "padding:2px 8px;margin-right:6px;font-size:0.75rem;";
+
+function jobsView() {
+    if (bg.jobs.length === 0) return "";
+    const active = bg.jobs.filter(isActive);
+    const totalBytes = active.reduce((n, j) => n + j.totalBytes, 0);
+    const pct = totalBytes > 0 ? ` · ${Math.floor(100 * active.reduce((n, j) => n + j.bytes, 0) / totalBytes)}%` : "";
+    let html = `<button data-plg="jobs" title="${esc(t("BG_JOBS_TITLE"))}">${esc(t("BG_JOBS", { count: bg.jobs.length }))}${active.length ? esc(pct) : ""}</button>`;
+    if (!bg.open) return html;
+    const rows = bg.jobs.map((job) => {
+        const bar = job.status === "running" && job.totalBytes > 0
+            ? `<div style="height:4px;margin:4px 0;background:var(--light,#888);opacity:.6"><div style="height:100%;width:${Math.min(100, 100 * job.bytes / job.totalBytes).toFixed(1)}%;background:var(--primary,#4a90e2)"></div></div>`
+            : "";
+        const id = esc(job.id);
+        const actions = [];
+        if (job.status === "awaiting_confirm") {
+            actions.push(`<button data-plg="job-ok" data-job="${id}" style="${BTN}">${esc(t("BG_CONFIRM"))}</button>`);
+        }
+        if (isActive(job)) actions.push(`<button data-plg="job-cancel" data-job="${id}" style="${BTN}">${esc(t("CANCEL"))}</button>`);
+        else actions.push(`<button data-plg="job-dismiss" data-job="${id}" style="${BTN}">${esc(t("BG_DISMISS"))}</button>`);
+        return `<div style="padding:8px 0;border-top:1px solid var(--light,#888)">`
+            + `<div style="font-size:0.85rem;word-break:break-all" title="${esc(job.sources.join("\n"))}">${esc(jobTitle(job))}</div>`
+            + `<div style="font-size:0.75rem;color:var(--light,#888);margin:2px 0">${esc(jobStatus(job))}</div>${bar}<div>${actions.join("")}</div></div>`;
+    }).join("");
+    const clear = bg.jobs.some((j) => !isActive(j))
+        ? `<div style="padding-top:6px"><button data-plg="jobs-clear" style="${BTN}">${esc(t("BG_CLEAR"))}</button></div>` : "";
+    html += `<div class="plg-panel" style="position:fixed;left:8px;right:8px;max-width:460px;max-height:60vh;overflow:auto;z-index:1000;padding:4px 12px 10px;`
+        + `background:var(--bg-color,#fff);color:var(--color,#333);border:1px solid var(--light,#888);border-radius:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);line-height:1.3">${rows}${clear}</div>`;
+    return html;
+}
+
+async function pollJobs() {
+    clearTimeout(bg.timer);
+    bg.timer = null;
+    try {
+        const res = await sv("GET");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        bg.available = true;
+        bg.jobs = data.jobs;
+        bg.now = data.now;
+        noticeChanges();
+    } catch (_) {
+        bg.available = false; // not installed, or not reachable from here: the page works as before
+        bg.jobs = [];
+        bg.open = false;
+    }
+    render();
+    if (bg.available && bg.jobs.some(isActive)) bg.timer = setTimeout(pollJobs, 2000);
+}
+
+// A job finishing while the page is open is announced; a job of this page that now needs the
+// person's OK (a move deletes its source) asks for it.
+function noticeChanges() {
+    let finished = false;
+    for (const job of bg.jobs) {
+        const before = bg.last.get(job.id);
+        bg.last.set(job.id, job.status);
+        if (before && ACTIVE.includes(before) && !isActive(job)) {
+            finished = true;
+            const text = `${jobTitle(job)}: ${jobStatus(job)}`;
+            if (job.status === "done") Notification.success(text);
+            else if (job.status === "cancelled") Notification.info(text);
+            else Notification.error(text);
+        }
+        if (job.status === "awaiting_confirm" && bg.mine.has(job.id) && !bg.asked.has(job.id)) {
+            bg.asked.add(job.id);
+            setTimeout(() => askConfirm(job), 0);
+        }
+    }
+    if (finished) refresh();
+}
+
+async function askConfirm(job) {
+    if (!job) return;
+    const ok = window.confirm(t("CONFIRM_MOVE", {
+        dest: job.destination,
+        count: job.confirm?.files ?? job.totalFiles,
+        size: human(job.confirm?.bytes ?? job.totalBytes),
+    }));
+    await jobAction(job.id, "confirm", { ok });
+}
+
+async function jobAction(id, action, body = {}) {
+    try {
+        const res = await sv("POST", `/${encodeURIComponent(id)}/${action}`, body);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    } catch (err) {
+        Notification.error(`${t("BG_ERROR")}: ${err.message}`);
+    }
+    pollJobs();
+}
+
+async function pasteBackground() {
+    const { mode, paths } = state.clipboard;
+    try {
+        const res = await sv("POST", "", { sources: paths.slice(), destination: destDir(), move: mode === "cut", label: t("COPY_SUFFIX") });
+        if (res.status === 401) throw new Error(t("BG_NOT_LOGGED"));
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const { job } = await res.json();
+        bg.mine.add(job.id);
+        if (mode === "cut") setClipboard([]);
+        Notification.info(t("BG_STARTED"));
+    } catch (err) {
+        Notification.error(`${t("BG_ERROR")}: ${err.message}`);
+    }
+    pollJobs();
+}
+
 
 let lastPathname = "";
 
@@ -134,6 +322,8 @@ function render() {
         $box.plgView = html;
         $box.innerHTML = html;
     }
+    const $panel = $box.querySelector(".plg-panel");
+    if ($panel) $panel.style.top = `${Math.round($box.getBoundingClientRect().bottom + 4)}px`;
 }
 
 let pendingStatus = null;
@@ -160,6 +350,14 @@ function onClick(e) {
     case "paste": paste(); break;
     case "clear": setClipboard([]); break;
     case "cancel": state.job?.abort.abort(); break;
+    case "paste-bg": pasteBackground(); break;
+    case "jobs": bg.open = !bg.open; render(); break;
+    case "job-ok": askConfirm(bg.jobs.find((j) => j.id === $button.dataset.job)); break;
+    case "job-cancel": jobAction($button.dataset.job, "cancel"); break;
+    case "job-dismiss": sv("DELETE", `/${encodeURIComponent($button.dataset.job)}`).then(pollJobs, pollJobs); break;
+    case "jobs-clear":
+        Promise.all(bg.jobs.filter((j) => !isActive(j)).map((j) => sv("DELETE", `/${encodeURIComponent(j.id)}`).catch(() => {}))).then(pollJobs);
+        break;
     }
 }
 
@@ -353,3 +551,5 @@ window.addEventListener("keydown", (e) => {
 });
 
 render();
+pollJobs();
+document.addEventListener("visibilitychange", () => { if (!document.hidden) pollJobs(); });

@@ -29,11 +29,18 @@ for (const lang of [...LANGUAGES, ...REGIONAL]) check(files.includes(lang), `${l
 for (const lang of files) check(lang === "en" || LANGUAGES.includes(lang) || REGIONAL.includes(lang), `${lang}.json is a Filestash language`);
 
 let checked = 0;
+const untranslated = new Map();
 for (const lang of files) {
     const d = read(lang);
     const keys = Object.keys(d);
-    check(JSON.stringify(keys) === JSON.stringify(Object.keys(en)), `${lang}: same keys as en, same order`,
-        JSON.stringify({ missing: Object.keys(en).filter((k) => !(k in d)), extra: keys.filter((k) => !(k in en)) }));
+    // A language may lack the newest keys (they fall back to English), never have an extra one, and
+    // what it has comes in en's order. English and Spanish are complete.
+    const wanted = Object.keys(en).filter((k) => k in d);
+    const extra = keys.filter((k) => !(k in en));
+    check(JSON.stringify(keys) === JSON.stringify(wanted) && extra.length === 0, `${lang}: only keys of en, in its order`,
+        JSON.stringify({ extra }));
+    if (lang === "en" || lang === "es") check(keys.length === Object.keys(en).length, `${lang}: complete`);
+    else if (keys.length < Object.keys(en).length) untranslated.set(lang, Object.keys(en).length - keys.length);
     const needed = integerCategories(lang);
     for (const [key, source] of Object.entries(en)) {
         const value = d[key];
@@ -88,5 +95,6 @@ console.error = consoleError;
 check(t("COPY") === "COPY", "nothing loadable: keys, no exception");
 
 console.log(`${files.length} languages, ${checked} plural messages checked`);
+if (untranslated.size) console.log(`NOTE  ${untranslated.size} languages lack ${[...new Set(untranslated.values())].join("/")} newest keys (English is shown): ${[...untranslated.keys()].join(" ")}`);
 console.log(failures === 0 ? "ALL PASSED" : `${failures} FAILED`);
 process.exit(failures === 0 ? 0 : 1);

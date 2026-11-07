@@ -71,6 +71,42 @@ it needs no change to Filestash and no extra service.
 
 **To remove it**, delete the zip (or the volume line) and restart Filestash.
 
+## Background jobs (optional): copy on the server, not through the browser
+
+By default the data of a copy goes through the browser: it is downloaded and uploaded again. From a
+phone on a slow link, a file of several GB is out of the question. **`server/copyjobs.mjs` is an
+optional small service that does the same copy on the server**: the plugin sends it only the paths,
+the bytes travel Filestash → the service → Filestash on the server's own network, and the page can
+be closed or lose its connection while it runs.
+
+When the service answers, the toolbar gets **In background** (or *Move in background*) next to
+*Paste here*, and a **Background (n)** button that opens the list of jobs with progress, Cancel and
+Dismiss. A finished job announces itself if the page is open. A move still asks before it deletes
+anything. Without the service, nothing changes.
+
+- **It is a client of Filestash, not a second way into the storage.** Every request goes to
+  Filestash's own API with the cookie of the person who started the job, so the backend sees that
+  person's own login and its rules (Samba `valid users`, `write list`…) apply. Jobs are listed only
+  to the person who started them. The cookie is read from the request, kept in memory while the job
+  runs, and never written to disk or logged; `jobs.json` holds paths and states only.
+- **Where it runs**: anywhere that reaches Filestash, normally next to it (see
+  [`server/compose.example.yaml`](server/compose.example.yaml), `server/Dockerfile`). Zero
+  dependencies, Node 20 or later. Publish its port as widely as Filestash itself, no wider.
+- **How the browser finds it**: `http(s)://<the host of the page>:8335`, which is the default port. For
+  another address run once in the browser console `localStorage.setItem("plg_copypaste_server", "http://host:port")`
+  (`"off"` turns it off). Filestash's cookie is shared by every port of the same host and is
+  `SameSite=Strict`, which is why a port on the same host is enough. The service answers only the
+  origins in `ALLOWED_ORIGINS`, and writes need the `X-Requested-With` header. Its endpoints live
+  under `/api/` because the cookie is limited to that path. If Filestash is served over HTTPS, the service must be too (mixed content is blocked).
+- **Limits**: Filestash's cookie lasts 7 days, so a job cannot outlive that. If the service restarts,
+  running jobs are listed as *interrupted* (what was half-written is removed on a clean stop;
+  re-launch them, nothing is ever overwritten). `MAX_JOBS` (default 2) copy at the same time, the
+  rest wait.
+
+Configuration, all environment variables: `FILESTASH_URL` (default `http://127.0.0.1:8334/`),
+`PORT` (8335), `HOST`, `ALLOWED_ORIGINS` (comma list; **set it**), `MAX_JOBS`, `STATE_DIR`,
+`KEEP_HOURS` (how long finished jobs stay listed, 24).
+
 ## How copying and moving behave
 
 - **The data goes through the browser.** Each file is downloaded (`GET /api/files/cat`) and uploaded
@@ -116,6 +152,7 @@ which checks the keys, the placeholders and the plural forms of every language.
 | `src/copy.js` | The UI: its own box in the toolbar (put back by a `MutationObserver` when the page re-renders), the clipboard in `localStorage`, shortcuts, progress, and a capture-phase `drop` listener that takes over only the drops whose source and target are in different top-level folders. |
 | `src/engine.js` | The copy and move logic, with no DOM: planning (unique names, refusing a folder into itself), the transfers, the clean-up after a cancel, and removing the sources after a move. |
 | `src/i18n.js` | The language choice and the translations, with plural forms. |
+| `server/copyjobs.mjs` | The optional background service: an HTTP API for jobs that runs `src/engine.js` on the server with the caller's Filestash cookie (a per-job `AsyncLocalStorage` supplies it to the engine's `fetch`). Not part of the plugin zip. |
 
 Files inside a plugin zip are served with a 30-day cache, so `build.py` puts a hash of the
 sources into every URL (`?v=…`): a new version reaches the browser at once.

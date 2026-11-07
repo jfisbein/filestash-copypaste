@@ -1,0 +1,20 @@
+# Next to Filestash, in the same compose project (so `filestash` resolves). Adjust ALLOWED_ORIGINS
+# to the address you type in the browser to reach Filestash, scheme and port included.
+services:
+  copypaste-jobs:
+    build:
+      context: https://github.com/jfisbein/filestash-copypaste.git
+      dockerfile: server/Dockerfile
+    restart: unless-stopped
+    environment:
+      FILESTASH_URL: http://filestash:8334/
+      ALLOWED_ORIGINS: http://nas.lan:8334
+      MAX_JOBS: "2"
+    ports:
+      - "8335:8335" # publish it exactly as widely as Filestash itself
+    volumes:
+      - copypaste_jobs_state:/state
+    mem_limit: 512m
+    stop_grace_period: 15s # on a stop, running jobs remove their half-written file first
+volumes:
+  copypaste_jobs_state:

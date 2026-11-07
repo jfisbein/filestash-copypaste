@@ -66,5 +66,21 @@
     "ERROR_SHARE_ROOT": "no se puede mover un share entero",
     "ERROR_NOT_FOUND": "ya no existe",
     "ERROR_SIZE_MISMATCH": "el tamaño copiado no coincide con el original",
-    "ERROR_TOO_DEEP": "demasiados niveles de carpetas (¿un enlace en bucle?)"
+    "ERROR_TOO_DEEP": "demasiados niveles de carpetas (¿un enlace en bucle?)",
+    "PASTE_BG": "En segundo plano",
+    "MOVE_BG": "Mover en segundo plano",
+    "BG_TITLE": "Lo hace el servidor: puedes cerrar la página o perder la conexión y sigue",
+    "BG_JOBS": "Segundo plano ({{count}})",
+    "BG_JOBS_TITLE": "Trabajos que se ejecutan en el servidor",
+    "BG_QUEUED": "Esperando un hueco libre",
+    "BG_WAITING": "Esperando tu confirmación",
+    "BG_REMOVING": "Borrando del origen…",
+    "BG_CANCELLED": "Cancelado",
+    "BG_INTERRUPTED": "Interrumpido (el servicio se reinició)",
+    "BG_CONFIRM": "Revisar y continuar",
+    "BG_DISMISS": "Descartar",
+    "BG_CLEAR": "Limpiar terminados",
+    "BG_STARTED": "Iniciado en el servidor: puedes cerrar la página. El progreso está en «Segundo plano»",
+    "BG_NOT_LOGGED": "el servicio no reconoce esta sesión: vuelve a iniciar sesión",
+    "BG_ERROR": "Servicio en segundo plano"
 }

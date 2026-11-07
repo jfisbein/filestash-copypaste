@@ -61,6 +61,11 @@ jobs:
         env:
           FILESTASH_USER: alice
           FILESTASH_PASSWORD: copypaste-ci-password # test-only, see ci/compose.yaml
+      - name: Background service against the same Filestash
+        run: node test/server.mjs --base "http://localhost:$PORT/" --shares one,two
+        env:
+          FILESTASH_USER: alice
+          FILESTASH_PASSWORD: copypaste-ci-password # test-only, see ci/compose.yaml
       - name: Logs
         if: failure()
         run: docker compose -f ci/compose.yaml logs
