@@ -226,7 +226,7 @@ function jobRows() {
     }).join("");
 }
 
-// A box fixed at the bottom of the page, outside the toolbar: the list of jobs when it is open, and,
+// A box fixed near the bottom of the page, above Filestash's own notices, outside the toolbar: the list of jobs when it is open, and,
 // while something runs, a strip with its progress (tap it to open the list).
 function dockView() {
     if (!bg.available || bg.jobs.length === 0) return "";
@@ -257,7 +257,7 @@ function renderDock() {
         if (!html) return;
         $dock = document.createElement("div");
         $dock.className = "plg-dock no-select";
-        $dock.style.cssText = "position:fixed;left:8px;right:8px;bottom:8px;max-width:460px;z-index:1000;display:flex;flex-direction:column;gap:6px;";
+        $dock.style.cssText = "position:fixed;left:8px;right:8px;bottom:92px;max-width:460px;z-index:1000;display:flex;flex-direction:column;gap:6px;";
         $dock.addEventListener("click", onClick);
         document.body.appendChild($dock);
     }
