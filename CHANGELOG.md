@@ -1,15 +1,22 @@
 # Changelog
 
-## Unreleased
+## v1.3.0 — 2026-11-07
 
 - **Background jobs** (optional): `server/copyjobs.mjs`, a small service that runs the copy or move
-  on the server, so the data no longer goes through the browser. The plugin shows **In background**
-  next to *Paste here* when the service answers, plus a **Background (n)** list with progress,
-  Cancel and Dismiss. See the README. Without the service nothing changes.
+  on the server, so the data no longer goes through the browser. From a phone on a weak connection a
+  file of several GB is now fine: the page only sends the paths and can be closed while it runs.
+  It acts with each person's own Filestash session, so the backend's rules still apply, and never
+  stores a cookie or a password. Docker image and a complete `compose.yaml` example in the README.
+  Without the service nothing changes.
+- When the service answers, the plugin shows **In background** (or **Move in background**) next to
+  *Paste here*. Progress (name, bytes, speed, bar) is a strip fixed at the bottom of the page, outside
+  the toolbar, which is wider than a phone screen; tapping it opens the list of jobs, with Cancel and
+  Dismiss. A finished job announces itself, and a move still asks before it deletes the source.
 - New messages in English and Spanish; the other languages show them in English until translated
   (`test/locales.mjs` now accepts a language lacking the newest keys, but not an extra or misordered one).
-- Tests: `test/server.mjs` (the service against a real Filestash and Samba, in CI), and a background
+- Tests: `test/server.mjs` (the service against a real Filestash and Samba, in CI) and a background
   scenario in `test/ui.mjs`.
+- `AGENTS.md` (and a `CLAUDE.md` that includes it): the rules that are not obvious when changing the code.
 
 ## v1.2.1 — 2026-10-24
 
