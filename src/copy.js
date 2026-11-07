@@ -190,19 +190,29 @@ function jobStatus(job) {
     }
 }
 
-const BTN = "padding:2px 8px;margin-right:6px;font-size:0.75rem;";
+const BTN = "padding:4px 10px;margin:4px 6px 0 0;font-size:0.85rem;border:1px solid var(--light,#888);border-radius:4px;background:transparent;color:inherit;cursor:pointer;";
+const BOX = "background:var(--bg-color,#fff);color:var(--color,#333);border:1px solid var(--light,#888);border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.25);line-height:1.35;";
 
+const percent = (jobs) => {
+    const total = jobs.reduce((n, j) => n + j.totalBytes, 0);
+    return total > 0 ? Math.floor(100 * jobs.reduce((n, j) => n + j.bytes, 0) / total) : null;
+};
+
+const bar = (job) => (job.status === "running" && job.totalBytes > 0
+    ? `<div style="height:5px;margin:5px 0;border-radius:3px;background:rgba(128,128,128,.35)"><div style="height:100%;border-radius:3px;width:${Math.min(100, 100 * job.bytes / job.totalBytes).toFixed(1)}%;background:var(--primary,#4a90e2)"></div></div>`
+    : "");
+
+// The toolbar button. On a phone the toolbar is wider than the screen and this button can be off
+// the right edge, so the progress is also in the dock (below), which is always on screen.
 function jobsView() {
     if (bg.jobs.length === 0) return "";
     const active = bg.jobs.filter(isActive);
-    const totalBytes = active.reduce((n, j) => n + j.totalBytes, 0);
-    const pct = totalBytes > 0 ? ` · ${Math.floor(100 * active.reduce((n, j) => n + j.bytes, 0) / totalBytes)}%` : "";
-    let html = `<button data-plg="jobs" title="${esc(t("BG_JOBS_TITLE"))}">${esc(t("BG_JOBS", { count: bg.jobs.length }))}${active.length ? esc(pct) : ""}</button>`;
-    if (!bg.open) return html;
-    const rows = bg.jobs.map((job) => {
-        const bar = job.status === "running" && job.totalBytes > 0
-            ? `<div style="height:4px;margin:4px 0;background:var(--light,#888);opacity:.6"><div style="height:100%;width:${Math.min(100, 100 * job.bytes / job.totalBytes).toFixed(1)}%;background:var(--primary,#4a90e2)"></div></div>`
-            : "";
+    const pct = percent(active);
+    return `<button data-plg="jobs" title="${esc(t("BG_JOBS_TITLE"))}">${esc(t("BG_JOBS", { count: bg.jobs.length }))}${active.length && pct !== null ? esc(` · ${pct}%`) : ""}</button>`;
+}
+
+function jobRows() {
+    return bg.jobs.map((job) => {
         const id = esc(job.id);
         const actions = [];
         if (job.status === "awaiting_confirm") {
@@ -210,15 +220,52 @@ function jobsView() {
         }
         if (isActive(job)) actions.push(`<button data-plg="job-cancel" data-job="${id}" style="${BTN}">${esc(t("CANCEL"))}</button>`);
         else actions.push(`<button data-plg="job-dismiss" data-job="${id}" style="${BTN}">${esc(t("BG_DISMISS"))}</button>`);
-        return `<div style="padding:8px 0;border-top:1px solid var(--light,#888)">`
-            + `<div style="font-size:0.85rem;word-break:break-all" title="${esc(job.sources.join("\n"))}">${esc(jobTitle(job))}</div>`
-            + `<div style="font-size:0.75rem;color:var(--light,#888);margin:2px 0">${esc(jobStatus(job))}</div>${bar}<div>${actions.join("")}</div></div>`;
+        return `<div style="padding:10px 0;border-top:1px solid var(--light,#888)">`
+            + `<div style="font-size:0.95rem;word-break:break-all" title="${esc(job.sources.join("\n"))}">${esc(jobTitle(job))}</div>`
+            + `<div style="font-size:0.85rem;opacity:.75;margin:2px 0">${esc(jobStatus(job))}</div>${bar(job)}<div>${actions.join("")}</div></div>`;
     }).join("");
-    const clear = bg.jobs.some((j) => !isActive(j))
-        ? `<div style="padding-top:6px"><button data-plg="jobs-clear" style="${BTN}">${esc(t("BG_CLEAR"))}</button></div>` : "";
-    html += `<div class="plg-panel" style="position:fixed;left:8px;right:8px;max-width:460px;max-height:60vh;overflow:auto;z-index:1000;padding:4px 12px 10px;`
-        + `background:var(--bg-color,#fff);color:var(--color,#333);border:1px solid var(--light,#888);border-radius:4px;box-shadow:0 4px 16px rgba(0,0,0,.25);line-height:1.3">${rows}${clear}</div>`;
+}
+
+// A box fixed at the bottom of the page, outside the toolbar: the list of jobs when it is open, and,
+// while something runs, a strip with its progress (tap it to open the list).
+function dockView() {
+    if (!bg.available || bg.jobs.length === 0) return "";
+    const active = bg.jobs.filter(isActive);
+    let html = "";
+    if (bg.open) {
+        const clear = bg.jobs.some((j) => !isActive(j))
+            ? `<div style="padding-top:6px"><button data-plg="jobs-clear" style="${BTN}">${esc(t("BG_CLEAR"))}</button> `
+              + `<button data-plg="jobs" style="${BTN}">×</button></div>`
+            : `<div style="padding-top:6px"><button data-plg="jobs" style="${BTN}">×</button></div>`;
+        html += `<div class="plg-panel" style="${BOX}max-height:60vh;overflow:auto;padding:0 14px 10px">${jobRows()}${clear}</div>`;
+    }
+    if (active.length > 0 && !bg.open) {
+        const job = active.find((j) => j.status === "awaiting_confirm") ?? active.find((j) => j.status === "running") ?? active[0];
+        const more = active.length > 1 ? ` (+${active.length - 1})` : "";
+        html += `<button data-plg="jobs" title="${esc(t("BG_JOBS_TITLE"))}" style="${BOX}display:block;width:100%;text-align:left;padding:10px 14px;font:inherit;cursor:pointer">`
+            + `<div style="font-size:0.95rem;word-break:break-all">${esc(jobTitle(job))}${esc(more)}</div>`
+            + `<div style="font-size:0.85rem;opacity:.75">${esc(jobStatus(job))}</div>${bar(job)}</button>`;
+    }
     return html;
+}
+
+let $dock = null;
+function renderDock() {
+    const onFiles = !!document.querySelector(`[is="component_submenu"]`) && !new URLSearchParams(location.search).has("share");
+    const html = onFiles ? dockView() : "";
+    if (!$dock) {
+        if (!html) return;
+        $dock = document.createElement("div");
+        $dock.className = "plg-dock no-select";
+        $dock.style.cssText = "position:fixed;left:8px;right:8px;bottom:8px;max-width:460px;z-index:1000;display:flex;flex-direction:column;gap:6px;";
+        $dock.addEventListener("click", onClick);
+        document.body.appendChild($dock);
+    }
+    if ($dock.plgView !== html) {
+        $dock.plgView = html;
+        $dock.innerHTML = html;
+    }
+    $dock.style.display = html ? "flex" : "none";
 }
 
 async function pollJobs() {
@@ -305,6 +352,7 @@ let lastPathname = "";
 function render() {
     lastPathname = location.pathname;
     markCut();
+    renderDock();
     const $menu = document.querySelector(`[is="component_submenu"] > .component_submenu`);
     if (!$menu || new URLSearchParams(location.search).has("share")) return;
     let $box = $menu.querySelector(":scope > .plg-copypaste");
@@ -322,8 +370,7 @@ function render() {
         $box.plgView = html;
         $box.innerHTML = html;
     }
-    const $panel = $box.querySelector(".plg-panel");
-    if ($panel) $panel.style.top = `${Math.round($box.getBoundingClientRect().bottom + 4)}px`;
+
 }
 
 let pendingStatus = null;

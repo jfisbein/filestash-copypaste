@@ -252,8 +252,11 @@ check(files.get("/b/one.txt") === "1" && !files.has("/a/one.txt"), "… and move
 
 // ---------------------------------------------------------------- background jobs (the service)
 const poll = async () => { docListeners.visibilitychange.forEach((f) => f()); await new Promise((r) => setTimeout(r, 20)); };
-const clickJob = (name, id) => box().listeners.click[0]({ target: { closest: () => ({ dataset: { plg: name, job: id } }) }, preventDefault() {}, stopPropagation() {} });
+const dock = () => document.body.children.find((c) => c.className.includes("plg-dock"));
+const clickJob = (name, id) => dock().listeners.click[0]({ target: { closest: () => ({ dataset: { plg: name, job: id } }) }, preventDefault() {}, stopPropagation() {} });
 const panel = () => decode(box().innerHTML);
+const dockHtml = () => decode(dock()?.innerHTML ?? "");
+const dockShown = () => dock() && dock().style.display !== "none" && dock().innerHTML !== "";
 
 go("/b/");
 setClipboardCopy();
@@ -266,7 +269,7 @@ check(same(buttons(), [`paste:${T("PASTE_HERE")} (1)`, "clear:×"]), "service do
 svc.up = true;
 await poll();
 check(same(buttons(), [`paste:${T("PASTE_HERE")} (1)`, `paste-bg:${T("PASTE_BG")}`, "clear:×"]), "service up: a background button appears", JSON.stringify(buttons()));
-check(!panel().includes('data-plg="jobs"'), "no jobs: no jobs button");
+check(!panel().includes('data-plg="jobs"') && !dockShown(), "no jobs: no jobs button, no dock");
 
 await click("paste-bg");
 await poll();
@@ -275,9 +278,13 @@ check(svc.requests.includes(sent), "background paste sends sources, destination,
 check(lastNote() === `info: ${T("BG_STARTED")}` && same(clip(), { mode: "copy", paths: ["/a/loose.txt"] }), "… tells the person it can be closed; a copy keeps the clipboard", lastNote());
 check(panel().includes(`data-plg="jobs"`) && panel().includes(T("BG_JOBS", { count: 1 })) && panel().includes("25%"), "… and a jobs button shows with the overall progress", JSON.stringify(buttons()));
 
+// the strip at the bottom is what a phone shows: the toolbar can be wider than the screen
+const strip = dockHtml();
+check(dockShown() && strip.includes("loose.txt → /b/") && strip.includes(T("COPYING", { i: 1, n: 1, done: "976.6 KB", total: "3.8 MB", rate: "97.7 KB" })) && strip.includes("width:25.0%") && !strip.includes("plg-panel"),
+    "while a job runs, a strip outside the toolbar shows its name, bytes, rate and bar", strip.match(new RegExp(T("COPYING", { i: 1, n: 1, done: ".*?", total: ".*?", rate: ".*?" })))?.[0]);
 await click("jobs");
-const open = panel();
-check(open.includes("loose.txt → /b/") && open.includes(`data-plg="job-cancel"`) && open.includes("width:25.0%"), "the panel lists the job with a progress bar and Cancel");
+const open = dockHtml();
+check(open.includes("plg-panel") && open.includes("loose.txt → /b/") && open.includes(`data-plg="job-cancel"`) && open.includes("width:25.0%") && !open.includes("job-ok"), "the list (in the dock) shows the job with a progress bar and Cancel");
 
 const copyJob = svc.jobs[0];
 Object.assign(copyJob, { status: "done", files: 1, bytes: 4_000_000 });
@@ -285,7 +292,7 @@ before = globalThis.__refreshes;
 await poll();
 check(lastNote() === `success: loose.txt → /b/: ${T("COPY_DONE", { count: 1, size: "3.8 MB" })}` && globalThis.__refreshes > before,
     "a job finishing announces itself and refreshes the listing", lastNote());
-check(panel().includes(`data-plg="job-dismiss"`) && !panel().includes(`data-plg="job-cancel"`), "a finished job offers Dismiss, not Cancel");
+check(dockHtml().includes(`data-plg="job-dismiss"`) && !dockHtml().includes(`data-plg="job-cancel"`), "a finished job offers Dismiss, not Cancel");
 
 // a move asks for the OK on the page that started it, and sends the answer
 store.set("plg_copypaste_clipboard", JSON.stringify({ mode: "cut", paths: ["/a/loose.txt"] }));
@@ -311,7 +318,7 @@ check(svc.jobs.length === 0 && buttons().every((b) => !b.startsWith("jobs:")), "
 // the service stops answering: back to a plain page, no error
 svc.up = false;
 await poll();
-check(!panel().includes("paste-bg"), "service gone: the background button goes");
+check(!panel().includes("paste-bg") && !dockShown(), "service gone: the background button and the dock go");
 
 console.log(failures === 0 ? "ALL PASSED" : `${failures} FAILED`);
 process.exit(failures === 0 ? 0 : 1);
