@@ -221,6 +221,9 @@ node test/mock.mjs                # the engine, against an in-memory imitation o
 node test/ui.mjs [es-ES]          # toolbar, clipboard, shortcuts and drop logic, in any language
 ```
 
+Notes for anyone changing the code, human or AI assistant, are in [AGENTS.md](AGENTS.md): the rules that are
+not obvious from reading it.
+
 These need only Node 20 or newer and Python 3, with no dependencies. The integration test runs
 the real thing in Docker: Filestash with the plugin, logging in to a throwaway Samba server with
 two shares.
