@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- **Background jobs** (optional): `server/copyjobs.mjs`, a small service that runs the copy or move
+  on the server, so the data no longer goes through the browser. The plugin shows **In background**
+  next to *Paste here* when the service answers, plus a **Background (n)** list with progress,
+  Cancel and Dismiss. See the README. Without the service nothing changes.
+- New messages in English and Spanish; the other languages show them in English until translated
+  (`test/locales.mjs` now accepts a language lacking the newest keys, but not an extra or misordered one).
+- Tests: `test/server.mjs` (the service against a real Filestash and Samba, in CI), and a background
+  scenario in `test/ui.mjs`.
+
 ## v1.2.1 — 2026-10-24
 
 - **License changed from MIT to the GNU AGPL v3.0**, the license of Filestash itself.

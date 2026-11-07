@@ -66,5 +66,21 @@
     "ERROR_SHARE_ROOT": "a whole share cannot be moved",
     "ERROR_NOT_FOUND": "no longer exists",
     "ERROR_SIZE_MISMATCH": "the copied size does not match the original",
-    "ERROR_TOO_DEEP": "too many folder levels (a symlink loop?)"
+    "ERROR_TOO_DEEP": "too many folder levels (a symlink loop?)",
+    "PASTE_BG": "In background",
+    "MOVE_BG": "Move in background",
+    "BG_TITLE": "The server does the work: you can close this page or lose the connection, and it carries on",
+    "BG_JOBS": "Background ({{count}})",
+    "BG_JOBS_TITLE": "Jobs running on the server",
+    "BG_QUEUED": "Waiting for a free slot",
+    "BG_WAITING": "Waiting for your OK",
+    "BG_REMOVING": "Removing from the source…",
+    "BG_CANCELLED": "Cancelled",
+    "BG_INTERRUPTED": "Interrupted (the service was restarted)",
+    "BG_CONFIRM": "Review and continue",
+    "BG_DISMISS": "Dismiss",
+    "BG_CLEAR": "Clear finished",
+    "BG_STARTED": "Started on the server: you can close this page. Progress is under \"Background\"",
+    "BG_NOT_LOGGED": "the service does not know this session: log in again",
+    "BG_ERROR": "Background service"
 }

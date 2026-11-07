@@ -59,6 +59,7 @@ const menu = wrapper.appendChild(new El("div"));
 menu.appendChild(new El("div")).className = "action left";
 const head = new El("head");
 const winListeners = {};
+const docListeners = {};
 const def = (k, v) => Object.defineProperty(globalThis, k, { value: v, configurable: true, writable: true });
 let confirmAnswer = true;
 let confirms = 0;
@@ -75,9 +76,10 @@ def("document", {
         '[is="component_submenu"]': wrapper,
         '[is="component_submenu"] > .component_submenu > .plg-copypaste': menu.querySelector(":scope > .plg-copypaste"),
     })[sel] ?? null,
-    addEventListener() {},
+    addEventListener: (t, f) => { (docListeners[t] ||= []).push(f); },
+    hidden: false,
 });
-def("location", { pathname: "/files/", search: "" });
+def("location", { pathname: "/files/", search: "", protocol: "http:", hostname: "nas.test" });
 def("CSS", { escape: (s) => s.replace(/[^a-zA-Z0-9_-]/g, (c) => "\\" + c) });
 def("MutationObserver", class { observe() {} });
 def("Element", class {});
@@ -90,8 +92,31 @@ const nodeFetch = globalThis.fetch;
 def("fetch", async (url, opts) => {
     const u = new URL(url);
     if (u.protocol === "file:") return new Response(fs.readFileSync(fileURLToPath(u))); // the locale files
+    if (u.origin === SERVICE) return service(u, opts);
     return nodeFetch(url, opts);
 });
+// the background service, imitated: it is "down" (a network error) until the scenario starts it
+const SERVICE = "http://nas.test:8335";
+const svc = { up: false, jobs: [], requests: [], now: 100_000 };
+async function service(u, { method = "GET", body } = {}) {
+    if (!svc.up) throw new TypeError("fetch failed");
+    const json = (obj, status = 200) => new Response(JSON.stringify(obj), { status });
+    const parts = u.pathname.replace("/api/copyjobs", "").split("/").filter(Boolean);
+    svc.requests.push(`${method} ${parts.join("/")}${body ? " " + body : ""}`);
+    if (parts.length === 0 && method === "GET") return json({ jobs: svc.jobs, now: svc.now });
+    if (parts.length === 0 && method === "POST") {
+        const data = JSON.parse(body);
+        const job = { id: "j" + (svc.jobs.length + 1), owner: undefined, ...data, status: data.move ? "awaiting_confirm" : "running", created: 1, started: 90_000,
+            files: 0, totalFiles: 1, bytes: 1_000_000, totalBytes: 4_000_000, renamed: 0, current: "", confirm: data.move ? { files: 1, bytes: 4_000_000 } : null, note: "", kept: [], error: null };
+        svc.jobs.unshift(job);
+        return json({ job }, 202);
+    }
+    const job = svc.jobs.find((j) => j.id === parts[0]);
+    if (parts[1] === "confirm") { job.status = JSON.parse(body).ok ? "running" : "cancelled"; return json({ job }, 202); }
+    if (parts[1] === "cancel") { job.status = "cancelled"; return json({ job }, 202); }
+    if (method === "DELETE") { svc.jobs.splice(svc.jobs.indexOf(job), 1); return json({ ok: true }); }
+    return json({}, 404);
+}
 globalThis.__notes = [];
 globalThis.__refreshes = 0;
 globalThis.__path = "/";
@@ -136,7 +161,7 @@ const check = (ok, label, extra = "") => {
 };
 const box = () => menu.querySelector(":scope > .plg-copypaste");
 const decode = (s) => s.replace(/&#(\d+);/g, (m, c) => String.fromCharCode(c));
-const buttons = () => [...box().innerHTML.matchAll(/data-plg="(\w+)"[^>]*>([^<]*)</g)].map((m) => `${m[1]}:${decode(m[2])}`);
+const buttons = () => [...box().innerHTML.matchAll(/data-plg="([\w-]+)"[^>]*>([^<]*)</g)].map((m) => `${m[1]}:${decode(m[2])}`);
 const go = (p) => { globalThis.__path = p; location.pathname = "/files" + p; sel.__select([]); };
 const settle = async (before) => {
     for (let i = 0; i < 200 && globalThis.__refreshes === before; i++) await new Promise((r) => setTimeout(r, 5));
@@ -224,6 +249,76 @@ let before = globalThis.__refreshes;
 check(dropOn("/a/one.txt", "/b/") === true, "a drop onto another share is taken over");
 await settle(before);
 check(files.get("/b/one.txt") === "1" && !files.has("/a/one.txt"), "… and moves it (copy + remove, after the confirmation)", lastNote());
+
+// ---------------------------------------------------------------- background jobs (the service)
+const poll = async () => { docListeners.visibilitychange.forEach((f) => f()); await new Promise((r) => setTimeout(r, 20)); };
+const dock = () => document.body.children.find((c) => c.className.includes("plg-dock"));
+const clickJob = (name, id) => dock().listeners.click[0]({ target: { closest: () => ({ dataset: { plg: name, job: id } }) }, preventDefault() {}, stopPropagation() {} });
+const panel = () => decode(box().innerHTML);
+const dockHtml = () => decode(dock()?.innerHTML ?? "");
+const dockShown = () => dock() && dock().style.display !== "none" && dock().innerHTML !== "";
+
+go("/b/");
+setClipboardCopy();
+function setClipboardCopy() {
+    store.set("plg_copypaste_clipboard", JSON.stringify({ mode: "copy", paths: ["/a/loose.txt"] }));
+    winListeners.storage[0]({ key: "plg_copypaste_clipboard" });
+}
+check(same(buttons(), [`paste:${T("PASTE_HERE")} (1)`, "clear:×"]), "service down: the page is exactly as before (no background button)", JSON.stringify(buttons()));
+
+svc.up = true;
+await poll();
+check(same(buttons(), [`paste:${T("PASTE_HERE")} (1)`, `paste-bg:${T("PASTE_BG")}`, "clear:×"]), "service up: a background button appears", JSON.stringify(buttons()));
+check(!panel().includes('data-plg="jobs"') && !dockShown(), "no jobs: no jobs button, no dock");
+
+await click("paste-bg");
+await poll();
+const sent = `POST  ${JSON.stringify({ sources: ["/a/loose.txt"], destination: "/b/", move: false, label: T("COPY_SUFFIX") })}`;
+check(svc.requests.includes(sent), "background paste sends sources, destination, copy, and the language's suffix", svc.requests.find((r) => r.startsWith("POST ")));
+check(lastNote() === `info: ${T("BG_STARTED")}` && same(clip(), { mode: "copy", paths: ["/a/loose.txt"] }), "… tells the person it can be closed; a copy keeps the clipboard", lastNote());
+check(panel().includes(`data-plg="jobs"`) && panel().includes(T("BG_JOBS", { count: 1 })) && panel().includes("25%"), "… and a jobs button shows with the overall progress", JSON.stringify(buttons()));
+
+// the strip at the bottom is what a phone shows: the toolbar can be wider than the screen
+const strip = dockHtml();
+check(dockShown() && strip.includes("loose.txt → /b/") && strip.includes(T("COPYING", { i: 1, n: 1, done: "976.6 KB", total: "3.8 MB", rate: "97.7 KB" })) && strip.includes("width:25.0%") && !strip.includes("plg-panel"),
+    "while a job runs, a strip outside the toolbar shows its name, bytes, rate and bar", strip.match(new RegExp(T("COPYING", { i: 1, n: 1, done: ".*?", total: ".*?", rate: ".*?" })))?.[0]);
+await click("jobs");
+const open = dockHtml();
+check(open.includes("plg-panel") && open.includes("loose.txt → /b/") && open.includes(`data-plg="job-cancel"`) && open.includes("width:25.0%") && !open.includes("job-ok"), "the list (in the dock) shows the job with a progress bar and Cancel");
+
+const copyJob = svc.jobs[0];
+Object.assign(copyJob, { status: "done", files: 1, bytes: 4_000_000 });
+before = globalThis.__refreshes;
+await poll();
+check(lastNote() === `success: loose.txt → /b/: ${T("COPY_DONE", { count: 1, size: "3.8 MB" })}` && globalThis.__refreshes > before,
+    "a job finishing announces itself and refreshes the listing", lastNote());
+check(dockHtml().includes(`data-plg="job-dismiss"`) && !dockHtml().includes(`data-plg="job-cancel"`), "a finished job offers Dismiss, not Cancel");
+
+// a move asks for the OK on the page that started it, and sends the answer
+store.set("plg_copypaste_clipboard", JSON.stringify({ mode: "cut", paths: ["/a/loose.txt"] }));
+winListeners.storage[0]({ key: "plg_copypaste_clipboard" });
+check(buttons().includes(`paste-bg:${T("MOVE_BG")}`), "a cut offers Move in background", JSON.stringify(buttons()));
+confirms = 0;
+confirmAnswer = false;
+await click("paste-bg");
+await poll();
+await poll();
+check(confirms === 1 && svc.jobs[0].status === "cancelled" && svc.requests.some((r) => r.startsWith("POST j2/confirm") && r.endsWith('{"ok":false}')),
+    "a move asks first (the source is deleted); \"no\" is sent and cancels it", `${confirms} ${svc.jobs[0].status}`);
+check(clip().paths.length === 0, "… and the cut clipboard is emptied once the job exists");
+
+// dismiss and clear
+clickJob("job-dismiss", "j2");
+await poll();
+check(!svc.jobs.some((j) => j.id === "j2") && svc.jobs.length === 1, "Dismiss deletes the job on the service");
+clickJob("jobs-clear");
+await poll();
+check(svc.jobs.length === 0 && buttons().every((b) => !b.startsWith("jobs:")), "Clear finished empties the list; the button goes");
+
+// the service stops answering: back to a plain page, no error
+svc.up = false;
+await poll();
+check(!panel().includes("paste-bg") && !dockShown(), "service gone: the background button and the dock go");
 
 console.log(failures === 0 ? "ALL PASSED" : `${failures} FAILED`);
 process.exit(failures === 0 ? 0 : 1);
